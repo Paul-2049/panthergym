@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', { 'title': 'Drop in pricing' })
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html', {})
+    <main class="page">
+      <div data-observ></div>
+      @@include('html/section/drop-in-pricing-main.html', {})
+      @@include('html/section/full-drop-in-pricing.html', {})
+      @@include('html/section/no-warries-membership.html', {})
+      @@include('html/section/join-today.html', {})
+    </main>
+    @@include('html/footer.html', {})
+  </div>
+  @@include('html/script.html', {})
+</body>
+
+</html>

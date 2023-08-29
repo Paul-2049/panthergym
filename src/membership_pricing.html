@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', { 'title': 'Membership pricing' })
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html', {})
+    <main class="page">
+      <div data-observ></div>
+      @@include('html/section/members-main.html', {})
+      @@include('html/section/full-membership.html', {})
+      @@include('html/section/free-membership.html', {})
+      @@include('html/section/no-warries-membership.html', {})
+      @@include('html/section/join-today.html', {})
+    </main>
+    @@include('html/footer.html', {})
+  </div>
+  @@include('html/script.html', {})
+</body>
+
+</html>

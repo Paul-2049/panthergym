@@ -1,0 +1,50 @@
+@layer components {
+  .footer-item-link {
+    @apply text-white uppercase text-[16px] leading-[32px] font-normal;
+  }
+
+  .footer__container {
+    @apply max-w-[1440px] w-full;
+  }
+
+  .work-day {
+    @apply text-white uppercase text-[16px] leading-[32px] font-normal font-privacy min-w-[120px];
+  }
+
+  .open-time {
+    @apply text-[#646464] text-[16px] leading-[32px] font-privacy font-normal;
+  }
+
+  .search-popup {
+    @apply fixed top-0 left-0 right-0 w-full bg-panther-red-100 flex flex-col items-center justify-center text-center z-10 py-[20px] lg:py-[100px];
+  }
+
+  .heading-search {
+    @apply text-[32px] text-white mb-3 font-bold;
+  }
+
+  .search--form {
+    @apply flex flex-col lg:flex-row items-center justify-center gap-[15px];
+  }
+
+  .search-input {
+    @apply py-[8px] px-0 uppercase text-[20px] font-bold text-white font-base leading-[1.1] border-t-0 border-l-0 border-r-0 border-b-[1px] border-white bg-transparent;
+  }
+
+  .search-btn-js,
+  .search--result-close-btn {
+    @apply cursor-pointer;
+  }
+
+  .search-popup [type=submit] {
+    @apply mx-0 text-black;
+  }
+
+  .search--result-close-btn {
+    @apply absolute w-[15px] h-[15px] top-[15px] right-[15px];
+  }
+
+  .search-popup.active {
+    @apply block;
+  }
+}

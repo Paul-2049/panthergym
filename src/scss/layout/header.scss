@@ -1,0 +1,35 @@
+@layer components {
+  .item-link {
+    @apply text-white uppercase text-[18px] leading-[1.6] font-bold lg:hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
+  }
+
+  .footer-item-link {
+    @apply text-white uppercase text-[16px] leading-[32px] font-normal;
+  }
+
+  .work-day {
+    @apply text-white uppercase text-[16px] leading-[32px] font-normal min-w-[120px];
+  }
+
+  .open-time {
+    @apply text-[#646464] text-[16px] leading-[32px] font-normal;
+  }
+
+  .header-menu {
+    @apply flex flex-col gap-[20px] lg:flex-row lg:gap-[36px] text-white lg:justify-end;
+    font-family: Rajdhani;
+  }
+  .cart-block .cart--link.w-inline-block{
+    @apply flex flex-row gap-[9px] items-center;
+    #cart-count{
+      @apply text-white text-[12px] leading-[1.6] uppercase font-bold min-w-[15px] h-[15px] rounded-[50%] flex items-center justify-center bg-panther-red-100;
+    }
+  }
+  .nav-sub-menu.active{
+    @apply h-auto pl-[15px] lg:p-[15px];
+  }
+}
+
+.menu-open .nav-js {
+  transform: translateX(0);
+}

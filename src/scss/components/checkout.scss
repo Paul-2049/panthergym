@@ -1,0 +1,105 @@
+@layer components {
+    .woocommerce-checkout label {
+        @apply font-privacy font-bold leading-[1.1] text-[16px] text-black pl-[10px];
+    }
+
+    .woocommerce-checkout select,
+    .woocommerce-checkout .input-text {
+        @apply p-[10px] pb-[5px] border-b-[1px] border-black text-panther-red-100 text-[16px] leading-[1.2] font-bold font-privacy placeholder:text-panther-white-200 placeholder:font-normal bg-transparent;
+    }
+
+    .woocommerce-checkout .form-row {
+        @apply mb-[25px];
+    }
+
+    .checkout-item-title {
+        @apply uppercase text-[24px] leading-[1.1] font-bold font-base text-black;
+    }
+
+    .woocommerce-checkout .product-name {
+        @apply flex justify-between items-center font-bold w-full;
+    }
+
+    .woocommerce-checkout .left-col {
+        @apply py-[11px] px-[30px] font-privacy text-[16px];
+    }
+
+    .woocommerce-checkout .right-col {
+        @apply max-w-[171px] w-full text-right pr-[42px] border-l-[1px] border-black py-[11px] font-privacy text-[16px];
+    }
+
+    .form-row.place-order {
+        @apply mb-0;
+    }
+
+    #place_order {
+        @apply w-full h-[50px] font-privacy font-bold uppercase text-[16px] text-center flex items-center justify-center mt-[32px];
+        clip-path:none;
+    }
+
+    .woocommerce-checkout #payment label {
+        @apply pl-0;
+    }
+
+    #payment label {
+        @apply mb-[10px];
+    }
+
+    .woocommerce-checkout #payment div.payment_box .form-row {
+        @apply mb-0;
+    }
+
+    .wc-stripe-elements-field,
+    .wc-stripe-iban-element-field {
+        @apply py-[10px];
+    }
+
+    #payment p {
+        @apply text-[16px] font-privacy leading-[1.5];
+    }
+
+    .form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated {
+        @apply flex items-start;
+    }
+
+    .form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated label {
+        @apply mb-0;
+    }
+
+    .form-row.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated input {
+        @apply mt-[2px];
+    }
+
+    .woocommerce-checkout #payment div.payment_box,
+    .woocommerce-checkout #payment div.form-row,
+    .woocommerce-checkout #payment ul.payment_methods {
+        @apply px-0;
+    }
+
+    .product-price .woocommerce-Price-amount bdi .woocommerce-Price-currencySymbol,
+    .product-price .woocommerce-Price-amount bdi,
+    .woocommerce-checkout .order-total bdi .woocommerce-Price-currencySymbol,
+    .woocommerce-checkout .order-total bdi {
+        @apply text-panther-red-100;
+    }
+
+    .woocommerce-checkout #payment ul.payment_methods li input {
+        @apply mr-1;
+    }
+
+    .woocommerce-checkout #payment div.payment_box {
+        @apply my-0;
+    }
+
+    .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
+        @apply relative flex items-center justify-start before:w-[30px] before:h-[30px] before:left-0 before:border-[1px] before:border-black before:bg-no-repeat before:bg-[length:15px_10px] before:bg-center before:mr-[17px];
+    }
+
+    .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox.active {
+        @apply before:bg-checkbox-woo;
+    }
+
+    .woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox input {
+        @apply w-0 h-0 opacity-0 relative -z-10;
+    }
+}
