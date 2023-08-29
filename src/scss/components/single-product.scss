@@ -22,7 +22,7 @@
         li{
             @apply list-disc list-inside;
         }
-        h5{
+        h1,h2,h3,h4,h5,h6{
             @apply mb-[20px] font-bold font-base text-[24px] leading-[1.1] uppercase mt-[30px] lg:mt-[60px];
         }
     }
