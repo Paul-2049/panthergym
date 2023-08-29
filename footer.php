@@ -13,7 +13,7 @@
 ?>
 
 </main>
-<footer class="bg-black footer">
+<footer class="bg-black footer" x1>
   <div class="footer__container">
     <div class="flex flex-col sm:flex-row justify-between sm:gap-5 gap-[75px] py-8">
       <div class="flex flex-col justify-center sm:w-[40%]">
