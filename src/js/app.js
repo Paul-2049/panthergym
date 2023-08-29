@@ -12,7 +12,8 @@ import { isWebp, menuClose, menuInit } from './modules';
 /* Раскомментировать для использования */
 // import AOS from 'aos'
 /* Раскомментировать для использования */
-import Swiper, { Navigation, Pagination } from 'swiper'
+import Swiper from 'swiper';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 // Включить/выключить FLS (Full Logging System) (в работе)
 window['FLS'] = location.hostname === 'localhost';
@@ -143,12 +144,13 @@ const swiper2 = new Swiper('.feedbackSwiper', {
 });
 
 const bullet_product = new Swiper('.bullet-slider-product', {
-  spaceBetween: 10,
-  slidesPerView: 3,
-  // freeMode: true,
-  // watchSlidesProgress: true,
+  spaceBetween: 22,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
 });
 const mainProduct = new Swiper('.main-slider-product', {
+  modules: [Thumbs],
   spaceBetween: 10,
   thumbs: {
     swiper: bullet_product,
