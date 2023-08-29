@@ -1,0 +1,81 @@
+@layer components {
+    .account-section {
+        @apply bg-white pt-[92px] lg:pt-[148px] pb-[70px] lg:pb-[100px];
+    }
+
+    .qr-code {
+        @apply w-[176px] h-[176px] mb-[20px] lg:mb-0 lg:mr-[50px];
+    }
+
+    .account-head {
+        @apply flex flex-col items-center lg:flex-row;
+    }
+
+    .account-wrap {
+        @apply flex flex-col justify-center lg:justify-start text-center lg:text-left;
+    }
+
+    .account-name {
+        @apply text-[40px] text-panther-red-100 font-bold leading-[1.1] uppercase text-center lg:text-left;
+    }
+
+    .welcome-text {
+        @apply text-[40px] text-black font-bold leading-[1.1] uppercase text-center lg:text-left;
+    }
+
+    .account-content {
+        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left [&>*]:text-panther-red-100 max-w-[894px] w-full mb-[53px] lg:mb-[57px];
+    }
+
+    .account-block {
+        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full;
+    }
+
+    #mepr-account-nav {
+        @apply flex flex-col text-center lg:text-left text-[20px] leading-[2.4] uppercase font-bold text-black;
+    }
+
+    .mepr-nav-item {
+        @apply m-0 p-0;
+    }
+
+    .mepr-active-nav-tab {
+        @apply text-panther-red-100;
+    }
+
+    .mp_wrapper {
+        @apply last:w-full last:max-w-[900px] last:text-center;
+    }
+
+    .mp_wrapper .mepr-account-change-password {
+        @apply text-center text-panther-red-100;
+    }
+
+    .mp_wrapper button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+        @apply text-white uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-panther-red-100 bg-no-repeat bg-center bg-cover py-[17px] px-[47px] block w-fit mx-auto;
+        clip-path:polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+    }
+
+    .mp_wrapper textarea,
+    .mp_wrapper select,
+    .mp_wrapper input[type=text],
+    .mp_wrapper input[type=url],
+    .mp_wrapper input[type=email],
+    .mp_wrapper input[type=tel],
+    .mp_wrapper input[type=number],
+    .mp_wrapper input[type=password] {
+        @apply py-[8px] px-0 uppercase text-[20px] font-bold text-black font-base leading-[1.1] border-t-0 border-l-0 border-r-0 border-b-[1px] border-black bg-transparent;
+    }
+
+    .mp_wrapper .mp-form-row {
+        @apply mb-[35px] lg:mb-[28px]
+    }
+
+    .mp-form-label {
+        @apply text-[16px] leading-[1.1] font-privacy text-black font-normal;
+    }
+
+}

@@ -1,0 +1,27 @@
+@layer components {
+  .content-p {
+    @apply text-[15px] font-privacy leading-[1.5] mb-[15px] lg:text-[17px] text-white;
+  }
+  .content {
+    a{
+      @apply flex items-center text-[15px] lg:text-[18px] underline underline-offset-8 font-privacy leading-[1.5] text-panther-red-100 after:bg-arrow-red after:bg-no-repeat after:bg-contain after:bg-center after:w-[24px] after:h-[11px] after:ml-[10px] hover:text-white hover:no-underline hover:after:bg-arrow-white transition-all duration-[0.3s] ease-in after:transition-all after:duration-[0.3s] after:ease-in;
+    }
+  }
+  .card-room{
+    p{
+      @apply text-[16px] leading-[1.5] font-privacy mb-[16px] last:mb-0;
+    }
+  }
+}
+.text-animate span{
+  display: block;
+  animation: text 20s infinite linear;
+}
+@keyframes text {
+  0% {
+    transform: translate(0, 0);
+}
+100% {
+    transform: translate(-250%, 0)
+}
+}

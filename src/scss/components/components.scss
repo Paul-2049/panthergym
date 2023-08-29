@@ -1,0 +1,21 @@
+@layer components {
+  .content-p {
+    @apply text-[15px] font-privacy leading-[1.5] mb-[15px] lg:text-[17px] text-white;
+  }
+
+  .content {
+    a {
+      @apply flex items-center text-[15px] lg:text-[18px] underline font-privacy leading-[1.5] text-panther-red-100 after:bg-arrow-red after:bg-no-repeat after:bg-contain after:bg-center after:w-[24px] after:h-[11px] after:ml-[10px];
+    }
+  }
+}
+
+@import 'btn';
+@import 'article';
+@import 'tarifs';
+@import 'account';
+@import 'faq';
+@import 'checkout';
+@import 'breadcrumbs';
+@import 'shop';
+@import 'single-product';

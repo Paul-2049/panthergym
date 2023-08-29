@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', { 'title': 'Shop' })
+
+<body>
+    <div class="wrapper">
+        @@include('html/header.html', {})
+        <main class="page">
+            <div data-observ></div>
+            <section class="bg-black h-[130px] md:h-[177px]">
+            </section>
+            <section class="pt-[44px] pb-[55px] lg:pb-[114px]">
+                <div class="flex flex-col lg:flex-row max-w-[1290px] w-full mx-auto px-[15px]">
+                    <div
+                        class="filter-js flex flex-col max-w-[297px] w-full fixed lg:static top-0 left-0 -translate-x-full transition-transform duration-200 ease-in lg:translate-x-0 h-full z-10 bg-white justify-center lg:justify-start py-[20px] lg:py-0">
+                        <button class="close bg-accordion-icon bg-no-repeat bg-contain rotate-[45deg] w-[25px] h-[25px] absolute top-[15px] right-[15px] bg-transparent p-0 m-0 lg:hidden" type="button"></button>
+                        <span
+                            class="lg:px-[22px] font-privacy leading-[1.5] text-[20px] font-bold lg:mb-[42px] block cursor-pointer relative mb-[15px] pl-[15px] lg:pl-0">Categories</span>
+                        <ul
+                            class="lg:mr-[-15px] lg:h-auto mb-[20px] lg:mb-0 gap-1 flex flex-col h-[85%] overflow-y-auto lg:overscroll-y-none">
+                            <li class="active tab-item" data-cat="">Gloves</li>
+                            <li class="tab-item" data-cat="">Footwear</li>
+                            <li class="tab-item" data-cat="">Handwraps</li>
+                            <li class="tab-item" data-cat="">Headgear</li>
+                            <li class="tab-item" data-cat="">Jump Rope</li>
+                            <li class="tab-item" data-cat="">No-Foul Protectors</li>
+                            <li class="tab-item" data-cat="">Mouthguards</li>
+                        </ul>
+                    </div>
+                    <div class="lg:border-l-[1px] lg:border-black">
+                        <h1
+                            class="text-center mb-[25px] lg:mb-[98px] font-privacy font-bold text-panther-red-100 text-[36px] lg:text-[68px] leading-[1.1] italic uppercase">
+                            SHOP <span class="current-cat text-black text-[24px] lg:text-[36px]">/ Glowes</span>
+                        </h1>
+                        <div class="open-filter text-left text-[22px] flex items-center justify-start gap-2 lg:hidden mb-[25px] cursor-pointer text-black hover:text-panther-red-100 transition-colors duration-200 ease-in hover:fill-panther-red-100 fill-black">
+                            Filter
+                            <span>
+                                <svg id="Group_35" data-name="Group 35" xmlns="http://www.w3.org/2000/svg" width="22px"
+                                    height="22px" viewBox="0 0 66.58 57.184">
+                                    <path id="Path_16" data-name="Path 16"
+                                        d="M-170.816-274.868q7.167,0,14.334,0c1.011,0,2.023.02,3.032-.024.527-.023,1.044.071,1.571.034.56-.04,1.125-.009,1.688-.009h5.025c.667,0,.647-.008.877-.624a8.861,8.861,0,0,1,7.527-6.133,9,9,0,0,1,9.806,6.368.461.461,0,0,0,.519.393c1.524-.011,3.048.006,4.572-.011.387,0,.536.109.529.512q-.031,1.771,0,3.542c.007.409-.151.512-.532.508-1.455-.016-2.911.009-4.366-.014a.683.683,0,0,0-.79.553,9.08,9.08,0,0,1-8.732,6.294,9.07,9.07,0,0,1-8.531-6.292.687.687,0,0,0-.785-.557q-20.966.016-41.932.009a3.9,3.9,0,0,0-.412,0c-.349.037-.48-.083-.473-.459.024-1.235.019-2.471,0-3.707,0-.309.076-.394.39-.393Q-179.158-274.861-170.816-274.868Zm39.725,2.284a4.573,4.573,0,0,0-4.529-4.585,4.615,4.615,0,0,0-4.608,4.551,4.578,4.578,0,0,0,4.533,4.589A4.563,4.563,0,0,0-131.091-272.583Z"
+                                        transform="translate(187.916 301.197)" />
+                                    <path id="Path_17" data-name="Path 17"
+                                        d="M-136.028-34.24c-4.64,0-9.281.006-13.921-.008a.636.636,0,0,0-.723.517,8.825,8.825,0,0,1-6.667,6.088,8.747,8.747,0,0,1-8.4-2.412,8.587,8.587,0,0,1-2.277-3.753.533.533,0,0,0-.615-.437q-6.013.013-12.026.005c-2.292,0-4.585-.007-6.877.006-.363,0-.5-.083-.494-.48.023-1.235.014-2.471-.012-3.706-.008-.364.192-.366.44-.366h9.761c3.031,0,6.062-.006,9.093.009a.67.67,0,0,0,.764-.53,8.843,8.843,0,0,1,7.366-6.208,8.7,8.7,0,0,1,7.288,2.177,8.784,8.784,0,0,1,2.684,4.156c.113.367.343.4.653.4q3.913-.007,7.825,0h19.852c.927,0,.831-.042.832.812q0,1.524,0,3.048c0,.686,0,.686-.667.686Zm-23.343,2.291a4.58,4.58,0,0,0,4.619-4.534,4.613,4.613,0,0,0-4.525-4.6,4.589,4.589,0,0,0-4.635,4.484A4.57,4.57,0,0,0-159.371-31.949Z"
+                                        transform="translate(188.054 84.575)" />
+                                    <path id="Path_18" data-name="Path 18"
+                                        d="M-141.742-506.927h-17.875c-.59,0-1.181.019-1.77-.006a.515.515,0,0,0-.583.439,9.022,9.022,0,0,1-3.236,4.6,8.926,8.926,0,0,1-4.538,1.782,8.741,8.741,0,0,1-4.73-.795,8.915,8.915,0,0,1-4.838-5.485.667.667,0,0,0-.777-.548c-2.553.019-5.107,0-7.661.02-.388,0-.442-.117-.438-.462q.022-1.914-.021-3.829c-.007-.31.17-.219.313-.219,2.595,0,5.19-.011,7.784.013a.706.706,0,0,0,.808-.573,8.9,8.9,0,0,1,7.664-6.237,8.479,8.479,0,0,1,5.544,1.167,8.936,8.936,0,0,1,4.078,5.07.716.716,0,0,0,.825.572q19.358-.018,38.716-.009a3.175,3.175,0,0,0,.37,0c.362-.042.48.113.475.471q-.024,1.812,0,3.624c0,.328-.1.414-.426.413q-6.692-.017-13.384-.009Zm-24.341-2.226a4.636,4.636,0,0,0-4.61-4.613,4.584,4.584,0,0,0-4.522,4.6,4.559,4.559,0,0,0,4.57,4.583A4.62,4.62,0,0,0-166.083-509.153Z"
+                                        transform="translate(188.209 518.3)" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div
+                            class="product-list grid w-full lg:pl-[129px] gap-x-[56px] gap-y-[43px] grid-cols-1 bm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
+                            <a href=""
+                                class="product-cart h-fit py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                                <div class="thumbail mb-[16px]">
+                                    <img src="images/product.png" alt="">
+                                </div>
+                                <div
+                                    class="category mb-[10px] text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    Sparring Gloves
+                                </div>
+                                <div class="title mb-[18px] font-base text-black text-[24px] !font-bold leading-[1.1]">
+                                    RIVAL RS11V EVOLUTION SPARRING GLOVES
+                                </div>
+                                <div
+                                    class="price  text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    $189.95
+                                </div>
+                            </a>
+                            <a href=""
+                                class="product-cart h-fit py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                                <div class="thumbail mb-[16px]">
+                                    <img src="images/product.png" alt="">
+                                </div>
+                                <div
+                                    class="category mb-[10px] text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    Sparring Gloves
+                                </div>
+                                <div class="title mb-[18px] font-base text-black text-[24px] !font-bold leading-[1.1]">
+                                    RIVAL RS11V EVOLUTION SPARRING GLOVES
+                                </div>
+                                <div
+                                    class="price  text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    $189.95
+                                </div>
+                            </a>
+                            <a href=""
+                                class="product-cart h-fit py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                                <div class="thumbail mb-[16px]">
+                                    <img src="images/product.png" alt="">
+                                </div>
+                                <div
+                                    class="category mb-[10px] text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    Sparring Gloves
+                                </div>
+                                <div class="title mb-[18px] font-base text-black text-[24px] !font-bold leading-[1.1]">
+                                    RIVAL RS11V EVOLUTION SPARRING GLOVES
+                                </div>
+                                <div
+                                    class="price  text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    $189.95
+                                </div>
+                            </a>
+                            <a href=""
+                                class="product-cart h-fit py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                                <div class="thumbail mb-[16px]">
+                                    <img src="images/product.png" alt="">
+                                </div>
+                                <div
+                                    class="category mb-[10px] text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    Sparring Gloves
+                                </div>
+                                <div class="title mb-[18px] font-base text-black text-[24px] !font-bold leading-[1.1]">
+                                    RIVAL RS11V EVOLUTION SPARRING GLOVES
+                                </div>
+                                <div
+                                    class="price  text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                                    $189.95
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+            </section>
+            <section class="relative lg:py-[68px] py-[46px] pt-0 bg-white lg:pt-0">
+                <div class="absolute h-[50%] w-full bg-black-darkgray-gradient bottom-0"></div>
+                <div
+                    class="relative flex flex-col hadow-[0_0_40px_0_#00000029] rounded-[8px] overflow-hidden max-w-[1200px] sm:mx-auto mx-5">
+                    <div class="absolute top-0 left-0 right-0 bottom-0">
+                        <img class="sm:hidden object-left-top object-cover w-full h-full"
+                            src="images/boxer-vertical.jpg" alt="">
+                        <img class="hidden sm:block object-left-top object-cover w-full h-full" src="images/boxer.jpg"
+                            alt="">
+                    </div>
+                    <div
+                        class="flex flex-col justify-center sm:self-end md:w-[820px] sm:py-[80px] sm:px-[60px] px-[25px] pb-[60px] pt-[300px] relative z-[1]">
+                        <p
+                            class="text-[40px] font-privacy font-bold italic leading-[42px] text-white text-left max-lg:hidden">
+                            READY TO GET
+                            STARTED?</p>
+                        <p
+                            class="text-[38px] font-privacy font-bold italic leading-[42px] text-white text-left lg:hidden mb-[20px]">
+                            READY TO <br class="lg:hidden"> GET STARTED?
+                        </p>
+                        <p
+                            class="text-[40px] font-privacy font-bold italic leading-[42px] text-[#E10A17] text-right max-lg:hidden">
+                            JOIN PANTHER GYM
+                            TODAY</p>
+                        <p class="text-[38px] font-privacy font-bold italic leading-[42px] text-[#E10A17] lg:hidden">
+                            JOIN PANTHER <br class="lg:hidden"> GYM TODAY</p>
+                        <div class="flex sm:flex-row flex-col sm:gap-1 gap-5 justify-center items-center mt-[30px]">
+                            <button class="btn-primary whitespace-nowrap">
+                                BECOME A MEMBER
+                            </button>
+                            <button class="btn-primary">
+                                BOOK CLASSES
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/footer.html', {})
+    </div>
+    @@include('html/script.html', {})
+</body>
+
+</html>

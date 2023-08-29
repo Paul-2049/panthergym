@@ -1,0 +1,8 @@
+@layer components {
+    #breadcrumbs {
+        @apply font-privacy leading-[1.8] text-[16px] text-black;
+        a{
+            @apply text-panther-red-100;
+        }
+    }
+}

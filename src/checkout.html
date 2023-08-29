@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', { 'title': 'Boxing classes' })
+
+<body>
+    <div class="wrapper">
+        @@include('html/header.html', {})
+        <main class="page">
+            <div data-observ></div>
+            <section class="bg-black h-[130px] md:h-[177px]">
+            </section>
+            <section class="bg-white pt-[40px] lg:pt-[80px] px-[30px] pb-[55px] lg:pb-[107px]">
+                <div class="w-full mx-auto px-[15px] max-w-[1280px]">
+                    <div class="mb-[25px] lg:mb-[80px]">
+                        shipp
+                    </div>
+                    <h1
+                        class="uppercase lg:text-[68px] text-center font-bold italic leading-[1.1] text-[36px] mb-[36px] lg:mb-[78px] font-privacy">
+                        Checkout
+                    </h1>
+                    <div class="flex flex-col lg:flex-row justify-between items-start">
+                        <div class="max-w-[777px] w-full"></div>
+                        <div class="max-w-[380px] w-full border-[1px] border-black [&>*]:text-panther-red-100"></div>
+                    </div>
+                    <div
+                        class="lg:max-w-[380px] w-full border-[1px] border-black pt-[43px] pb-[22px] px-[35px] mt-[25px] lg:mt-0">
+                        <h3 class="checkout-item-title mb-[30px] text-center uppercase">
+                            YOUR CART
+                        </h3>
+                        <ul class="flex flex-col gap-[4px] py-[23px] border-t-[1px] border-b-[1px] border-black">
+                            <li class="flex items-center justify-between font-privacy text-[16px] leading-[2]">
+                                <span>Subtotal</span><span>$99.90</span>
+                            </li>
+                        </ul>
+                        <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
+                            <input id="ship-to-different-address-checkbox"
+                                class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox"
+                                type="checkbox" name="ship_to_different_address" value="1" style="
+                width: 20px;
+                height: 20px;
+            "> <span>Ship to a different address?</span>
+                        </label>
+                        <div
+                            class="flex items-center justify-between font-privacy font-bold text-[16px] py-[9px] border-b-[1px] border-black leading-[2]">
+                            <span>Total</span><span
+                                class="text-panther-red-100 [&>bdi]:text-panther-red-100">$104.90</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/footer.html', {})
+    </div>
+    @@include('html/script.html', {})
+</body>
+
+</html>
