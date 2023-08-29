@@ -1,8 +1,9 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper from 'swiper';
+import {Navigation, Pagination} from 'swiper/modules';
 
-Swiper.use([Navigation]);
 
 const boxingMainSwiper = new Swiper('.JS-boxing-main-swiper', {
+  modules: [Navigation, Pagination],
   slidesPerView: 1,
   spaceBetween: 50,
   navigation: {

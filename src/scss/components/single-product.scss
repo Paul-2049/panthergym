@@ -26,4 +26,7 @@
             @apply mb-[20px] font-bold font-base text-[24px] leading-[1.1] uppercase mt-[30px] lg:mt-[60px];
         }
     }
+    .swiper-slide-thumb-active{
+        @apply border-[1px] border-panther-red-100;
+    }
 }
