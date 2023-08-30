@@ -1,32 +1,84 @@
 @layer components {
-    .attribute-list {
-        @apply flex items-center flex-wrap justify-start gap-[10px] mb-[26px] mt-[10px];
-        .attribute-value{
-            @apply border-solid border-[1px] border-black min-w-[67px] h-[40px] flex items-center justify-center uppercase text-black font-privacy text-[15px] leading-[1.1] cursor-pointer hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+    .woo-variation-swatches .variable-items-wrapper {
+        @apply mb-[26px] mt-[10px];
+
+        .variable-item {
+            @apply border-solid border-[1px] border-black min-w-[67px] h-[40px] flex items-center justify-center uppercase text-black font-privacy text-[15px] leading-[1.1] cursor-pointer hover:bg-black hover:text-white transition-colors duration-200 ease-in rounded-none hover:shadow-none #{!important};
         }
-        .attribute-value.active{
-            @apply bg-black text-white;
+
+        .variable-item:hover {
+            .variable-item-span {
+                color:white !important;
+
+            }
+        }
+
+        .variable-item-span {
+            color:black !important;
+
+        }
+
+        .variable-item.selected {
+            background-color:black !important;
+
+            .variable-item-span {
+                color:white !important;
+
+            }
         }
     }
-    .add-to-card{
-        @apply max-w-[219px] w-full h-[50px] m-0 p-0 flex items-center justify-center text-white bg-panther-red-100 hover:bg-panther-red-200 transition-colors duration-200 ease-in font-bold uppercase text-[15px] font-privacy cursor-pointer;
+
+    .product_meta,
+    .product_level_wrapper,
+    .reset_variations {
+        @apply hidden opacity-0 w-0 h-0 overflow-hidden;
+        display:none !important;
     }
-    .quantity input{
-        @apply w-[60px] text-black text-[15px] leading-[1.1] font-privacy text-center px-[15px];
+    .added_to_cart.wc-forward{
+        width: 0;
+        height: 0;
+        overflow: hidden;
     }
-    .content-single{
-        @apply [&>*]:font-privacy [&>*]:text-[16px] leading-[1.8];
-        p{
-            @apply mb-[20px];
+    .single_add_to_cart_button,
+    .add-to-card {
+        clip-path:unset;
+        @apply max-w-[219px] w-full h-[50px] m-0 p-0 inline-flex items-center justify-center text-white bg-panther-red-100 hover:bg-panther-red-200 transition-colors duration-200 ease-in font-bold uppercase text-[15px] font-privacy cursor-pointer rounded-none #{!important};
+    }
+
+    .quantity {
+        @apply inline-flex items-center justify-between border-[1px] border-black h-[50px] min-w-[67px] px-[8px];
+    }
+
+    .woocommerce-variation-availability .stock {
+        @apply text-black text-[15px] leading-[1.1] font-privacy mb-[15px];
+    }
+
+    .woocommerce .quantity .qty {
+        @apply w-[60px] text-black text-[15px] leading-[1.1] font-privacy text-center px-0;
+    }
+
+    .content-single {
+        @apply [&>*]:font-privacy [&>*]:text-[16px] font-privacy text-[16px] leading-[1.8] mt-[25px] lg:mt-[73px];
+
+        p {
+            @apply mb-[20px] font-privacy text-[16px] leading-[1.8];
         }
-        li{
-            @apply list-disc list-inside;
+
+        li {
+            @apply list-disc list-inside font-privacy text-[16px] leading-[1.8];
         }
-        h1,h2,h3,h4,h5,h6{
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             @apply mb-[20px] font-bold font-base text-[24px] leading-[1.1] uppercase mt-[30px] lg:mt-[60px];
         }
     }
-    .swiper-slide-thumb-active{
+
+    .swiper-slide-thumb-active {
         @apply border-[1px] border-panther-red-100;
     }
 }
