@@ -92,7 +92,29 @@
 									?>
 								</div>
 								<div class="actions">
-									<button type="button" class="book">
+									<button type="button"
+											class="book booking_shedule"
+											data-id="<?= $event->ID ?>"
+											data-date="<?= date('Y-m-d', $day) ?>"
+											data-time="<?= $start ?> - <?= $end ?>"
+											data-duration="<?= (strtotime( $end ) - strtotime( $start )) / 60; ?> minutes"
+											data-title="<?= $event->post_title ?>"
+											data-description="<?= $event->post_content ?>"
+											data-location="<?= tribe_get_venue( $event->ID ) ?? "&mdash;"; ?>"
+											data-intensity="<?= get_field( 'event_intensity', $event->ID ) ?? "&mdash;" ?>"
+											data-instructors="<?php
+												$organizer_ids = tribe_get_organizer_ids( $event->ID );
+												$organizers = [];
+												if( !empty( $organizer_ids ) ) foreach( $organizer_ids as $id ) {
+													$organizers[] = tribe_get_organizer_object( $id )->post_title;
+													echo implode(', ', $organizers);
+												} else {
+													echo "&mdash;";
+												}
+
+											?>"
+											data-categories="<?php if (!empty( $categories )) echo substr($categories,0,-1); else echo "&mdash;"; ?>"
+									>
 										Book
 									</button>
 								</div>

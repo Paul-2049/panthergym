@@ -44,3 +44,15 @@
 		border-color: $color_white;
 	}
 }
+
+@mixin button_red {
+	@include button_white;
+	background: $color_red;
+	color: $color_white;
+
+	&:hover {
+		background: $color_white;
+		color: $color_red;
+		border-color: $color_red;
+	}
+}
