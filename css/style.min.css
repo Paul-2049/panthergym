@@ -1718,80 +1718,123 @@ video {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.attribute-list{
+.woo-variation-swatches .variable-items-wrapper{
   margin-bottom: 26px;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
 }
-.attribute-list .attribute-value{
-  display: flex;
-  height: 40px;
+.woo-variation-swatches .variable-items-wrapper .variable-item{
+  display: flex !important;
+  height: 40px !important;
+  min-width: 67px !important;
+  cursor: pointer !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
+  font-family: Open Sans, sans-serif !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+  line-height: 1.1 !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 200ms !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1) !important;
+}
+.woo-variation-swatches .variable-items-wrapper .variable-item:hover{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+.woo-variation-swatches .variable-items-wrapper .variable-item:hover .variable-item-span {
+    color: white !important;
+  }
+.woo-variation-swatches .variable-items-wrapper .variable-item-span {
+    color: black !important;
+  }
+.woo-variation-swatches .variable-items-wrapper .variable-item.selected {
+    background-color: black !important;
+  }
+.woo-variation-swatches .variable-items-wrapper .variable-item.selected .variable-item-span {
+    color: white !important;
+  }
+.product_meta,
+  .product_level_wrapper,
+  .reset_variations{
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+  opacity: 0;
+    display: none !important;
+}
+.added_to_cart.wc-forward {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+.single_add_to_cart_button,
+  .add-to-card {
+    clip-path: unset;
+    margin: 0px !important;
+    display: inline-flex !important;
+    height: 50px !important;
+    width: 100% !important;
+    max-width: 219px !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0px !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(225 10 23 / var(--tw-bg-opacity)) !important;
+    padding: 0px !important;
+    font-family: Open Sans, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-duration: 200ms !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1) !important;
+  }
+.single_add_to_cart_button:hover,
+  .add-to-card:hover{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 0 0 / var(--tw-bg-opacity)) !important;
+}
+.quantity{
+  display: inline-flex;
+  height: 50px;
   min-width: 67px;
-  cursor: pointer;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-width: 1px;
-  border-style: solid;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.woocommerce-variation-availability .stock{
+  margin-bottom: 15px;
   font-family: Open Sans, sans-serif;
   font-size: 15px;
-  text-transform: uppercase;
   line-height: 1.1;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-.attribute-list .attribute-value:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.attribute-list .attribute-value.active{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.add-to-card{
-  margin: 0px;
-  display: flex;
-  height: 50px;
-  width: 100%;
-  max-width: 219px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(225 10 23 / var(--tw-bg-opacity));
-  padding: 0px;
-  font-family: Open Sans, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-.add-to-card:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
-}
-.quantity input{
+.woocommerce .quantity .qty{
   width: 60px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
   text-align: center;
   font-family: Open Sans, sans-serif;
   font-size: 15px;
@@ -1800,7 +1843,15 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .content-single{
+  margin-top: 25px;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
   line-height: 1.8;
+}
+@media (min-width: 1024px){
+  .content-single{
+    margin-top: 73px;
+  }
 }
 .content-single>*{
   font-family: Open Sans, sans-serif;
@@ -1808,12 +1859,23 @@ video {
 }
 .content-single p{
   margin-bottom: 20px;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
 }
 .content-single li{
   list-style-position: inside;
   list-style-type: disc;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
 }
-.content-single h5{
+.content-single h1,
+  .content-single h2,
+  .content-single h3,
+  .content-single h4,
+  .content-single h5,
+  .content-single h6{
   margin-bottom: 20px;
   margin-top: 30px;
   font-family: Rajdhani;
@@ -1823,7 +1885,12 @@ video {
   line-height: 1.1;
 }
 @media (min-width: 1024px){
-  .content-single h5{
+  .content-single h1,
+  .content-single h2,
+  .content-single h3,
+  .content-single h4,
+  .content-single h5,
+  .content-single h6{
     margin-top: 60px;
   }
 }
@@ -2100,6 +2167,9 @@ video {
 }
 .flex{
   display: flex;
+}
+.inline-flex{
+  display: inline-flex;
 }
 .grid{
   display: grid;
@@ -2394,6 +2464,9 @@ video {
 .cursor-pointer{
   cursor: pointer;
 }
+.list-inside{
+  list-style-position: inside;
+}
 .list-disc{
   list-style-type: disc;
 }
@@ -2537,6 +2610,9 @@ video {
 }
 .rounded-\[8px\]{
   border-radius: 8px;
+}
+.rounded-none{
+  border-radius: 0px;
 }
 .rounded-b-\[4px\]{
   border-bottom-right-radius: 4px;
@@ -4111,6 +4187,11 @@ body.lock {
   --tw-shadow-colored: 0px 0px 40px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.hover\:shadow-none:hover{
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .hover\:after\:bg-arrow-white:hover::after{
   content: var(--tw-content);
   background-image: url('../images/arrow-white.svg');
@@ -4474,6 +4555,9 @@ body.lock {
   }
   .lg\:mt-\[64px\]{
     margin-top: 64px;
+  }
+  .lg\:mt-\[73px\]{
+    margin-top: 73px;
   }
   .lg\:mt-\[90px\]{
     margin-top: 90px;
