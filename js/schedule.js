@@ -92,7 +92,7 @@ jQuery(document).ready(function($){
 				}
 			}
 
-			$('html, body').animate({
+			$('.gym_shedule_popup').animate({
 				scrollTop: 0
 			}, 300);
 		}, 'json');
@@ -146,6 +146,10 @@ jQuery(document).ready(function($){
 						$('.gym_shedule_popup').addClass('done');
 					}
 				}
+
+				$('.gym_shedule_popup').animate({
+					scrollTop: 0
+				}, 300);
 			}, 'json');
 		}
 	});
