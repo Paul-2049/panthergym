@@ -10,6 +10,7 @@ class GYM_SCHEDULE {
 		add_shortcode(self::SHORTCODE, [ $this, 'shortcode' ]);
 
 		// Добавляем попап
+		add_action('wp_head', [ $this, 'head_scripts' ]);
 		add_action('wp_footer', [ $this, 'popup' ]);
 
 		// Ajax - Бронирование
@@ -63,11 +64,19 @@ class GYM_SCHEDULE {
 		return $events;
 	}
 
+	public function head_scripts(){
+		?>
+		<script type="text/javascript">
+		    var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+		</script>
+		<?php
+	}
+
 	public function popup(){
 		include_once( THEME_DIR . '/template-parts/schedule-popup.php' );
 	}
 
-	public static function booking(){
+	public function booking(){
 		if ( !is_user_logged_in() ) {
 			wp_die( json_encode([
 				'status' => 'auth'
@@ -103,8 +112,7 @@ class GYM_SCHEDULE {
 		if(!is_wp_error($user)) {
 			wp_set_auth_cookie($user->ID, true);
 			wp_set_current_user( $user->ID );
-			self::booking();
-
+			$this->booking();
 		}
 
 		wp_die( json_encode( $user ) );

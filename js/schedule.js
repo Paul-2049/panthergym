@@ -65,7 +65,7 @@ jQuery(document).ready(function($){
 			'event_date': $buttom.attr('data-date')
 		};
 
-		jQuery.post('/wp-admin/admin-ajax.php', data, function (response) {
+		jQuery.post(ajaxurl, data, function (response) {
 			$buttom.removeAttr('disabled');
 
 			if($('.gym_shedule_popup').hasClass('auth')) {
@@ -126,7 +126,7 @@ jQuery(document).ready(function($){
 				'event_date': $('.gym_shedule_popup [data-step="event_details"] button.next').attr('data-date')
 			};
 
-			jQuery.post('/wp-admin/admin-ajax.php', data, function (response) {
+			jQuery.post(ajaxurl, data, function (response) {
 				$buttom.removeAttr('disabled');
 
 				if(response.hasOwnProperty('errors')) {
