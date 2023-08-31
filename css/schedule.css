@@ -342,7 +342,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   font-size: 0px !important;
 }
 .gym_shedule_popup button[disabled]:before {
-  content: "";
+  content: "";
   display: inline-block;
   width: 20px;
   height: 20px;
