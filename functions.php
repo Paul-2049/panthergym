@@ -1,4 +1,11 @@
 <?php
+
+if ( !defined('THEME_DIR')) define('THEME_DIR', __DIR__);
+if ( !defined('THEME_URL')) define('THEME_URL', get_stylesheet_directory_uri());
+
+// Подключаем классы
+require_once( __DIR__ . '/classes/GYM_SCHEDULE.php');
+
 add_action('wp_enqueue_scripts', 'panther_child_css', 1001);
 function panther_child_css()
 {
