@@ -1,0 +1,286 @@
+body.shedule_popup {
+	overflow: hidden;
+
+	.gym_shedule_popup {
+		display: block;
+
+		&.auth {
+			[data-step="event_details"] {
+				display: none;
+			}
+
+			[data-step="auth"] {
+				display: block;
+			}
+		}
+	}
+}
+
+.gym_shedule_popup {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+	padding: 100px 15px;
+	overflow: auto;
+	z-index: 100;
+	transition: all 0.3s linear;
+
+	.close {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		display: flex;
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+
+		&:before,
+		&:after {
+			content: "";
+			width: 20px;
+			height: 1px;
+			background: $color_black;
+			transform: rotate(45deg);
+			position: absolute;
+			top: 50%;
+			left: calc(50% - 10px);
+		}
+
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&.done {
+		.thanks_title,
+		.thanks_subtitle {
+			display: block;
+		}
+
+		.actions {
+			display: none;
+		}
+	}
+
+	.inner {
+		position: relative;
+		padding: 80px 100px 66px;
+		background: $color_white;
+		max-width: 926px;
+		margin: 0 auto;
+		color: $color_black;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.1;
+
+		&[data-step="auth"] {
+			display: none;
+			max-width: 658px;
+			padding-bottom: 100px;
+
+			.title {
+				margin-bottom: 50px;
+			}
+
+			label {
+				position: relative;
+				display: block;
+				color: $color_black;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 1.1;
+				margin-bottom: 36px;
+
+				input {
+					width: 100%;
+					padding: 17px 0px;
+					border: none !important;
+					border-bottom: 1px solid $color_black !important;
+					font-size: 16px;
+					font-family: 'Open Sans', sans-serif;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 1;
+
+					&:focus-visible {
+						outline: none;
+					}
+				}
+
+				.error {
+					position: relative;
+					color: $color_red;
+					font-size: 12px;
+					font-weight: 400;
+
+					strong {
+						color: $color_red;
+					}
+
+					a {
+						font-size: inherit;
+					}
+				}
+			}
+
+			.actions {
+				margin-top: 50px;
+				margin-bottom: 80px;
+
+				button {
+					@include button_red;
+					width: 185px;
+				}
+			}
+
+			.blocks_by_2 {
+				border: none;
+				align-items: center;
+
+				.item {
+					padding: 0px;
+					border: none;
+					text-align: left;
+
+					&:first-child {
+						width: 60%;
+					}
+
+					&:last-child {
+						width: 40%;
+					}
+
+					&.bold {
+						font-weight: 700;
+					}
+				}
+			}
+
+			a {
+				color: $color_red;
+				text-decoration: underline;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 110%;
+				letter-spacing: 1px;
+			}
+		}
+	}
+
+	.time {
+		color: $color_red;
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	.duration {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.8;
+		margin-bottom: 35px;
+	}
+
+	.thanks_title {
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 42px;
+		font-weight: 700;
+		line-height: 1.1;
+		text-transform: uppercase;
+		text-align: center;
+		display: none;
+	}
+
+	.thanks_subtitle {
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 1.1;
+		text-transform: normal;
+		text-align: center;
+		margin-bottom: 30px;
+		display: none;
+	}
+
+	.title {
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.1;
+		text-transform: uppercase;
+		margin-bottom: 13px;
+	}
+
+	.description {
+		line-height: 1.8;
+		padding-bottom: 34px;
+		border-bottom: 1px solid $color_black;
+	}
+
+	.blocks_by_2 {
+		display: flex;
+		border-bottom: 1px solid $color_black;
+
+		.item {
+			width: 50%;
+			padding: 20px 34px;
+
+			&:not(:last-child) {
+				border-right: 1px solid $color_black;
+			}
+
+			.label {
+				font-size: 14px;
+				font-weight: 700;
+				line-height: 1.8;
+			}
+
+			.text {
+				line-height: 1.8;
+			}
+		}
+	}
+
+	.actions {
+		margin-top: 26px;
+		text-align: center;
+
+		button {
+			@include button_white;
+			width: 145px;
+			height: 40px;
+			font-weight: 400;
+		}
+	}
+
+	button[disabled] {
+		position: relative;
+		background-color: $color_gray !important;
+		border-color: $color_gray !important;
+		font-size: 0px !important;
+
+		&:before {
+			content: "\f531";
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			font-size: 20px;
+			position: absolute;
+			top: calc(50% - 10px);
+			left: calc(50% - 10px);
+			color: $color_white;
+			font-family: dashicons;
+			animation: gym_rotate 3s linear infinite;
+		}
+	}
+}
