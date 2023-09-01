@@ -337,6 +337,9 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   color: #FFFFFF;
   border-color: #FFFFFF;
 }
+.gym_shedule_popup .actions button:hover {
+  border-color: #E10A17;
+}
 .gym_shedule_popup button[disabled] {
   position: relative;
   background-color: #79808A !important;
