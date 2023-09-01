@@ -44,3 +44,11 @@
 .according-content .highlighted {
     background-color:#e10a177a;
 }
+
+form.form-search {
+    .js-search-input {
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
