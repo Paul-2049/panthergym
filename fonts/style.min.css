@@ -2810,7 +2810,7 @@ video {
   text-align: right;
 }
 .font-base{
-  font-family: Rajdhani;
+  font-family: Rajdhani, sans-serif;
 }
 .font-privacy{
   font-family: Open Sans, sans-serif;
