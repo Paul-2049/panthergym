@@ -53,17 +53,17 @@ $title = str_replace($search, $replace, $title);
                 </ul>
             </div>
             <div class="flex flex-col max-w-[985px] w-full lg:pl-[93px] lg:border-l-[1px] lg:border-black">
-                <form action="" class="form-search rounded-[2px] border-[1px] border-black flex items-center justify-start py-[10px] px-[15px] lg:py-[18px] lg:px-[20px] gap-[20px] mb-[40px] max-w-[892px] w-full">
-                    <button type="button" class="js-search-btn bg-transparent w-[20px] h-[20px] cursor-pointer m-0 p-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.53506 12.5893C10.54 12.5893 12.9761 10.1533 12.9761 7.14834C12.9761 4.14335 10.54 1.70733 7.53506 1.70733C4.53007 1.70733 2.09405 4.14335 2.09405 7.14834C2.09405 10.1533 4.53007 12.5893 7.53506 12.5893ZM7.53506 14.2967C11.483 14.2967 14.6834 11.0963 14.6834 7.14834C14.6834 3.20042 11.483 0 7.53506 0C3.58714 0 0.386719 3.20042 0.386719 7.14834C0.386719 11.0963 3.58714 14.2967 7.53506 14.2967Z" fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.53506 12.5893C10.54 12.5893 12.9761 10.1533 12.9761 7.14834C12.9761 4.14335 10.54 1.70733 7.53506 1.70733C4.53007 1.70733 2.09405 4.14335 2.09405 7.14834C2.09405 10.1533 4.53007 12.5893 7.53506 12.5893ZM7.53506 14.2967C11.483 14.2967 14.6834 11.0963 14.6834 7.14834C14.6834 3.20042 11.483 0 7.53506 0C3.58714 0 0.386719 3.20042 0.386719 7.14834C0.386719 11.0963 3.58714 14.2967 7.53506 14.2967Z" fill="#E7E5E5" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2643 17.0848L11.1555 11.976L12.3628 10.7687L17.4716 15.8775L16.2643 17.0848Z" fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2643 17.0848L11.1555 11.976L12.3628 10.7687L17.4716 15.8775L16.2643 17.0848Z" fill="#E7E5E5" />
-                        </svg>
-                    </button>
-                    <input class="js-search-input" type="text" placeholder="Search by keyword">
-                </form>
+				<form action="" class="form-search rounded-[2px] border-[1px] border-black flex items-center justify-start pl-[15px] lg:pl-[20px] gap-[20px] mb-[40px] max-w-[892px] w-full">
+					<button type="button" class="js-search-btn bg-transparent w-[20px] h-[20px] cursor-pointer m-0 p-0">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M7.53506 12.5893C10.54 12.5893 12.9761 10.1533 12.9761 7.14834C12.9761 4.14335 10.54 1.70733 7.53506 1.70733C4.53007 1.70733 2.09405 4.14335 2.09405 7.14834C2.09405 10.1533 4.53007 12.5893 7.53506 12.5893ZM7.53506 14.2967C11.483 14.2967 14.6834 11.0963 14.6834 7.14834C14.6834 3.20042 11.483 0 7.53506 0C3.58714 0 0.386719 3.20042 0.386719 7.14834C0.386719 11.0963 3.58714 14.2967 7.53506 14.2967Z" fill="white" />
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M7.53506 12.5893C10.54 12.5893 12.9761 10.1533 12.9761 7.14834C12.9761 4.14335 10.54 1.70733 7.53506 1.70733C4.53007 1.70733 2.09405 4.14335 2.09405 7.14834C2.09405 10.1533 4.53007 12.5893 7.53506 12.5893ZM7.53506 14.2967C11.483 14.2967 14.6834 11.0963 14.6834 7.14834C14.6834 3.20042 11.483 0 7.53506 0C3.58714 0 0.386719 3.20042 0.386719 7.14834C0.386719 11.0963 3.58714 14.2967 7.53506 14.2967Z" fill="#E7E5E5" />
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M16.2643 17.0848L11.1555 11.976L12.3628 10.7687L17.4716 15.8775L16.2643 17.0848Z" fill="white" />
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M16.2643 17.0848L11.1555 11.976L12.3628 10.7687L17.4716 15.8775L16.2643 17.0848Z" fill="#E7E5E5" />
+						</svg>
+					</button>
+					<input class="js-search-input w-full py-[10px] pr-[15px] lg:py-[18px] lg:pr-[20px]" type="text" placeholder="Search by keyword">
+				</form>
                 <?php while (have_rows('tabs_item')) : the_row();
                 ?>
                     <div class="tabs-content <?php echo get_row_index() == 1 ? 'active' : ''; ?>" data-tab-content id="tab-<?php echo get_row_index(); ?>">
