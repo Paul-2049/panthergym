@@ -60,17 +60,16 @@ if ($product->is_type('variable')) {
                                 <?php echo wp_get_attachment_image($image_id, 'full'); ?>
                             </div>
                         <?php endforeach; ?>
-                        <?php $used_attributes = array(); // Здесь будем хранить уже использованные атрибуты
+                        <?php $used_attributes = array(); 
                         foreach ($variations as $variation) :
-                            $attribute_string = ''; // Строка для хранения атрибутов данной вариации
+                            $attribute_string = ''; 
 
                             foreach ($variation['attributes'] as $att_key => $att_value) {
                                 $attribute_string .= 'data-' . $att_key . '="' . $att_value . '"';
                             }
 
-                            // Проверяем, были ли уже использованы атрибуты этой вариации
                             if (!in_array($attribute_string, $used_attributes)) {
-                                array_push($used_attributes, $attribute_string); // Добавляем атрибуты в список использованных
+                                array_push($used_attributes, $attribute_string); 
                         ?>
                                 <div class="swiper-slide bullet-attribute-image" style="display: none;" <?php echo $attribute_string; ?>>
                                     <img src="<?php echo $variation['image']['src']; ?>" alt="<?php echo $variation['image']['alt']; ?>">
