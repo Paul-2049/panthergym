@@ -33,17 +33,18 @@ jQuery(document).ready(function($){
 		});
 	}
 
-	$(document).on('click', 'button.booking_shedule', function(){
-		$('.gym_shedule_popup [data-step="event_details"] button.next').attr( 'data-id', $(this).attr('data-id') );
-		$('.gym_shedule_popup [data-step="event_details"] button.next').attr( 'data-date', $(this).attr('data-date') );
-		$('.gym_shedule_popup [data-step="event_details"] .time').text( $(this).attr('data-time') );
-		$('.gym_shedule_popup [data-step="event_details"] .duration span').text( $(this).attr('data-duration') );
-		$('.gym_shedule_popup [data-step="event_details"] .title').text( $(this).attr('data-title') );
-		$('.gym_shedule_popup [data-step="event_details"] .description').html( $(this).attr('data-description') );
-		$('.gym_shedule_popup [data-step="event_details"] .location').text( $(this).attr('data-location') );
-		$('.gym_shedule_popup [data-step="event_details"] .intensity').text( $(this).attr('data-intensity') );
-		$('.gym_shedule_popup [data-step="event_details"] .instructors').text( $(this).attr('data-instructors') );
-		$('.gym_shedule_popup [data-step="event_details"] .categories').text( $(this).attr('data-categories') );
+	$(document).on('click', '.schedule_calendar .schedule_list .item', function(){
+		let $button = $(this).find('button.booking_shedule');
+		$('.gym_shedule_popup [data-step="event_details"] button.next').attr( 'data-id', $button.attr('data-id') );
+		$('.gym_shedule_popup [data-step="event_details"] button.next').attr( 'data-date', $button.attr('data-date') );
+		$('.gym_shedule_popup [data-step="event_details"] .time').text( $button.attr('data-time') );
+		$('.gym_shedule_popup [data-step="event_details"] .duration span').text( $button.attr('data-duration') );
+		$('.gym_shedule_popup [data-step="event_details"] .title').text( $button.attr('data-title') );
+		$('.gym_shedule_popup [data-step="event_details"] .description').html( $button.attr('data-description') );
+		$('.gym_shedule_popup [data-step="event_details"] .location').text( $button.attr('data-location') );
+		$('.gym_shedule_popup [data-step="event_details"] .intensity').text( $button.attr('data-intensity') );
+		$('.gym_shedule_popup [data-step="event_details"] .instructors').text( $button.attr('data-instructors') );
+		$('.gym_shedule_popup [data-step="event_details"] .categories').text( $button.attr('data-categories') );
 
 		$('body').addClass('shedule_popup');
 	}).on('click', '.gym_shedule_popup .close', function(){
