@@ -1,8 +1,4 @@
 # panthergym
 
-npm i 
-
-gulp
-
-gulp build
+npm i, gulp, gulp build
 
