@@ -294,525 +294,355 @@ $current_logged_in_user = wp_get_current_user();
         <input type="submit" value="View member" class="btn-clip-none w-full md:max-w-[217px]">
     </form>
 </section>
-<section class="max-w-[919px] w-full mx-auto pb-[80px] lg:pb-[193px]">
+
+<section class="member-details-section max-w-[919px] w-full mx-auto pb-[80px] lg:pb-[193px]">
     <h1 class="leading-[1.1] font-bold text-center text-[32px] md:text-[40px] uppercase mb-[20px] md:mb-[40px] text-black"><?php echo get_the_title(); ?></h1>
     <!-- Show COnfirmation box -->
-<?php if (array_key_exists('confirmation', $_GET)) : ?>
-    <?php if ('checkin_complete' === $_GET['confirmation']) : ?>
-        <div class="section">
-            <div class="container--1248 confirmation">
-                <div>Check-In Complete</div>
+    <?php /* if (array_key_exists('confirmation', $_GET)) : ?>
+        <?php if ('checkin_complete' === $_GET['confirmation']) : ?>
+            <div class="section">
+                <div class="container--1248 confirmation">
+                    <div>Check-In Complete</div>
+                </div>
             </div>
-        </div>
-    <?php endif; ?>
-<?php endif; ?>
+        <?php endif; ?>
+    <?php endif; */ ?>
 
-<!-- Only show this section if they have a valid membership -->
-<?php if ($valid_membership && $user_id) : ?>
-    <div class="section is--search-memberships">
-        <div class="container--1248 is--800" style="display: flex; flex-direction: column; padding-top: 50px;">
-            <h2>Available Actions</h2>
-            <div class="available-actions-info">Membership Level: <strong><?php echo $membership_title; ?></strong></div>
-            <div class="available-actions-info">Membership Status: <strong><?php echo $membership_status; ?></strong></div>
-            <div class="available-actions-info">Checked-in Today?
-                <?php if ($checked_in_today) : ?>
-                    <span class="yes">YES</span>
-                <?php else : ?>
-                    <span class="no">NO</span>
-                <?php endif; ?>
-                ( Latest check-in on:
-                <script>
-                    var checkin = moment.utc("<?php echo $checkins[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                    document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                </script>
-                )
-            </div>
-            <?php if ($valid_membership && 'free-membership' === $membership_type) : ?>
-                <div class="available-actions-info">Drop-In Used Today?
-                    <?php if ($drop_in_used_this_date) : ?>
+    <!-- Only show this section if they have a valid membership -->
+    <?php /* if ($valid_membership && $user_id) : ?>
+        <div class="section is--search-memberships">
+            <div class="container--1248 is--800" style="display: flex; flex-direction: column; padding-top: 50px;">
+                <h2>Available Actions</h2>
+                <div class="available-actions-info">Membership Level: <strong><?php echo $membership_title; ?></strong></div>
+                <div class="available-actions-info">Membership Status: <strong><?php echo $membership_status; ?></strong></div>
+                <div class="available-actions-info">Checked-in Today?
+                    <?php if ($checked_in_today) : ?>
                         <span class="yes">YES</span>
                     <?php else : ?>
                         <span class="no">NO</span>
                     <?php endif; ?>
+                    ( Latest check-in on:
+                    <script>
+                        var checkin = moment.utc("<?php echo $checkins[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
+                        document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
+                    </script>
+                    )
                 </div>
-            <?php endif; ?>
-
-            <div class="available-actions">
-
-                <!-- If they have dropins with gear -->
-                <?php if (count($dropins_with_gear) > 0 && !$checked_in_today && !$drop_in_used_this_date) : ?>
-                    <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doDropInCheckInAjax( event, <?php echo $user_id; ?>, 'with_gear', '<?php echo $event_date; ?>' )">
-                        Use Drop-In with Gear and Check-In
-                    </button>
-                <?php endif; ?>
-
-                <!-- If they have dropins without gear -->
-                <?php if (count($dropins_without_gear) > 0 && !$checked_in_today && !$drop_in_used_this_date) : ?>
-                    <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doDropInCheckInAjax( event, <?php echo $user_id; ?>, 'without_gear', '<?php echo $event_date; ?>' )">
-                        Use Drop-In without Gear and Check-In
-                    </button>
-                <?php endif; ?>
-
-                <!-- Checkin -->
-                <?php if (!$checked_in_today && ($drop_in_used_this_date || 'full-membership' === $membership_type)) : ?>
-                    <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doCheckIn( <?php echo $user_id; ?> )">
-                        Check-In
-                    </button>
-                <?php endif; ?>
-
-
-                <!-- Show Drop-In Purchase for Free Members only with valid membership -->
                 <?php if ($valid_membership && 'free-membership' === $membership_type) : ?>
-                    <!-- <form action="<?php echo home_url('/member-purchase-drop-in/'); ?>" method="get">
+                    <div class="available-actions-info">Drop-In Used Today?
+                        <?php if ($drop_in_used_this_date) : ?>
+                            <span class="yes">YES</span>
+                        <?php else : ?>
+                            <span class="no">NO</span>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+
+                <div class="available-actions">
+
+                    <!-- If they have dropins with gear -->
+                    <?php if (count($dropins_with_gear) > 0 && !$checked_in_today && !$drop_in_used_this_date) : ?>
+                        <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doDropInCheckInAjax( event, <?php echo $user_id; ?>, 'with_gear', '<?php echo $event_date; ?>' )">
+                            Use Drop-In with Gear and Check-In
+                        </button>
+                    <?php endif; ?>
+
+                    <!-- If they have dropins without gear -->
+                    <?php if (count($dropins_without_gear) > 0 && !$checked_in_today && !$drop_in_used_this_date) : ?>
+                        <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doDropInCheckInAjax( event, <?php echo $user_id; ?>, 'without_gear', '<?php echo $event_date; ?>' )">
+                            Use Drop-In without Gear and Check-In
+                        </button>
+                    <?php endif; ?>
+
+                    <!-- Checkin -->
+                    <?php if (!$checked_in_today && ($drop_in_used_this_date || 'full-membership' === $membership_type)) : ?>
+                        <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doCheckIn( <?php echo $user_id; ?> )">
+                            Check-In
+                        </button>
+                    <?php endif; ?>
+
+
+                    <!-- Show Drop-In Purchase for Free Members only with valid membership -->
+                    <?php if ($valid_membership && 'free-membership' === $membership_type) : ?>
+                        <!-- <form action="<?php echo home_url('/member-purchase-drop-in/'); ?>" method="get">
                                 <input type="hidden" name="id" value="<?php echo $user_id; ?>">
                                 <input type="submit" value="Purchase a Drop-In">
                             </form> -->
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <?php if ($valid_membership && 'full-membership' === $membership_type && !$checked_in_today) : ?>
-                    <!-- <form action="" method="post">
+                    <?php if ($valid_membership && 'full-membership' === $membership_type && !$checked_in_today) : ?>
+                        <!-- <form action="" method="post">
                                 <input type="hidden" name="check_in" value="now">
                                 <input type="submit" value="Check-In">
                             </form> -->
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <!-- <button>Purchase at Juice Bar</button> -->
+                    <!-- <button>Purchase at Juice Bar</button> -->
+                </div>
             </div>
         </div>
-    </div>
-<?php endif; ?>
-<!-- /Only show this section if they have a valid membership -->
+    <?php endif; */ ?>
+    <!-- /Only show this section if they have a valid membership -->
 
-<div class="section is--search-memberships wf-section">
-    <div class="container--1248 is--800">
+    <!-- <div class="section is--search-memberships wf-section">
+    <div class="container--1248 is--800"> -->
 
-        <?php
-        // continue as long as there is an id
-        if ($user_id) {
+    <?php
+    // continue as long as there is an id
+    if ($user_id) {
 
-            // ensure valid user
-            $user = get_userdata($user_id);
-            if ($user) {
-        ?>
-                <div class="w3-container">
+        // ensure valid user
+        $user = get_userdata($user_id);
+        if ($user) {
+    ?>
+            <div class="w3-container">
 
-                    <div class="w3-bar w3-black">
-                        <button class="w3-bar-item w3-button tablink <?php if ('userdetails' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'UserDetails')">Member Details</button>
-                        <button class="w3-bar-item w3-button tablink <?php if ('checkins' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'CheckIns')">Check-Ins</button>
-                        <button class="w3-bar-item w3-button tablink <?php if ('qrcodescans' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'QRCodeScans')">QR Code Scans</button>
-                        <button class="w3-bar-item w3-button tablink <?php if ('classes' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Classes')">Classes</button>
-                        <button class="w3-bar-item w3-button tablink <?php if ('wellness' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Wellness')">Wellness Services</button>
-                    </div>
+                <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button tablink <?php if ('userdetails' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'UserDetails')">Member Details</button>
+                    <button class="w3-bar-item w3-button tablink <?php if ('checkins' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'CheckIns')">Check-Ins</button>
+                    <button class="w3-bar-item w3-button tablink <?php if ('qrcodescans' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'QRCodeScans')">QR Code Scans</button>
+                    <button class="w3-bar-item w3-button tablink <?php if ('classes' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Classes')">Classes</button>
+                    <button class="w3-bar-item w3-button tablink <?php if ('wellness' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Wellness')">Wellness Services</button>
+                </div>
 
-                    <!-- User Details -->
-                    <div id="UserDetails" class="w3-container w3-border tab" <?php if ('userdetails' !== $tab) echo 'style="display:none"'; ?>>
-                        <h2>Member Details</h2>
-                        <table class="user-details-table">
-                            <tbody>
-                                <tr>
-                                    <th>Membership</th>
-                                    <td>
-                                        <?php if ($valid_membership) : ?>
+                <!-- User Details -->
+                <div id="UserDetails" class="w3-container w3-border tab" <?php if ('userdetails' !== $tab) echo 'style="display:none"'; ?>>
+                    <div class="font-privacy text-[16px] leading-[1.1] flex flex-col md:flex-row items-center justify-center gap-[45px] md:gap-[97px] pt-[25px] md:pt-[58px] pb-[40px] md:pb-[88px] px-[15px]">
+                        <div class="avatar">
+                            <?php echo do_shortcode('[avatar user="' . $user_id . '"]'); ?>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-[31px] flex-wrap mb-[15px] md:mb-[32px]">
+                                <div class="w-[88px] h-[88px]">
+                                    <?php echo do_shortcode('[mepr-show if="loggedin"][kaya_qrcode_dynamic title_align="aligncenter" ecclevel="L" align="aligncenter" css_shadow="1"]https://panthergym.com/staging/member-details/?id=[mepr-account-info field="' . $user_id . '"][/kaya_qrcode_dynamic][/mepr-show]'); ?>
+                                </div>
+                                <div class="">
+                                    <p class="name text-[20px] font-bold mb-[10px]"><?php echo $user->data->display_name; ?></p>
+                                    <p><?php echo $user->data->user_email; ?></p>
+                                </div>
+                            </div>
 
-                                            <div class="valid-subscription"><span class="type"><?php echo $membership_title; ?></span> subscription found.</div>
-                                            <div>Membership status: <span class="status ' . $subscription->status . '"><?php echo $membership_status; ?></span></div>
+                            <ul class="max-w-[500px] w-full">
+                                <li class="flex items-center justify-start">
+                                    <?php if ($valid_membership) : ?>
+                                        <span class="font-bold py-[10px] min-w-[210px]">Membership:</span>
+                                        <span class="text-panther-red-100 py-[10px] type"><?php echo $membership_title; ?></span>
+                                    <?php else : ?>
+                                        <span class="font-bold py-[10px] min-w-[210px]">No active subscriptions found.</span>
+                                    <?php endif ?>
+                                </li>
 
-                                        <?php else : ?>
-
-                                            No active subscriptions found.
-
-                                        <?php endif ?>
-                                    </td>
-                                </tr>
-
+                                <li class="flex items-center justify-start">
+                                    <?php if ($valid_membership) : ?>
+                                        <span class="font-bold py-[10px] min-w-[210px]">Membership status:</span>
+                                        <span class="text-panther-red-100 py-[10px]"><?php echo $membership_status; ?></span>
+                                    <?php else : ?>
+                                        <span class="font-bold py-[10px] min-w-[210px]">No active subscriptions found.</span>
+                                    <?php endif ?>
+                                </li>
                                 <?php if ($valid_membership && 'free-membership' === $membership_type) : ?>
-                                    <tr>
-                                        <th>Drop-Ins Available</th>
-                                        <td>
-                                            Without gear: <?php echo count($dropins_without_gear); ?>
-                                            <br />
-                                            With gear: <?php echo count($dropins_with_gear); ?>
-                                        </td>
-                                    </tr>
-                                <?php endif; ?>
-
-                                </tr>
-                                <th>Name</th>
-                                <td><?php echo $user->data->display_name; ?></td>
-                                </tr>
-                                </tr>
-                                <th>Email</th>
-                                <td><?php echo $user->data->user_email; ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Picture</th>
-                                    <td><?php echo do_shortcode('[avatar user="' . $user_id . '"]'); ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Latest Check-In</th>
-                                    <td>
-                                        <ul>
-                                            <?php if (is_array($checkins)) : ?>
-                                                <li>
-                                                    <script>
-                                                        var checkin = moment.utc("<?php echo $checkins[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                                        document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                                                    </script>
-                                                </li>
-                                            <?php else : ?>
-                                                No Check-Ins Found
-                                            <?php endif; ?>
-                                        </ul>
-
-                                        <!-- <form action="" method="post">
-                                                    <input type="hidden" name="check_in" value="now">
-                                                    <input type="submit" value="Check-In">
-                                                </form> -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Latest QR Code Scan</th>
-                                    <td>
-                                        <ul>
-                                            <li>
-                                                <script>
-                                                    var scan = moment.utc("<?php echo $scans[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                                    document.write(scan.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                                                </script>
-                                            </li>
-                                            <!--  -->
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /User Details -->
-
-                    <!-- Check-Ins -->
-                    <div id="CheckIns" class="w3-container w3-border tab" <?php if ('checkins' !== $tab) echo 'style="display:none"'; ?>>
-                        <h2>Check-Ins</h2>
-                        <?php if (is_array($checkins)) : ?>
-                            <ul style="margin-bottom: 50px; height: 300px; overflow-y: scroll;">
-                                <?php
-                                foreach ($checkins as $key => $checkin) {
-                                ?>
-                                    <li>
-                                        <script>
-                                            var checkin = moment.utc("<?php echo $checkin; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                            //document.write( checkin.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
-                                            document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                                        </script>
+                                    <li class="flex items-center justify-start">
+                                        <span class="font-bold py-[10px] min-w-[210px]">Without gear:</span>
+                                        <span class="text-panther-red-100 py-[10px]"><?php echo count($dropins_without_gear); ?></span>
+                                        With gear: <?php echo count($dropins_with_gear); ?>
                                     </li>
-                                <?php
-                                }
-                                ?>
+                                    <li class="flex items-center justify-start">
+                                        <span class="font-bold py-[10px] min-w-[210px]">With gear:</span>
+                                        <span class="text-panther-red-100 py-[10px]"><?php echo count($dropins_with_gear); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                                <li class="flex items-center justify-start">
+                                    <span class="font-bold py-[10px] min-w-[210px]">Last check-ins:</span>
+                                    <?php if (is_array($checkins)) : ?>
+                                        <span class="py-[10px]">
+                                            <script>
+                                                var checkin = moment.utc("<?php echo $checkins[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
+                                                document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
+                                            </script>
+                                        </span>
+                                    <?php else : ?>
+                                        <span class="py-[10px]">No Check-Ins Found</span>
+                                    <?php endif; ?>
+                                </li>
+                                <li class="flex items-center justify-start">
+                                    <span class="font-bold  py-[10px] min-w-[210px]">Last QR Code Scan:</span>
+                                    <span class="py-[10px]">
+                                        <script>
+                                            var scan = moment.utc("<?php echo $scans[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
+                                            document.write(scan.format("MMMM Do YYYY, h:mm:ss a")); // without day
+                                        </script>
+                                    </span>
+                                </li>
                             </ul>
-                        <?php else : ?>
-                            No Check-Ins Found
-                        <?php endif; ?>
-                    </div>
-                    <!-- /Check-Ins -->
 
-                    <!-- QR Code Scans -->
-                    <div id="QRCodeScans" class="w3-container w3-border tab" <?php if ('qrcodescans' !== $tab) echo 'style="display:none"'; ?>>
-                        <h2>QR Code Scans</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /User Details -->
+
+                <!-- Check-Ins -->
+                <div id="CheckIns" class="w3-container w3-border tab" <?php if ('checkins' !== $tab) echo 'style="display:none"'; ?>>
+                    <h2>Check-Ins</h2>
+                    <?php if (is_array($checkins)) : ?>
                         <ul style="margin-bottom: 50px; height: 300px; overflow-y: scroll;">
                             <?php
-                            foreach ($scans as $key => $scan) {
+                            foreach ($checkins as $key => $checkin) {
                             ?>
                                 <li>
                                     <script>
-                                        var scan = moment.utc("<?php echo $scan; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                        //document.write( scan.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
-                                        document.write(scan.format("MMMM Do YYYY, h:mm:ss a")); // without day
+                                        var checkin = moment.utc("<?php echo $checkin; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
+                                        //document.write( checkin.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
+                                        document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
                                     </script>
                                 </li>
                             <?php
                             }
                             ?>
                         </ul>
-                    </div>
-                    <!-- /QR Code Scans -->
-
-                    <!-- Classes -->
-                    <div id="Classes" class="w3-container w3-border tab" <?php if ('classes' !== $tab) echo 'style="display:none"'; ?>>
-                        <h2>Classes</h2>
-                        <!-- Schedule -->
-                        <div class="schedule-list-wrapper">
-                            <?php include('partials/member-details/classes/schedule.php'); ?>
-                        </div>
-                    </div>
-                    <!-- /Classes -->
-
-                    <!-- Wellness Services -->
-                    <div id="Wellness" class="w3-container w3-border tab" <?php if ('wellness' !== $tab) echo 'style="display:none"'; ?>>
-
-                        <h2>Wellness Services</h2>
-
-                        <!-- Show COnfirmation box booking -->
-                        <?php if (array_key_exists('confirm-booking', $_GET)) : ?>
-                            <div class="section" style="padding: 0;">
-                                <div class="container--1248 confirmation" style="width: 100%;">
-                                    <div>Wellness Service marked as Paid</div>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        $orders = wc_get_orders(array(
-                            'customer' => $user->data->user_email,
-                            'status' => array('wc-completed'),
-                        ));
-                        // var_export($orders);
-
-                        $booking_data = new WC_Booking_Data_Store();
-                        $bookings  = $booking_data::get_bookings_for_user($user_id, ['date_after' => time(), 'order_by' => 'start_date', 'order' => 'ASC']);
-
-                        foreach ($bookings as $customer_booking) :
-
-                            // get booking and product and resource
-                            $booking = get_wc_booking($customer_booking->id);
-                            $product = wc_get_product($booking->product_id);
-                            $resource = get_post($booking->resource_id);
-
-                            // get product details
-                        ?>
-                            <div class="individual-wellness-service" style="margin-top: 30px;">
-                                <h3><?php echo $product->get_name(); ?></h3>
-
-                                <div>
-                                    Date: <?php echo date("Y-m-d \a\\t h:i a", $booking->start) . ' - ' . date("h:i a", $booking->end); ?>
-                                </div>
-
-                                <div class="status status-<?php echo $booking->status; ?>">
-                                    Status: <?php echo ucfirst($booking->status); ?>
-                                </div>
-
-                                <div>
-                                    Resource: <?php echo $resource->post_title; ?>
-                                </div>
-
-                                <?php
-                                if ('confirmed' === $booking->status) {
-                                    // button to mark as paid
-                                ?>
-                                    <form action="" method="post">
-                                        <input type="hidden" name="booking" value="true">
-                                        <input type="hidden" name="booking_id" value="<?php echo $customer_booking->id; ?>">
-                                        <input type="submit" value="Mark as Paid" style="background: darkgreen; padding: 5px 15px; color: white; margin-top: 10px; display: inline-block; width: 200px;">
-                                    </form>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                        <?php
-                        endforeach;
-
-                        if (empty($bookings)) :
-                            echo 'No Wellness Services Booked.';
-                        endif;
-                        ?>
-                    </div>
-                    <!-- /Wellness Services -->
+                    <?php else : ?>
+                        No Check-Ins Found
+                    <?php endif; ?>
                 </div>
+                <!-- /Check-Ins -->
 
-                <script>
-                    function openTab(evt, cityName) {
-                        var i, x, tablinks;
-                        x = document.getElementsByClassName("tab");
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
+                <!-- QR Code Scans -->
+                <div id="QRCodeScans" class="w3-container w3-border tab" <?php if ('qrcodescans' !== $tab) echo 'style="display:none"'; ?>>
+                    <h2>QR Code Scans</h2>
+                    <ul style="margin-bottom: 50px; height: 300px; overflow-y: scroll;">
+                        <?php
+                        foreach ($scans as $key => $scan) {
+                        ?>
+                            <li>
+                                <script>
+                                    var scan = moment.utc("<?php echo $scan; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
+                                    //document.write( scan.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
+                                    document.write(scan.format("MMMM Do YYYY, h:mm:ss a")); // without day
+                                </script>
+                            </li>
+                        <?php
                         }
-                        tablinks = document.getElementsByClassName("tablink");
-                        for (i = 0; i < x.length; i++) {
-                            tablinks[i].className = tablinks[i].className.replace(" w3-active", "");
-                        }
-                        document.getElementById(cityName).style.display = "block";
-                        evt.currentTarget.className += " w3-active";
+                        ?>
+                    </ul>
+                </div>
+                <!-- /QR Code Scans -->
+
+                <!-- Classes -->
+                <div id="Classes" class="w3-container w3-border tab" <?php if ('classes' !== $tab) echo 'style="display:none"'; ?>>
+                    <h2>Classes</h2>
+                    <!-- Schedule -->
+                    <div class="schedule-list-wrapper">
+                        <?php include('partials/member-details/classes/schedule.php'); ?>
+                    </div>
+                </div>
+                <!-- /Classes -->
+
+                <!-- Wellness Services -->
+                <div id="Wellness" class="w3-container w3-border tab" <?php if ('wellness' !== $tab) echo 'style="display:none"'; ?>>
+
+                    <h2>Wellness Services</h2>
+
+                    <!-- Show COnfirmation box booking -->
+                    <?php if (array_key_exists('confirm-booking', $_GET)) : ?>
+                        <div class="section" style="padding: 0;">
+                            <div class="container--1248 confirmation" style="width: 100%;">
+                                <div>Wellness Service marked as Paid</div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php
+                    $orders = wc_get_orders(array(
+                        'customer' => $user->data->user_email,
+                        'status' => array('wc-completed'),
+                    ));
+                    // var_export($orders);
+
+                    $booking_data = new WC_Booking_Data_Store();
+                    $bookings  = $booking_data::get_bookings_for_user($user_id, ['date_after' => time(), 'order_by' => 'start_date', 'order' => 'ASC']);
+
+                    foreach ($bookings as $customer_booking) :
+
+                        // get booking and product and resource
+                        $booking = get_wc_booking($customer_booking->id);
+                        $product = wc_get_product($booking->product_id);
+                        $resource = get_post($booking->resource_id);
+
+                        // get product details
+                    ?>
+                        <div class="individual-wellness-service" style="margin-top: 30px;">
+                            <h3><?php echo $product->get_name(); ?></h3>
+
+                            <div>
+                                Date: <?php echo date("Y-m-d \a\\t h:i a", $booking->start) . ' - ' . date("h:i a", $booking->end); ?>
+                            </div>
+
+                            <div class="status status-<?php echo $booking->status; ?>">
+                                Status: <?php echo ucfirst($booking->status); ?>
+                            </div>
+
+                            <div>
+                                Resource: <?php echo $resource->post_title; ?>
+                            </div>
+
+                            <?php
+                            if ('confirmed' === $booking->status) {
+                                // button to mark as paid
+                            ?>
+                                <form action="" method="post">
+                                    <input type="hidden" name="booking" value="true">
+                                    <input type="hidden" name="booking_id" value="<?php echo $customer_booking->id; ?>">
+                                    <input type="submit" value="Mark as Paid" style="background: darkgreen; padding: 5px 15px; color: white; margin-top: 10px; display: inline-block; width: 200px;">
+                                </form>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    <?php
+                    endforeach;
+
+                    if (empty($bookings)) :
+                        echo 'No Wellness Services Booked.';
+                    endif;
+                    ?>
+                </div>
+                <!-- /Wellness Services -->
+            </div>
+
+            <script>
+                function openTab(evt, cityName) {
+                    var i, x, tablinks;
+                    x = document.getElementsByClassName("tab");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
                     }
-                </script>
+                    tablinks = document.getElementsByClassName("tablink");
+                    for (i = 0; i < x.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" w3-active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " w3-active";
+                }
+            </script>
 
 
-        <?php
+    <?php
 
-            } else {
+        } else {
 
-                // not a user so set user_id to null
-                $user_id = null;
-            }
+            // not a user so set user_id to null
+            $user_id = null;
         }
+    }
 
-        if (!$valid_membership && $user_id) {
-            echo '<div class="not-valid-user">No Membership(s) found</div>';
-        }
+    if (!$valid_membership && $user_id) {
+        echo '<div class="not-valid-user">No Membership(s) found</div>';
+    }
 
-        ?>
-    </div>
-</div>
+    ?>
+    <!-- </div>
+</div> -->
 </section>
-
-<style>
-    .confirmation {
-        margin-top: 20px;
-        padding: 20px;
-        border: 1px solid black;
-        font-weight: 600;
-        font-size: 18px;
-        text-align: center;
-        background-color: lightgray;
-    }
-
-    .available-actions-info {
-        font-size: 20px;
-    }
-
-    .available-actions-info .yes {
-        color: green;
-        font-weight: 600;
-    }
-
-    .available-actions-info .no {
-        color: red;
-        font-weight: 600;
-    }
-
-    .available-actions {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    .w3-container {
-        order: 2;
-    }
-
-    .w3-bar {
-        margin-top: 50px;
-        display: flex;
-        gap: 0;
-    }
-
-    .w3-button {
-        padding: 10px 10px;
-        background: white !important;
-        color: black !important;
-        border: 1px solid black !important;
-        bottom: -1px !important;
-        position: relative !important;
-    }
-
-    .w3-button.w3-active {
-        background: black !important;
-        color: white !important;
-    }
-
-    .w3-container.w3-border.tab {
-        margin-bottom: 50px;
-        border: 1px solid black;
-        padding: 20px;
-    }
-
-    table.user-details-table {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: 1px solid black;
-        width: 100%;
-    }
-
-    table.user-details-table th {
-        color: black !important;
-        border-bottom: 1px solid black;
-    }
-
-    table.user-details-table td {
-        border-bottom: 1px solid black !important;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    span.status {
-        font-weight: 600;
-        font-size: 20px;
-    }
-
-    span.status.active {
-        color: greenyellow;
-        text-shadow: 1px 1px 10px black;
-    }
-
-    span.type {
-        color: darkblue;
-        font-weight: 600;
-        font-size: 20px;
-    }
-
-    .not-valid-user {
-        display: block;
-        border: 1px solid red;
-        color: red;
-        padding: 20px;
-        font-weight: bold;
-        background: antiquewhite;
-        margin-top: 20px;
-        width: 464px;
-        order: 1;
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .no-membership-hide {
-        display: none;
-    }
-
-    ul {
-        font-size: 20px;
-    }
-
-    /* input[type="submit"] {
-        font-size: 18px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background-color: #B20A10;
-        border-style: none;
-        border-radius: 0px 0px 0px 0px;
-        padding: 16px 40px;
-        cursor: pointer;
-    } */
-
-    div.working {
-        background: rgba(0, 0, 0, 0.9);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 30rem;
-        z-index: 9999999009;
-    }
-
-    div.working.hidden {
-        display: none;
-    }
-
-    div.status {
-        font-weight: 600;
-    }
-
-    div.status.status-paid {
-        color: green;
-    }
-
-    div.status.status-confirmed {
-        color: blue;
-    }
-</style>
 
 <?php
 get_footer();
