@@ -1,0 +1,26 @@
+@layer components {
+    .member-details-section {
+        .w3-container {
+            @apply max-w-[1110px] w-full shadow-card-membership-shadow;
+        }
+
+        .w3-bar {
+            @apply grid grid-cols-5 gap-0;
+        }
+
+        .w3-button {
+            @apply uppercase font-bold leading-[1.1] text-[16px] py-[20px] px-[20px] bg-panther-grey-1000;
+
+        }
+
+        .w3-button.w3-active {
+            @apply bg-white border-t-[3px] border-panther-red-100;
+        }
+    }
+
+    #UserDetails {
+        .avatar {
+            @apply rounded overflow-hidden w-[206px] h-[206px] shadow-avatar-shadow;
+        }
+    }
+}

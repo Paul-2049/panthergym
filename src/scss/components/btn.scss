@@ -15,6 +15,10 @@
     @apply text-white uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-panther-red-100 bg-no-repeat bg-center bg-cover py-[17px] px-[47px] block w-fit hover:bg-panther-red-200 transition-colors duration-200 ease-in;
     clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
   }
+  .btn-clip-none {
+    @apply text-white uppercase text-[16px] leading-[1.1] font-bold font-privacy tracking-[1px] bg-panther-red-100 py-[17px] px-[47px] block w-fit hover:bg-panther-red-200 transition-colors duration-200 ease-in h-[57px] m-0;
+    clip-path: unset;
+  }
   .btn-get{
     @apply text-black py-[14px] px-[20px] bg-white rounded-[4px] text-[16px] font-base font-bold tracking-[0.64px] leading-[1] w-[189px] h-[50px] flex items-center justify-center;
   }
