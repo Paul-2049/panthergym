@@ -1,0 +1,58 @@
+@mixin mobile($break_point: 767px) {
+	@media screen and (max-width: $break_point) {
+		@content;
+	}
+}
+
+@mixin tablet($break_point: 1024px) {
+	@media screen and (max-width: $break_point) {
+		@content;
+	}
+}
+
+@mixin desktop($break_point: 767px) {
+	@media all and (min-width: $break_point + 1) {
+		@content;
+	}
+	@media print {
+		@content;
+	}
+}
+
+
+@mixin button_white {
+	display: inline-block;
+	width: auto;
+	height: 50px;
+	background: $color_white;
+	color: $color_red;
+	border: 1px solid $color_red;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	clip-path: unset;
+	padding: 0px 15px;
+	transition: all 0.3s linear;
+
+	&:hover {
+		background: $color_red;
+		color: $color_white;
+		border-color: $color_white;
+	}
+}
+
+@mixin button_red {
+	@include button_white;
+	background: $color_red;
+	color: $color_white;
+
+	&:hover {
+		background: $color_white;
+		color: $color_red;
+		border-color: $color_red;
+	}
+}

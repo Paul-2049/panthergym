@@ -3,6 +3,9 @@
 if ( !defined('THEME_DIR')) define('THEME_DIR', __DIR__);
 if ( !defined('THEME_URL')) define('THEME_URL', get_stylesheet_directory_uri());
 
+// ACF
+include_once THEME_DIR . '/acf/schedule-event.php';
+
 // Подключаем классы
 require_once( __DIR__ . '/classes/GYM_SCHEDULE.php');
 
