@@ -10,7 +10,7 @@ get_header();
             <button class="close bg-accordion-icon bg-no-repeat bg-contain rotate-[45deg] w-[25px] h-[25px] absolute top-[15px] right-[15px] bg-transparent p-0 m-0 lg:hidden z-10" type="button"></button>
             <span class="lg:px-[22px] font-privacy leading-[1.5] text-[20px] font-bold lg:mb-[42px] block cursor-pointer relative mb-[15px] pl-[15px] lg:pl-0">
                 <?php echo __('Categories'); ?></span>
-            <ul class="lg:mr-[-15px] lg:h-auto mb-[20px] lg:mb-0 gap-1 flex flex-col overflow-y-auto lg:overscroll-y-none">
+            <ul class="lg:mr-[-15px] lg:h-auto mb-[20px] lg:mb-0 flex flex-col overflow-y-auto lg:overscroll-y-none">
                 <?php
                 $excluded_category_ids = array(115, 166, 120);
 
