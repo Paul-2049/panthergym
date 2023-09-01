@@ -66,7 +66,7 @@ export default {
       }
     },
     fontFamily: {
-      'base': 'Rajdhani',
+      'base': 'Rajdhani, sans-serif',
       'privacy': 'Open Sans, sans-serif',
     }
   },
