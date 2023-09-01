@@ -40,7 +40,7 @@ get_header();
                     </svg>
                 </span>
             </div>
-            <div class="product-list grid w-full lg:pl-[129px] gap-x-[56px] gap-y-[43px] grid-cols-1 bm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
+            <div class="product-list grid w-full lg:pl-[60px] gap-x-[30px] gap-y-[43px] grid-cols-1 bm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post();
                         $product = wc_get_product($post->ID);
