@@ -20,7 +20,7 @@
 
     #UserDetails {
         .avatar {
-            @apply rounded overflow-hidden w-[206px] h-[206px] shadow-avatar-shadow;
+            @apply rounded-full overflow-hidden w-[206px] h-[206px] shadow-avatar-shadow;
         }
     }
 }
