@@ -42,7 +42,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
 .gym_shedule_popup .close:before, .gym_shedule_popup .close:after {
   content: "";
   width: 20px;
-  height: 1px;
+  height: 2px;
   background: #000000;
   transform: rotate(45deg);
   position: absolute;
@@ -216,7 +216,9 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
-  letter-spacing: 1px;
+}
+.gym_shedule_popup .inner[data-step=auth] a:hover {
+  text-decoration: none;
 }
 .gym_shedule_popup .time {
   color: #E10A17;

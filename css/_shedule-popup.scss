@@ -46,7 +46,7 @@ body.shedule_popup {
 		&:after {
 			content: "";
 			width: 20px;
-			height: 1px;
+			height: 2px;
 			background: $color_black;
 			transform: rotate(45deg);
 			position: absolute;
@@ -207,7 +207,10 @@ body.shedule_popup {
 				font-style: normal;
 				font-weight: 400;
 				line-height: 110%;
-				letter-spacing: 1px;
+
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
 	}
