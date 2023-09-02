@@ -52,4 +52,11 @@ jQuery(document).ready(function($){
 			}, 'json');
 		}
 	});
+
+	if($('#billing_postcode').length) {
+		$('#billing_postcode, #billing_phone').bind( 'keyup blur', function(){
+			var node = $(this);
+			node.val(node.val().replace(/[^0-9]/g,'') );
+		});
+	}
 });
