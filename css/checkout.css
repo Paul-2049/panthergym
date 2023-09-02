@@ -333,6 +333,22 @@ body.woocommerce-checkout .wc-stripe-elements-field,
 body.woocommerce-checkout .wc-stripe-iban-element-field {
   padding: 15px 10px;
 }
+body.woocommerce-checkout #order_review_heading {
+  margin-top: 60px;
+}
+body.woocommerce-checkout .woocommerce-checkout-review-order .border-black .cart_item:first-child .product-name,
+body.woocommerce-checkout .woocommerce-checkout-review-order .border-black .cart_item:first-child .product-total {
+  padding-top: 50px;
+}
+body.woocommerce-checkout .woocommerce-checkout-review-order .border-black .cart-subtotal .left-col,
+body.woocommerce-checkout .woocommerce-checkout-review-order .border-black .cart-subtotal .right-col {
+  padding-top: 34px;
+}
+body.woocommerce-checkout .woocommerce-checkout-review-order .border-black .order-total .left-col,
+body.woocommerce-checkout .woocommerce-checkout-review-order .border-black .order-total .right-col {
+  padding-top: 27px;
+  padding-bottom: 50px;
+}
 body.woocommerce-checkout #place_order {
   transition: all 0.3s linear;
 }

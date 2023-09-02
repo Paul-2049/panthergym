@@ -348,6 +348,36 @@ body.woocommerce-checkout {
 		padding: 15px 10px;
 	}
 
+	#order_review_heading {
+		margin-top: 60px;
+	}
+
+	.woocommerce-checkout-review-order {
+		.border-black {
+			.cart_item:first-child {
+				.product-name,
+				.product-total {
+					padding-top: 50px;
+				}
+			}
+
+			.cart-subtotal {
+				.left-col,
+				.right-col {
+					padding-top: 34px;
+				}
+			}
+
+			.order-total {
+				.left-col,
+				.right-col {
+					padding-top: 27px;
+					padding-bottom: 50px;
+				}
+			}
+		}
+	}
+
 	#place_order {
 		transition: all 0.3s linear;
 
