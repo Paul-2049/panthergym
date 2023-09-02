@@ -385,4 +385,15 @@ body.woocommerce-checkout {
 			background-color: $color_red_light;
 		}
 	}
+
+	.woocommerce-error {
+		display: flex;
+		border-top-color: $color_red;
+
+		&:before {
+			position: unset;
+			color: $color_red;
+			margin-right: 10px;
+		}
+	}
 }

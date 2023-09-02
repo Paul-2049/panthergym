@@ -355,5 +355,14 @@ body.woocommerce-checkout #place_order {
 body.woocommerce-checkout #place_order:hover {
   background-color: #FF0000;
 }
+body.woocommerce-checkout .woocommerce-error {
+  display: flex;
+  border-top-color: #E10A17;
+}
+body.woocommerce-checkout .woocommerce-error:before {
+  position: unset;
+  color: #E10A17;
+  margin-right: 10px;
+}
 
 /*# sourceMappingURL=checkout.css.map */
