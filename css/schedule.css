@@ -348,7 +348,9 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
 }
 .gym_shedule_popup button[disabled]:before {
   content: "";
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
   font-size: 20px;

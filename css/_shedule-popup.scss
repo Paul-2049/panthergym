@@ -322,23 +322,6 @@ body.shedule_popup {
 	}
 
 	button[disabled] {
-		position: relative;
-		background-color: $color_gray !important;
-		border-color: $color_gray !important;
-		font-size: 0px !important;
-
-		&:before {
-			content: "\f463";
-			display: inline-block;
-			width: 20px;
-			height: 20px;
-			font-size: 20px;
-			position: absolute;
-			top: calc(50% - 10px);
-			left: calc(50% - 10px);
-			color: $color_white;
-			font-family: dashicons;
-			animation: gym_rotate 3s linear infinite;
-		}
+		@include button_disabled;
 	}
 }

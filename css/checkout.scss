@@ -1,0 +1,223 @@
+@import "vars";
+@import "mix";
+
+body.woocommerce-checkout {
+	.woocommerce-form-login-wrap {
+		margin-bottom: 60px;
+		border: 1px solid $color_black;
+
+		.woocommerce-form-login-toggle {
+			color: $color_black;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 1.1;
+			padding: 24px 30px;
+			cursor: pointer;
+
+			span {
+				color: $color_red;
+				text-decoretion: underline;
+			}
+		}
+
+		.woocommerce-form-login {
+			border-top: 1px solid $color_black;
+			padding: 23px 30px 28px;
+			display: none;
+
+			p {
+				color: $color_black;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.5;
+				margin: 0px;
+			}
+
+			.auth_fields {
+				display: inline-block;
+				margin: 25px -10px;
+				width: calc(100% + 20px);
+
+				@include mobile(575px) {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				label {
+					color: $color_black;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 1.1;
+					margin-bottom: 8px;
+				}
+
+				input {
+					color: $color_black;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 1;
+					height: 40px;
+					padding: 0px 10px;
+				}
+
+				.form-row {
+					margin: 0px;
+
+					@include mobile(575px) {
+						width: 100%;
+						margin-bottom: 25px;
+					}
+
+					&:last-child {
+						@include mobile(575px) {
+							margin-bottom: 0px;
+						}
+					}
+				}
+			}
+
+			.actions {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+
+				.buttons {
+					display: flex;
+					align-items: center;
+					width: calc(100% - 170px);
+
+					@include mobile {
+						width: calc(100% - 140px);
+					}
+
+					@include mobile(575px) {
+						flex-wrap: wrap;
+						width: 100%;
+					}
+
+					[name="login"] {
+						@include button_red;
+						width: 155px;
+						margin: 0px 55px 0px 0px;
+
+						@include mobile {
+							margin-right: 20px;
+							width: calc(100% - 185px);
+							max-width: 155px;
+						}
+
+						@include mobile(575px) {
+							width: 100%;
+							margin-top: 25px;
+							margin-right: 0px;
+							order: 2;
+						}
+					}
+
+					label {
+						position: relative;
+						padding-left: 47px;
+						cursor: pointer;
+
+						@include mobile {
+							width: 185px;
+							white-space: nowrap;
+						}
+
+						@include mobile(575px) {
+							width: 100%;
+							order: 1;
+						}
+
+						input {
+							display: none;
+
+							&:checked ~ span:after {
+								display: block;
+							}
+						}
+
+						span {
+							&:before {
+								content: "";
+								display: block;
+								width: 30px;
+								height: 30px;
+								border: 1px solid $color_black;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+							}
+
+							&:after {
+								content: "";
+								border: solid $color_black;
+								border-width: 0 2px 2px 0 !important;
+								position: absolute;
+								top: 4px;
+								left: 10px;
+								width: 9px;
+								height: 17px;
+								transform: rotate(45deg);
+								display: none;
+							}
+
+							color: $color_black;
+							font-family: 'Open Sans', sans-serif;
+							font-size: 14px;
+							font-weight: 700;
+							line-height: 30px;
+						}
+					}
+				}
+
+				.lost_password {
+					width: 170px;
+					color: $color_black;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 1.1;
+
+					@include mobile {
+						width: 140px;
+					}
+
+					@include mobile(575px) {
+						width: 100%;
+						margin-top: 25px;
+					}
+				}
+			}
+
+			input:focus-visible {
+				outline: none;
+			}
+
+		}
+
+		.error {
+			position: relative;
+			color: $color_red;
+			font-size: 12px;
+			font-weight: 400;
+			padding-left: 10px;
+
+			strong {
+				color: $color_red;
+			}
+
+			a {
+				font-size: inherit;
+			}
+		}
+	}
+
+	button[disabled] {
+		@include button_disabled;
+	}
+}
