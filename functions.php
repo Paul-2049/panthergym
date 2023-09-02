@@ -198,9 +198,11 @@ add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkou
 add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 	if( !empty($fields) ) foreach ( $fields as $type => $val ) {
 		if ( !empty($val) ) foreach ( $val as $key => $attr ) {
-			if ( !array_key_exists('placeholder', $attr ) || empty( $attr['placeholder'] ) ) {
+			if ( !empty($attr) && ( !array_key_exists('placeholder', $attr ) || empty( $attr['placeholder'] ) ) ) {
 				$fields[$type][$key]['placeholder'] = $attr['label'];
 			}
 		}
 	}
+	
+	return $fields;
 }, 10, 1 );
