@@ -7,6 +7,7 @@ if ( !defined('THEME_URL')) define('THEME_URL', get_stylesheet_directory_uri());
 include_once THEME_DIR . '/acf/schedule-event.php';
 
 // Подключаем классы
+require_once( __DIR__ . '/classes/GYM_ACCOUNT.php');
 require_once( __DIR__ . '/classes/GYM_SCHEDULE.php');
 
 add_action('wp_enqueue_scripts', 'panther_child_css', 1001);
@@ -15,6 +16,11 @@ function panther_child_css()
 	wp_deregister_style('style');
 	wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/css/style.min.css');
 	wp_enqueue_script('app-js', get_stylesheet_directory_uri() . '/js/app.min.js', array('jquery'), null, true);
+
+	if(is_checkout()) {
+		wp_enqueue_style('gym-checkout', THEME_URL . '/css/checkout.css');
+		wp_enqueue_script('gym-checkout', THEME_URL . '/js/checkout.js', ['jquery-core'], null, true);
+	}
 }
 
 register_nav_menus(
@@ -173,3 +179,16 @@ add_action('wp_ajax_nopriv_filter_products', 'filter_products');
 //     echo '<span style="color:red">' . wp_basename($template) . '</span>';
 //     return $template;
 // }
+
+
+/**
+ * Перемещаем форму логина на странице чекаута перед блоком Billing details
+ *
+ * @snippet       Move Login @ WooCommerce Checkout
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WC 3.5.4
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_login_form' );
