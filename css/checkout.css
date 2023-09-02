@@ -298,5 +298,8 @@ body.woocommerce-checkout select {
 body.woocommerce-checkout select:active, body.woocommerce-checkout select:focus {
   color: #E10A17 !important;
 }
+body.woocommerce-checkout #wc-stripe-new-payment-method {
+  margin-top: 2px;
+}
 
 /*# sourceMappingURL=checkout.css.map */

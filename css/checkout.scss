@@ -300,4 +300,8 @@ body.woocommerce-checkout {
 			color: $color_red !important;
 		}
 	}
+
+	#wc-stripe-new-payment-method {
+		margin-top: 2px;
+	}
 }
