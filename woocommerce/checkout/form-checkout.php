@@ -61,6 +61,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 					<?php
 					do_action('woocommerce_review_order_before_cart_contents');
 
+					$i = 0;
 					foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
 						$_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
 
@@ -69,6 +70,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 							<div class="<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?> flex items-center justify-between">
 								<div class="product-name flex items-center justify-between left-col">
 									<span>
+										<?php echo ++$i . '.'; ?>
 										<?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?>
 									</span>
 									<span>
