@@ -8,6 +8,18 @@ class GYM_SCHEDULE {
 
 		// Создание шорткода в верху страницы
 		add_shortcode(self::SHORTCODE, [ $this, 'shortcode' ]);
+
+		// Добавляем попап
+		add_action('wp_head', [ $this, 'head_scripts' ]);
+		add_action('wp_footer', [ $this, 'popup' ]);
+
+		// Ajax - Бронирование
+		add_action( 'wp_ajax_gym-schedule-booking', [ $this, 'booking' ] );
+		add_action( 'wp_ajax_nopriv_gym-schedule-booking', [ $this, 'booking' ] );
+
+		// Ajax - Аутентификация
+		add_action( 'wp_ajax_gym-schedule-login', [ $this, 'login' ] );
+		add_action( 'wp_ajax_nopriv_gym-schedule-login', [ $this, 'login' ] );
 	}
 
 	public function enqueue_scripts(){
@@ -50,6 +62,60 @@ class GYM_SCHEDULE {
 		");
 
 		return $events;
+	}
+
+	public function head_scripts(){
+		?>
+		<script type="text/javascript">
+		    var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+		</script>
+		<?php
+	}
+
+	public function popup(){
+		include_once( THEME_DIR . '/template-parts/schedule-popup.php' );
+	}
+
+	public function booking(){
+		if ( !is_user_logged_in() ) {
+			wp_die( json_encode([
+				'status' => 'auth'
+			]) );
+		}
+
+		wp_die( json_encode([
+			'status' => 'success'
+		]) );
+	}
+
+	public function login() {
+		if(empty( $_POST['login'] )) wp_die( json_encode([
+			'errors' => [
+				'invalid_username' => [ 'This field is required!' ]
+			]
+		]) );
+
+		if(empty( $_POST['password'] )) wp_die( json_encode([
+			'errors' => [
+				'incorrect_password' => [ 'This field is required!' ]
+			]
+		]) );
+
+		if(empty( $_POST['event_id'] ) || empty( $_POST['event_date'] )) wp_die( json_encode([
+			'errors' => [
+				'invalid_username' => [ 'Error! Please reload page and try again!' ]
+			]
+		]) );
+
+		$user = wp_authenticate( $_POST['login'], $_POST['password'] );
+
+		if(!is_wp_error($user)) {
+			wp_set_auth_cookie($user->ID, true);
+			wp_set_current_user( $user->ID );
+			$this->booking();
+		}
+
+		wp_die( json_encode( $user ) );
 	}
 }
 

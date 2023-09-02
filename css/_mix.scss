@@ -44,3 +44,38 @@
 		border-color: $color_white;
 	}
 }
+
+@mixin button_red {
+	@include button_white;
+	background: $color_red;
+	color: $color_white;
+
+	&:hover {
+		background: $color_white;
+		color: $color_red;
+		border-color: $color_red;
+	}
+}
+
+@mixin button_disabled {
+	position: relative;
+	background-color: $color_gray !important;
+	border-color: $color_gray !important;
+	font-size: 0px !important;
+
+	&:before {
+		content: "\f463";
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+		position: absolute;
+		top: calc(50% - 10px);
+		left: calc(50% - 10px);
+		color: $color_white;
+		font-family: dashicons;
+		animation: gym_rotate 3s linear infinite;
+	}
+}

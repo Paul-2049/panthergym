@@ -1,3 +1,367 @@
+@charset "UTF-8";
+body.shedule_popup {
+  overflow: hidden;
+}
+body.shedule_popup .gym_shedule_popup {
+  display: block;
+}
+body.shedule_popup .gym_shedule_popup.auth [data-step=event_details] {
+  display: none;
+}
+body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
+  display: block;
+}
+
+.gym_shedule_popup {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 100px 15px;
+  overflow: auto;
+  z-index: 100;
+  transition: all 0.3s linear;
+}
+@media screen and (max-width: 767px) {
+  .gym_shedule_popup {
+    padding: 15px 15px;
+  }
+}
+.gym_shedule_popup .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.gym_shedule_popup .close:before, .gym_shedule_popup .close:after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #000000;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 10px);
+}
+.gym_shedule_popup .close:after {
+  transform: rotate(-45deg);
+}
+.gym_shedule_popup.done .thanks_title,
+.gym_shedule_popup.done .thanks_subtitle {
+  display: block;
+}
+.gym_shedule_popup.done .actions {
+  display: none;
+}
+.gym_shedule_popup .inner {
+  position: relative;
+  padding: 80px 100px 66px;
+  background: #FFFFFF;
+  max-width: 926px;
+  margin: 0 auto;
+  color: #000000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+}
+@media screen and (max-width: 1024px) {
+  .gym_shedule_popup .inner {
+    padding: 40px 30px;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] {
+  display: none;
+  max-width: 658px;
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 1024px) {
+  .gym_shedule_popup .inner[data-step=auth] {
+    padding-bottom: 40px;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] .title {
+  margin-bottom: 50px;
+}
+.gym_shedule_popup .inner[data-step=auth] label {
+  position: relative;
+  display: block;
+  color: #000000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 36px;
+}
+.gym_shedule_popup .inner[data-step=auth] label input {
+  width: 100%;
+  padding: 17px 0px;
+  border: none !important;
+  border-bottom: 1px solid #000000 !important;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+.gym_shedule_popup .inner[data-step=auth] label input:focus-visible {
+  outline: none;
+}
+.gym_shedule_popup .inner[data-step=auth] label .error {
+  position: relative;
+  color: #E10A17;
+  font-size: 12px;
+  font-weight: 400;
+}
+.gym_shedule_popup .inner[data-step=auth] label .error strong {
+  color: #E10A17;
+}
+.gym_shedule_popup .inner[data-step=auth] label .error a {
+  font-size: inherit;
+}
+.gym_shedule_popup .inner[data-step=auth] .actions {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 1024px) {
+  .gym_shedule_popup .inner[data-step=auth] .actions {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] .actions button {
+  display: inline-block;
+  width: auto;
+  height: 50px;
+  background: #FFFFFF;
+  color: #E10A17;
+  border: 1px solid #E10A17;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  clip-path: unset;
+  padding: 0px 15px;
+  transition: all 0.3s linear;
+  background: #E10A17;
+  color: #FFFFFF;
+  width: 185px;
+}
+.gym_shedule_popup .inner[data-step=auth] .actions button:hover {
+  background: #E10A17;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+.gym_shedule_popup .inner[data-step=auth] .actions button:hover {
+  background: #FFFFFF;
+  color: #E10A17;
+  border-color: #E10A17;
+}
+@media screen and (max-width: 575px) {
+  .gym_shedule_popup .inner[data-step=auth] .actions button {
+    width: 100%;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] .blocks_by_2 {
+  border: none;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .gym_shedule_popup .inner[data-step=auth] .blocks_by_2 {
+    flex-wrap: wrap;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item {
+  padding: 0px;
+  border: none;
+  text-align: left;
+}
+.gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item:first-child {
+  width: 60%;
+}
+@media screen and (max-width: 575px) {
+  .gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item:first-child {
+    width: 50%;
+    padding-right: 7px;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item:last-child {
+  width: 40%;
+}
+@media screen and (max-width: 575px) {
+  .gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item:last-child {
+    width: 50%;
+    padding-left: 7px;
+  }
+}
+.gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item.bold {
+  font-weight: 700;
+}
+.gym_shedule_popup .inner[data-step=auth] a {
+  color: #E10A17;
+  text-decoration: underline;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+}
+.gym_shedule_popup .inner[data-step=auth] a:hover {
+  text-decoration: none;
+}
+.gym_shedule_popup .time {
+  color: #E10A17;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.gym_shedule_popup .duration {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+.gym_shedule_popup .thanks_title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  display: none;
+}
+.gym_shedule_popup .thanks_subtitle {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: normal;
+  text-align: center;
+  margin-bottom: 30px;
+  display: none;
+}
+.gym_shedule_popup .title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+.gym_shedule_popup .description {
+  line-height: 1.8;
+  padding-bottom: 34px;
+  border-bottom: 1px solid #000000;
+}
+.gym_shedule_popup .blocks_by_2 {
+  display: flex;
+  border-bottom: 1px solid #000000;
+}
+@media screen and (max-width: 767px) {
+  .gym_shedule_popup .blocks_by_2 {
+    flex-wrap: wrap;
+  }
+}
+.gym_shedule_popup .blocks_by_2 .item {
+  width: 50%;
+  padding: 20px 34px;
+}
+@media screen and (max-width: 767px) {
+  .gym_shedule_popup .blocks_by_2 .item {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media all and (min-width: 768px) {
+  .gym_shedule_popup .blocks_by_2 .item:not(:last-child) {
+    border-right: 1px solid #000000;
+  }
+}
+@media print {
+  .gym_shedule_popup .blocks_by_2 .item:not(:last-child) {
+    border-right: 1px solid #000000;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gym_shedule_popup .blocks_by_2 .item:not(:last-child) {
+    border-bottom: 1px solid #000000;
+  }
+}
+.gym_shedule_popup .blocks_by_2 .item .label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+.gym_shedule_popup .blocks_by_2 .item .text {
+  line-height: 1.8;
+}
+.gym_shedule_popup .actions {
+  margin-top: 26px;
+  text-align: center;
+}
+.gym_shedule_popup .actions button {
+  display: inline-block;
+  width: auto;
+  height: 50px;
+  background: #FFFFFF;
+  color: #E10A17;
+  border: 1px solid #E10A17;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  clip-path: unset;
+  padding: 0px 15px;
+  transition: all 0.3s linear;
+  width: 145px;
+  height: 40px;
+  font-weight: 400;
+}
+.gym_shedule_popup .actions button:hover {
+  background: #E10A17;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+.gym_shedule_popup .actions button:hover {
+  border-color: #E10A17;
+}
+.gym_shedule_popup button[disabled] {
+  position: relative;
+  background-color: #79808A !important;
+  border-color: #79808A !important;
+  font-size: 0px !important;
+}
+.gym_shedule_popup button[disabled]:before {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  color: #FFFFFF;
+  font-family: dashicons;
+  animation: gym_rotate 3s linear infinite;
+}
+
 @media screen and (max-width: 600px) {
   body.page-template-calendar.admin-bar {
     margin-top: -46px;
@@ -510,6 +874,23 @@ body.page-template-calendar .schedule_calendar .schedule_list .item .actions but
 }
 body.page-template-calendar .schedule_calendar .schedule_list .item .actions button.book:hover {
   border-color: #E10A17;
+}
+
+@-moz-keyframes gym_rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes gym_rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes gym_rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=schedule.css.map */
