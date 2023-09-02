@@ -139,11 +139,6 @@ body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .
     order: 2;
   }
 }
-body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label {
-  position: relative;
-  padding-left: 47px;
-  cursor: pointer;
-}
 @media screen and (max-width: 767px) {
   body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label {
     width: 185px;
@@ -156,11 +151,11 @@ body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .
     order: 1;
   }
 }
-body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label input {
-  display: none;
+body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label input[type=checkbox] ~ span:before {
+  top: 0px;
 }
-body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label input:checked ~ span:after {
-  display: block;
+body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label input[type=checkbox] ~ span:after {
+  top: 4px;
 }
 body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label span {
   color: #000000;
@@ -168,28 +163,6 @@ body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .
   font-size: 14px;
   font-weight: 700;
   line-height: 30px;
-}
-body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label span:before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #000000;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons label span:after {
-  content: "";
-  border: solid #000000;
-  border-width: 0 2px 2px 0 !important;
-  position: absolute;
-  top: 4px;
-  left: 10px;
-  width: 9px;
-  height: 17px;
-  transform: rotate(45deg);
-  display: none;
 }
 body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .lost_password {
   width: 170px;
@@ -225,6 +198,47 @@ body.woocommerce-checkout .woocommerce-form-login-wrap .error strong {
 }
 body.woocommerce-checkout .woocommerce-form-login-wrap .error a {
   font-size: inherit;
+}
+body.woocommerce-checkout label {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+}
+body.woocommerce-checkout label:before {
+  display: none;
+}
+body.woocommerce-checkout label input[type=checkbox] {
+  display: none;
+}
+body.woocommerce-checkout label input[type=checkbox]:checked ~ span:after {
+  border-color: #E10A17;
+}
+body.woocommerce-checkout label input[type=checkbox] ~ span {
+  position: relative;
+  padding-left: 47px;
+  cursor: pointer;
+}
+body.woocommerce-checkout label input[type=checkbox] ~ span:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000000;
+  position: absolute;
+  top: -5px;
+  left: 0px;
+}
+body.woocommerce-checkout label input[type=checkbox] ~ span:after {
+  content: "";
+  border: solid #E0E0E0;
+  border-width: 0 2px 2px 0 !important;
+  position: absolute;
+  top: -1px;
+  left: 10px;
+  width: 9px;
+  height: 17px;
+  transform: rotate(45deg);
+  display: block;
 }
 body.woocommerce-checkout button[disabled] {
   position: relative;

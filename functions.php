@@ -203,6 +203,26 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 			}
 		}
 	}
-	
+
 	return $fields;
 }, 10, 1 );
+
+/**
+ * Update the checkout create an account text
+ */
+add_filter( 'gettext', function ( $translated_text, $text, $domain ) {
+
+	// if not woocommerce then return
+	if ( 'woocommerce' !== $domain ) {
+		return $translated_text;
+	}
+
+	// check translated text and update
+	switch ( $translated_text ) {
+		case 'Create an account?' :
+			$translated_text = __( 'Checking out as Guest. Create and account?', 'woocommerce' );
+			break;
+	}
+	return $translated_text;
+
+}, 10, 3 );

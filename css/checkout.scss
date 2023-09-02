@@ -119,10 +119,6 @@ body.woocommerce-checkout {
 					}
 
 					label {
-						position: relative;
-						padding-left: 47px;
-						cursor: pointer;
-
 						@include mobile {
 							width: 185px;
 							white-space: nowrap;
@@ -133,39 +129,19 @@ body.woocommerce-checkout {
 							order: 1;
 						}
 
-						input {
-							display: none;
+						input[type="checkbox"] {
+							& ~ span {
+								&:before {
+									top: 0px;
+								}
 
-							&:checked ~ span:after {
-								display: block;
+								&:after {
+									top: 4px;
+								}
 							}
 						}
 
 						span {
-							&:before {
-								content: "";
-								display: block;
-								width: 30px;
-								height: 30px;
-								border: 1px solid $color_black;
-								position: absolute;
-								top: 0px;
-								left: 0px;
-							}
-
-							&:after {
-								content: "";
-								border: solid $color_black;
-								border-width: 0 2px 2px 0 !important;
-								position: absolute;
-								top: 4px;
-								left: 10px;
-								width: 9px;
-								height: 17px;
-								transform: rotate(45deg);
-								display: none;
-							}
-
 							color: $color_black;
 							font-family: 'Open Sans', sans-serif;
 							font-size: 14px;
@@ -213,6 +189,54 @@ body.woocommerce-checkout {
 
 			a {
 				font-size: inherit;
+			}
+		}
+	}
+
+	label {
+		display: flex;
+		align-items: center;
+		padding-left: 0px;
+
+		&:before {
+			display: none;
+		}
+
+		input[type="checkbox"] {
+			display: none;
+
+			&:checked ~ span:after {
+				border-color: $color_red;
+			}
+
+			& ~ span {
+				position: relative;
+				padding-left: 47px;
+				cursor: pointer;
+
+				&:before {
+					content: "";
+					display: block;
+					width: 30px;
+					height: 30px;
+					border: 1px solid $color_black;
+					position: absolute;
+					top: -5px;
+					left: 0px;
+				}
+
+				&:after {
+					content: "";
+					border: solid $color_gray_light_2;
+					border-width: 0 2px 2px 0 !important;
+					position: absolute;
+					top: -1px;
+					left: 10px;
+					width: 9px;
+					height: 17px;
+					transform: rotate(45deg);
+					display: block;
+				}
 			}
 		}
 	}
