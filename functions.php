@@ -200,6 +200,22 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 		if ( !empty($val) ) foreach ( $val as $key => $attr ) {
 			if ( !empty($attr) && ( !array_key_exists('placeholder', $attr ) || empty( $attr['placeholder'] ) ) ) {
 				$fields[$type][$key]['placeholder'] = $attr['label'];
+
+				if($type == 'billing' && $key == 'billing_postcode') {
+					$fields[$type][$key]['class'][] = 'form-row-first';
+
+					if( ($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false ) {
+						unset( $fields[$type][$key]['class'][$key_id] );
+					}
+				}
+
+				if($type == 'billing' && $key == 'billing_phone') {
+					$fields[$type][$key]['class'][] = 'form-row-last';
+
+					if( ($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false ) {
+						unset( $fields[$type][$key]['class'][$key_id] );
+					}
+				}
 			}
 		}
 	}

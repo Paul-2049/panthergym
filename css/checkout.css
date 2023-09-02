@@ -241,6 +241,10 @@ body.woocommerce-checkout input[type=checkbox] ~ span:after, body.woocommerce-ch
 body.woocommerce-checkout .wc_payment_method label {
   display: inline-block;
 }
+body.woocommerce-checkout .woocommerce-billing-fields .form-row,
+body.woocommerce-checkout .woocommerce-shipping-fields .form-row {
+  margin-bottom: 50px;
+}
 body.woocommerce-checkout .woocommerce-billing-fields label:not(.checkbox),
 body.woocommerce-checkout .woocommerce-shipping-fields label:not(.checkbox) {
   padding-left: 10px;
@@ -277,7 +281,7 @@ body.woocommerce-checkout input:active, body.woocommerce-checkout input:focus {
 body.woocommerce-checkout input:focus-visible {
   outline: none;
 }
-body.woocommerce-checkout input[type=text] {
+body.woocommerce-checkout input[type=text], body.woocommerce-checkout input[type=tel] {
   height: 50px;
   padding: 0px 10px;
 }
@@ -290,6 +294,7 @@ body.woocommerce-checkout input:-webkit-autofill:active, body.woocommerce-checko
 }
 body.woocommerce-checkout select {
   height: 50px;
+  padding: 0px 10px;
   background-image: linear-gradient(45deg, transparent 50%, #E10A17 50%), linear-gradient(135deg, #E10A17 50%, transparent 50%);
   background-position: calc(100% - 23px) calc(50% + 4px), calc(100% - 15px) calc(50% + 4px);
   background-size: 8px 8px, 8px 8px;
