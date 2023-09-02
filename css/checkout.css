@@ -53,7 +53,7 @@ body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .
   color: #000000;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
   height: 40px;
   padding: 0px 10px;
@@ -267,6 +267,13 @@ body.woocommerce-checkout button[disabled]:before {
   font-family: dashicons;
   animation: gym_rotate 3s linear infinite;
 }
+body.woocommerce-checkout input {
+  color: #000000 !important;
+  transition: all 0.3s linear;
+}
+body.woocommerce-checkout input:active, body.woocommerce-checkout input:focus {
+  color: #E10A17 !important;
+}
 body.woocommerce-checkout input:focus-visible {
   outline: none;
 }
@@ -285,6 +292,11 @@ body.woocommerce-checkout select {
   -webkit-appearance: none;
   /* Safari and Chrome */
   appearance: none;
+  color: #000000 !important;
+  transition: all 0.3s linear;
+}
+body.woocommerce-checkout select:active, body.woocommerce-checkout select:focus {
+  color: #E10A17 !important;
 }
 
 /*# sourceMappingURL=checkout.css.map */

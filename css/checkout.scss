@@ -59,7 +59,7 @@ body.woocommerce-checkout {
 					color: $color_black;
 					font-family: 'Open Sans', sans-serif;
 					font-size: 16px;
-					font-weight: 400;
+					font-weight: 700;
 					line-height: 1;
 					height: 40px;
 					padding: 0px 10px;
@@ -256,6 +256,14 @@ body.woocommerce-checkout {
 	}
 
 	input {
+		color: $color_black !important;
+		transition: all 0.3s linear;
+
+		&:active,
+		&:focus {
+			color: $color_red !important;
+		}
+
 		&:focus-visible {
 			outline: none;
 		}
@@ -283,5 +291,13 @@ body.woocommerce-checkout {
 		-moz-appearance:none; /* Firefox */
 		-webkit-appearance:none; /* Safari and Chrome */
 		appearance:none;
+
+		color: $color_black !important;
+		transition: all 0.3s linear;
+
+		&:active,
+		&:focus {
+			color: $color_red !important;
+		}
 	}
 }
