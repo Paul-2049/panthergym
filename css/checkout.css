@@ -205,18 +205,18 @@ body.woocommerce-checkout label {
 body.woocommerce-checkout label:before {
   display: none;
 }
-body.woocommerce-checkout label input[type=checkbox] {
+body.woocommerce-checkout input[type=checkbox] {
   display: none;
 }
-body.woocommerce-checkout label input[type=checkbox]:checked ~ span:after {
+body.woocommerce-checkout input[type=checkbox]:checked ~ span:after, body.woocommerce-checkout input[type=checkbox]:checked ~ label:after {
   border-color: #E10A17;
 }
-body.woocommerce-checkout label input[type=checkbox] ~ span {
+body.woocommerce-checkout input[type=checkbox] ~ span, body.woocommerce-checkout input[type=checkbox] ~ label {
   position: relative;
-  padding-left: 47px;
+  padding-left: 47px !important;
   cursor: pointer;
 }
-body.woocommerce-checkout label input[type=checkbox] ~ span:before {
+body.woocommerce-checkout input[type=checkbox] ~ span:before, body.woocommerce-checkout input[type=checkbox] ~ label:before {
   content: "";
   display: block;
   width: 30px;
@@ -226,7 +226,7 @@ body.woocommerce-checkout label input[type=checkbox] ~ span:before {
   top: -5px;
   left: 0px;
 }
-body.woocommerce-checkout label input[type=checkbox] ~ span:after {
+body.woocommerce-checkout input[type=checkbox] ~ span:after, body.woocommerce-checkout input[type=checkbox] ~ label:after {
   content: "";
   border: solid #E0E0E0;
   border-width: 0 2px 2px 0 !important;
@@ -298,8 +298,24 @@ body.woocommerce-checkout select {
 body.woocommerce-checkout select:active, body.woocommerce-checkout select:focus {
   color: #E10A17 !important;
 }
-body.woocommerce-checkout #wc-stripe-new-payment-method {
-  margin-top: 2px;
+body.woocommerce-checkout #payment div.payment_box {
+  padding: 0px;
+}
+body.woocommerce-checkout #payment div.payment_box .wc-credit-card-form {
+  margin-top: 0px;
+}
+body.woocommerce-checkout #payment div.payment_box .wc-credit-card-form .form-row-first,
+body.woocommerce-checkout #payment div.payment_box .wc-credit-card-form .form-row-last {
+  padding: 0px;
+}
+body.woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods-saveNew {
+  padding-top: 1em;
+}
+body.woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods-saveNew label {
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=checkout.css.map */
