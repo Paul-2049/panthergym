@@ -329,6 +329,10 @@ body.woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMeth
   line-height: 1.5;
   font-weight: 400;
 }
+body.woocommerce-checkout .wc-stripe-elements-field,
+body.woocommerce-checkout .wc-stripe-iban-element-field {
+  padding: 15px 10px;
+}
 body.woocommerce-checkout #place_order {
   transition: all 0.3s linear;
 }
