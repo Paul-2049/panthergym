@@ -336,4 +336,12 @@ body.woocommerce-checkout {
 			}
 		}
 	}
+
+	#place_order {
+		transition: all 0.3s linear;
+		
+		&:hover {
+			background-color: $color_red_light;
+		}
+	}
 }

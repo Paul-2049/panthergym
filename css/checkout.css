@@ -324,5 +324,11 @@ body.woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMeth
   line-height: 1.5;
   font-weight: 400;
 }
+body.woocommerce-checkout #place_order {
+  transition: all 0.3s linear;
+}
+body.woocommerce-checkout #place_order:hover {
+  background-color: #FF0000;
+}
 
 /*# sourceMappingURL=checkout.css.map */
