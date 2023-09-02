@@ -52,6 +52,7 @@ body.woocommerce-checkout {
 					font-weight: 700;
 					line-height: 1.1;
 					margin-bottom: 8px;
+					padding: 0px 10px;
 				}
 
 				input {
@@ -169,11 +170,6 @@ body.woocommerce-checkout {
 					}
 				}
 			}
-
-			input:focus-visible {
-				outline: none;
-			}
-
 		}
 
 		.error {
@@ -241,7 +237,51 @@ body.woocommerce-checkout {
 		}
 	}
 
+	.wc_payment_method {
+		label {
+			display: inline-block;
+		}
+	}
+
+	.woocommerce-billing-fields,
+	.woocommerce-shipping-fields {
+		label:not(.checkbox) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
 	button[disabled] {
 		@include button_disabled;
+	}
+
+	input {
+		&:focus-visible {
+			outline: none;
+		}
+
+		&[type="text"] {
+			height: 50px;
+			padding: 0px 10px;
+		}
+	}
+
+	select {
+		height: 50px;
+
+		background-image:
+				linear-gradient(45deg, transparent 50%, $color_red 50%),
+				linear-gradient(135deg, $color_red 50%, transparent 50%);
+		background-position:
+				calc(100% - 23px) calc(50% + 4px),
+				calc(100% - 15px) calc(50% + 4px);
+		background-size:
+				8px 8px,
+				8px 8px;
+		background-repeat: no-repeat;
+
+		-moz-appearance:none; /* Firefox */
+		-webkit-appearance:none; /* Safari and Chrome */
+		appearance:none;
 	}
 }
