@@ -192,3 +192,15 @@ add_action('wp_ajax_nopriv_filter_products', 'filter_products');
  */
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_login_form' );
+
+
+// Добавляем placeholder для всех полей на странице Checkout
+add_filter( 'woocommerce_checkout_fields', function( $fields ) {
+	if( !empty($fields) ) foreach ( $fields as $type => $val ) {
+		if ( !empty($val) ) foreach ( $val as $key => $attr ) {
+			if ( !array_key_exists('placeholder', $attr ) || empty( $attr['placeholder'] ) ) {
+				$fields[$type][$key]['placeholder'] = $attr['label'];
+			}
+		}
+	}
+}, 10, 1 );
