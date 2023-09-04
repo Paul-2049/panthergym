@@ -1,0 +1,399 @@
+@import "vars";
+@import "mix";
+
+body.woocommerce-checkout {
+	.woocommerce-form-login-wrap {
+		margin-bottom: 60px;
+		border: 1px solid $color_black;
+
+		.woocommerce-form-login-toggle {
+			color: $color_black;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 1.1;
+			padding: 24px 30px;
+			cursor: pointer;
+
+			span {
+				color: $color_red;
+				text-decoretion: underline;
+			}
+		}
+
+		.woocommerce-form-login {
+			border-top: 1px solid $color_black;
+			padding: 23px 30px 28px;
+			display: none;
+
+			p {
+				color: $color_black;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.5;
+				margin: 0px;
+			}
+
+			.auth_fields {
+				display: inline-block;
+				margin: 25px -10px;
+				width: calc(100% + 20px);
+
+				@include mobile(575px) {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				label {
+					color: $color_black;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 1.1;
+					margin-bottom: 8px;
+					padding: 0px 10px;
+				}
+
+				input {
+					color: $color_black;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 16px;
+					font-weight: 700;
+					line-height: 1;
+					height: 40px;
+					padding: 0px 10px;
+				}
+
+				.form-row {
+					margin: 0px;
+
+					@include mobile(575px) {
+						width: 100%;
+						margin-bottom: 25px;
+					}
+
+					&:last-child {
+						@include mobile(575px) {
+							margin-bottom: 0px;
+						}
+					}
+				}
+			}
+
+			.actions {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+
+				.buttons {
+					display: flex;
+					align-items: center;
+					width: calc(100% - 170px);
+
+					@include mobile {
+						width: calc(100% - 140px);
+					}
+
+					@include mobile(575px) {
+						flex-wrap: wrap;
+						width: 100%;
+					}
+
+					[name="login"] {
+						@include button_red;
+						width: 155px;
+						margin: 0px 55px 0px 0px;
+
+						@include mobile {
+							margin-right: 20px;
+							width: calc(100% - 185px);
+							max-width: 155px;
+						}
+
+						@include mobile(575px) {
+							width: 100%;
+							margin-top: 25px;
+							margin-right: 0px;
+							order: 2;
+						}
+					}
+
+					label {
+						@include mobile {
+							width: 185px;
+							white-space: nowrap;
+						}
+
+						@include mobile(575px) {
+							width: 100%;
+							order: 1;
+						}
+
+						input[type="checkbox"] {
+							& ~ span {
+								&:before {
+									top: 0px;
+								}
+
+								&:after {
+									top: 4px;
+								}
+							}
+						}
+
+						span {
+							color: $color_black;
+							font-family: 'Open Sans', sans-serif;
+							font-size: 14px;
+							font-weight: 700;
+							line-height: 30px;
+						}
+					}
+				}
+
+				.lost_password {
+					width: 170px;
+					color: $color_black;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 1.1;
+
+					@include mobile {
+						width: 140px;
+					}
+
+					@include mobile(575px) {
+						width: 100%;
+						margin-top: 25px;
+					}
+				}
+			}
+		}
+
+		.error {
+			position: relative;
+			color: $color_red;
+			font-size: 12px;
+			font-weight: 400;
+			padding-left: 10px;
+
+			strong {
+				color: $color_red;
+			}
+
+			a {
+				font-size: inherit;
+			}
+		}
+	}
+
+	label {
+		display: flex;
+		align-items: center;
+		padding-left: 0px;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	input[type="checkbox"] {
+		display: none;
+
+		&:checked ~ span:after,
+		&:checked ~ label:after {
+			border-color: $color_red;
+		}
+
+		& ~ span,
+		& ~ label {
+			position: relative;
+			padding-left: 47px !important;
+			cursor: pointer;
+
+			&:before {
+				content: "";
+				display: block;
+				width: 30px;
+				height: 30px;
+				border: 1px solid $color_black;
+				position: absolute;
+				top: -5px;
+				left: 0px;
+			}
+
+			&:after {
+				content: "";
+				border: solid $color_gray_light_2;
+				border-width: 0 2px 2px 0 !important;
+				position: absolute;
+				top: -1px;
+				left: 10px;
+				width: 9px;
+				height: 17px;
+				transform: rotate(45deg);
+				display: block;
+			}
+		}
+	}
+
+	.wc_payment_method {
+		label {
+			display: inline-block;
+		}
+	}
+
+	.woocommerce-billing-fields,
+	.woocommerce-shipping-fields {
+		.form-row {
+			margin-bottom: 50px;
+		}
+
+		label:not(.checkbox) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	button[disabled] {
+		@include button_disabled;
+	}
+
+	input {
+		color: $color_black !important;
+		transition: all 0.3s linear;
+
+		&:active,
+		&:focus {
+			color: $color_red !important;
+		}
+
+		&:focus-visible {
+			outline: none;
+		}
+
+		&[type="text"],
+		&[type="tel"] {
+			height: 50px;
+			padding: 0px 10px;
+		}
+
+		&:-webkit-autofill {
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: $color_black;
+
+			&:active,
+			&:focus {
+				-webkit-text-fill-color: $color_red;
+			}
+		}
+	}
+
+	select {
+		height: 50px;
+		padding: 0px 10px;
+
+		background-image:
+				linear-gradient(45deg, transparent 50%, $color_red 50%),
+				linear-gradient(135deg, $color_red 50%, transparent 50%);
+		background-position:
+				calc(100% - 23px) calc(50% + 4px),
+				calc(100% - 15px) calc(50% + 4px);
+		background-size:
+				8px 8px,
+				8px 8px;
+		background-repeat: no-repeat;
+
+		-moz-appearance:none; /* Firefox */
+		-webkit-appearance:none; /* Safari and Chrome */
+		appearance:none;
+
+		color: $color_black !important;
+		transition: all 0.3s linear;
+
+		&:active,
+		&:focus {
+			color: $color_red !important;
+		}
+	}
+
+	#payment div.payment_box {
+		padding: 0px;
+
+		.wc-credit-card-form {
+			margin-top: 0px;
+
+			.form-row-first,
+			.form-row-last {
+				padding: 0px;
+			}
+		}
+
+		.woocommerce-SavedPaymentMethods-saveNew {
+			padding-top: 1em;
+
+			label {
+				font-family: Open Sans,sans-serif;
+				font-size: 16px;
+				line-height: 1.5;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.wc-stripe-elements-field,
+	.wc-stripe-iban-element-field {
+		padding: 15px 10px;
+	}
+
+	#order_review_heading {
+		margin-top: 60px;
+	}
+
+	.woocommerce-checkout-review-order {
+		.border-black {
+			.cart_item:first-child {
+				.product-name,
+				.product-total {
+					padding-top: 50px;
+				}
+			}
+
+			.cart-subtotal {
+				.left-col,
+				.right-col {
+					padding-top: 34px;
+				}
+			}
+
+			.order-total {
+				.left-col,
+				.right-col {
+					padding-top: 27px;
+					padding-bottom: 50px;
+				}
+			}
+		}
+	}
+
+	#place_order {
+		transition: all 0.3s linear;
+
+		&:hover {
+			background-color: $color_red_light;
+		}
+	}
+
+	.woocommerce-error {
+		display: flex;
+		border-top-color: $color_red;
+
+		&:before {
+			position: unset;
+			color: $color_red;
+			margin-right: 10px;
+		}
+	}
+}
