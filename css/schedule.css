@@ -116,6 +116,10 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
 .gym_shedule_popup .inner[data-step=auth] label input:focus-visible {
   outline: none;
 }
+.gym_shedule_popup .inner[data-step=auth] label input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #000;
+}
 .gym_shedule_popup .inner[data-step=auth] label .error {
   position: relative;
   color: #E10A17;

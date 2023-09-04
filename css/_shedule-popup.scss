@@ -126,6 +126,11 @@ body.shedule_popup {
 					&:focus-visible {
 						outline: none;
 					}
+
+					&:-webkit-autofill {
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: #000;
+					}
 				}
 
 				.error {
