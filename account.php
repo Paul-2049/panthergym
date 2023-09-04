@@ -15,7 +15,7 @@ get_header();
     </div>
 </section>
 <section class="account-section">
-    <div class="w-full mx-auto max-w-[1470px] px-[30px]">
+    <div class="w-full mx-auto max-w-[1470px] px-[30px] text-center">
         <div class="account-head">
             <div class="qr-code">
                 <?php echo do_shortcode('[mepr-show if="loggedin"][kaya_qrcode_dynamic title_align="aligncenter" ecclevel="L" align="aligncenter" css_shadow="1"]https://panthergym.com/staging/member-details/?id=[mepr-account-info field="ID"][/kaya_qrcode_dynamic][/mepr-show]'); ?>
@@ -30,7 +30,7 @@ get_header();
                 </p>
             </div>
         </div>
-        <p class="account-content">
+        <p class="account-content mx-auto">
             <?php
             $text = get_field('sub_text');
             $allowed_html = array(
