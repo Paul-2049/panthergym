@@ -113,8 +113,9 @@ body.shedule_popup {
 
 				input {
 					width: 100%;
-					padding: 17px 0px;
+					padding: 17px 0px 10px;
 					border: none !important;
+					border-radius: 0px;
 					border-bottom: 1px solid $color_black !important;
 					font-size: 16px;
 					font-family: 'Open Sans', sans-serif;
@@ -168,6 +169,15 @@ body.shedule_popup {
 
 				@include mobile {
 					flex-wrap: wrap;
+				}
+
+				&.no_account {
+					.item {
+						@include mobile(575px) {
+							width: auto !important;
+							white-space: nowrap;
+						}
+					}
 				}
 
 				.item {

@@ -103,8 +103,9 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
 }
 .gym_shedule_popup .inner[data-step=auth] label input {
   width: 100%;
-  padding: 17px 0px;
+  padding: 17px 0px 10px;
   border: none !important;
+  border-radius: 0px;
   border-bottom: 1px solid #000000 !important;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
@@ -180,6 +181,12 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
 @media screen and (max-width: 767px) {
   .gym_shedule_popup .inner[data-step=auth] .blocks_by_2 {
     flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 575px) {
+  .gym_shedule_popup .inner[data-step=auth] .blocks_by_2.no_account .item {
+    width: auto !important;
+    white-space: nowrap;
   }
 }
 .gym_shedule_popup .inner[data-step=auth] .blocks_by_2 .item {
