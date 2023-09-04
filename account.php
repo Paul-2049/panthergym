@@ -20,11 +20,11 @@ get_header();
             <div class="qr-code">
                 <?php echo do_shortcode('[mepr-show if="loggedin"][kaya_qrcode_dynamic title_align="aligncenter" ecclevel="L" align="aligncenter" css_shadow="1"]https://panthergym.com/staging/member-details/?id=[mepr-account-info field="ID"][/kaya_qrcode_dynamic][/mepr-show]'); ?>
             </div>
-            <div class="account-wrap">
+            <div class="account-wrap w-full max-w-[894px]">
                 <div class="account-name">
                     <?php echo do_shortcode('[mepr-account-info field="first_name"]'); ?>
                 </div>
-                <p class="welcome-text">
+                <p class="welcome-text text-center">
                     <?php
                     the_field('welcome_text');  ?>
                 </p>
