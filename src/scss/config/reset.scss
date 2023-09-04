@@ -48,6 +48,11 @@ input::-ms-clear {
   display: none;
 }
 
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #000;
+}
+
 button {
   cursor: pointer;
 } 
