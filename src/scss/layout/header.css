@@ -17,7 +17,7 @@
 
   .header-menu {
     @apply flex flex-col gap-[20px] lg:flex-row lg:gap-[36px] text-white lg:justify-end;
-    font-family: Rajdhani;
+    font-family: "Rajdhani", sans-serif;
   }
 
   .cart-block .cart--link.w-inline-block {
