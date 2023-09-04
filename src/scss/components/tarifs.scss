@@ -1,6 +1,6 @@
 @layer components {
   .tarif-head {
-    @apply text-white bg-panther-red-100 pt-[26px] pb-[17px] flex flex-col items-center rounded-t-[4px];
+    @apply text-white bg-panther-red-100 pt-[26px] pb-[17px] flex flex-col items-center rounded-t-[4px] min-h-[225px] justify-between;
 
     .name {
       @apply text-white uppercase text-[24px] leading-[1.1] font-bold font-base mb-[3px];
@@ -9,19 +9,23 @@
     .price {
       @apply text-white font-privacy font-bold leading-[1.1] uppercase text-[50px] relative before:content-['$'] before:text-[24px] before:absolute before:top-0 before:left-0 before:leading-[1.1] before:-translate-x-full before:translate-y-1;
     }
-    .price.small{
+
+    .price.small {
       @apply text-[24px] before:translate-y-0;
     }
 
     .period {
-      @apply text-white font-privacy font-bold leading-[1.1] uppercase text-[20px] mb-[20px] md:mb-[18px];
+      @apply text-white font-privacy font-bold leading-[1.1] uppercase text-[20px] mb-[20px] md:mb-[18px] text-center;
     }
   }
-  .tarif-options.active{
+
+  .tarif-options.active {
     @apply h-auto block;
   }
-  .option {
-    @apply text-[16px] leading-[1.9] font-privacy font-normal text-black py-[20px] pl-[40px] flex flex-col;
+
+
+  .full-membership .option {
+    @apply text-[16px] leading-[1.9] font-privacy font-normal text-black pl-[40px] flex flex-col border-b-[1px] border-black first:pt-[20px];
   }
 
 
@@ -42,8 +46,8 @@
       @apply min-h-[350px];
     }
 
-  .price {
-    @apply before:pr-[5px] after:content-['day'] after:text-[24px] after:lowercase after:absolute after:top-0 after:right-0 after:-translate-x-[-100%] after:translate-y-1 after:pl-[5px] md:text-[64px];
+    .price {
+      @apply before:pr-[5px] after:content-['day'] after:text-[24px] after:lowercase after:absolute after:top-0 after:right-0 after:-translate-x-[-100%] after:translate-y-1 after:pl-[5px] md:text-[64px];
     }
   }
 
