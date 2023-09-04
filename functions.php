@@ -142,7 +142,7 @@ function filter_products()
 			$product = wc_get_product($query->post->ID);
 			$regular_price = $product->price;
 			$sale_price = $product->sale_price; ?>
-			<a href="<?php the_permalink(); ?>" class="product-cart h-fit py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+			<a href="<?php the_permalink(); ?>" class="product-cart py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
 				<div class="thumbail mb-[16px]">
 					<img src="<?php the_post_thumbnail_url(); ?>" alt="">
 				</div>
