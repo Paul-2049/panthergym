@@ -308,11 +308,13 @@ $current_logged_in_user = wp_get_current_user();
             <div class="w3-container">
 
                 <div class="w3-bar w3-black">
-                    <button class="w3-bar-item w3-button tablink <?php if ('userdetails' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'UserDetails')">Member Details</button>
-                    <button class="w3-bar-item w3-button tablink <?php if ('checkins' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'CheckIns')">Check-Ins</button>
-                    <button class="w3-bar-item w3-button tablink <?php if ('qrcodescans' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'QRCodeScans')">QR Code Scans</button>
-                    <button class="w3-bar-item w3-button tablink <?php if ('classes' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Classes')">Classes</button>
-                    <button class="w3-bar-item w3-button tablink <?php if ('wellness' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Wellness')">Wellness Services</button>
+                    <div class="grid grid-cols-5 gap-0 min-w-[919px]">
+                        <button class="w3-bar-item w3-button tablink <?php if ('userdetails' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'UserDetails')">Member Details</button>
+                        <button class="w3-bar-item w3-button tablink <?php if ('checkins' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'CheckIns')">Check-Ins</button>
+                        <button class="w3-bar-item w3-button tablink <?php if ('qrcodescans' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'QRCodeScans')">QR Code Scans</button>
+                        <button class="w3-bar-item w3-button tablink <?php if ('classes' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Classes')">Classes</button>
+                        <button class="w3-bar-item w3-button tablink <?php if ('wellness' === $tab) echo 'w3-active'; ?>" onclick="openTab(event,'Wellness')">Wellness Services</button>
+                    </div>
                 </div>
 
                 <!-- User Details -->
@@ -393,82 +395,147 @@ $current_logged_in_user = wp_get_current_user();
 
                 <!-- Check-Ins -->
                 <div id="CheckIns" class="w3-container w3-border tab" <?php if ('checkins' !== $tab) echo 'style="display:none"'; ?>>
-                    <h2>Check-Ins</h2>
-                    <?php if (is_array($checkins)) : ?>
-                        <ul style="margin-bottom: 50px; height: 300px; overflow-y: scroll;">
-                            <?php
-                            foreach ($checkins as $key => $checkin) {
-                            ?>
-                                <li>
-                                    <script>
-                                        var checkin = moment.utc("<?php echo $checkin; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                        //document.write( checkin.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
-                                        document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                                    </script>
-                                </li>
-                            <?php
+                    <div class="pt-[30px] px-[15px] md:px-[26px] min-h-[520px]">
+                        <?php
+                        sort($checkins);
+                        $currentYear = date("Y");
+                        $currentMonth = date("F");
+
+                        // Массив месяцев
+                        $months = [
+                            "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+                        ];
+
+                        echo '<ul class="tabs-nav flex justify-between gap-[23px] overflow-x-auto overflow-y-hidden">';
+
+                        foreach ($months as $month) {
+                            $isActive = ($month === $currentMonth) ? 'active' : '';
+                            $isClickable = false;
+                            foreach ($checkins as $checkin) {
+                                $checkinDate = new DateTime($checkin);
+                                if ($checkinDate->format("Y") == $currentYear && $checkinDate->format("F") == $month) {
+                                    $isClickable = true;
+                                    break;
+                                }
                             }
-                            ?>
-                        </ul>
-                    <?php else : ?>
-                        No Check-Ins Found
-                    <?php endif; ?>
+                            $isClickableClass = ($isClickable) ? '' : 'not-clickable';
+                            echo "<li class='$isActive $isClickableClass tab-item' data-tab-target='#tab-$month-checkin'>$month</li>";
+                        }
+
+                        echo '</ul>';
+                        ?>
+                        <?php
+                        sort($checkins);
+                        $currentMonth = null;
+                        $currentYear = date("Y");
+                        $currentYearText = date("y");
+                        foreach ($checkins as $key => $checkin) {
+                            $checkinDate = new DateTime($checkin);
+                            $year = $checkinDate->format("Y");
+                            if ($year == $currentYear) {
+                                $month = $checkinDate->format("F");
+                                $class = ($month == date('F')) ? 'active' : '';
+                                if ($month !== $currentMonth) {
+                                    if ($currentMonth !== null) {
+                                        echo "</div></div>";
+                                    }
+                                    echo "<div class='tabs-content max-w-[625px] w-full mx-auto mt-[25px] md:mt-[47px] pb-[40px] md:pb-[80px] $class' data-tab-content id='tab-$month-checkin'><p class='text-[24px] font-bold leading-[1.3] text-right mb-[25px] md:mb-[47px] flex items-start justify-end gap-[18px]'>$month <span class='text-[48px] leading-[1.1]'>‘$currentYearText</span>
+                                    </p><div class='grid grid-cols-4 gap-[25px] md:grid-cols-7 lg:gap-[50px]'>";
+                                    $currentMonth = $month;
+                                }
+                                echo "<div class='text-center'>";
+                                echo "<p class='text-panther-red-100 font-bold text-[32px] leading-[1.1]'>  <script>
+            var checkin = moment.utc('$checkin', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
+            document.write(checkin.format('DD'));
+        </script></p>";
+                                echo "<p class='text-black font-privacy font-bold uppercase leading-[1]'>  <script>
+            var checkin = moment.utc('$checkin', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
+            document.write(checkin.format(`hh:mm <br/> a`));
+        </script></p>";
+                                echo "</div>";
+                            }
+                        }
+
+                        if ($currentMonth !== null) {
+                            echo "</div></div>";
+                        }
+                        ?>
+
+
+
+                    </div>
                 </div>
                 <!-- /Check-Ins -->
 
                 <!-- QR Code Scans -->
                 <div id="QRCodeScans" class="w3-container w3-border tab" <?php if ('qrcodescans' !== $tab) echo 'style="display:none"'; ?>>
                     <div class="pt-[30px] px-[15px] md:px-[26px] min-h-[520px]">
-                        <ul class="tabs-nav flex justify-between gap-[23px] overflow-x-auto overflow-y-hidden">
-                            <li class="active tab-item" data-tab-target="#tab-January">January</li>
-                            <li class="tab-item" data-tab-target="#tab-February">February</li>
-                            <li class="tab-item" data-tab-target="#tab-March">March</li>
-                            <li class="tab-item" data-tab-target="#tab-April">April</li>
-                            <li class="tab-item" data-tab-target="#tab-May">May</li>
-                            <li class="tab-item" data-tab-target="#tab-June">June</li>
-                            <li class="tab-item" data-tab-target="#tab-Jule">Jule</li>
-                            <li class="tab-item" data-tab-target="#tab-August">August</li>
-                            <li class="tab-item" data-tab-target="#tab-September">September</li>
-                            <li class="tab-item" data-tab-target="#tab-October">October</li>
-                            <li class="tab-item" data-tab-target="#tab-November">November</li>
-                            <li class="tab-item" data-tab-target="#tab-December">December</li>
-                        </ul>
                         <?php
                         sort($scans);
+                        $currentYear = date("Y");
+                        $currentMonth = date("F");
 
-                        $currentMonth = null;
-                        $i = 0;
-                        foreach ($scans as $key => $scan) {
-                            $i++;
-                            if($i==1){
-                                $class = 'active';
-                            }else{
-                                $class = '';
-                            }
-                            $scanDate = new DateTime($scan);
-                            $month = $scanDate->format("F");
-                            if ($month !== $currentMonth) {
-                                if ($currentMonth !== null) {
-                                    echo "</div></div>";
+                        // Массив месяцев
+                        $months = [
+                            "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+                        ];
+
+                        echo '<ul class="tabs-nav flex justify-between gap-[23px] overflow-x-auto overflow-y-hidden">';
+
+                        foreach ($months as $month) {
+                            $isActive = ($month === $currentMonth) ? 'active' : '';
+                            $isClickable = false;
+                            foreach ($scans as $scan) {
+                                $scanDate = new DateTime($scan);
+                                if ($scanDate->format("Y") == $currentYear && $scanDate->format("F") == $month) {
+                                    $isClickable = true;
+                                    break;
                                 }
-                                echo "<div class='$class tabs-content max-w-[625px] w-full mx-auto mt-[25px] md:mt-[47px]' data-tab-content id='tab-$month'> <p class='text-[24px] font-bold leading-[1.1] text-right mb-[25px] md:mb-[47px]'>$month</p><div class='grid grid-cols-4 gap-[25px] md:grid-cols-7 lg:gap-[50px]'>";
-                                $currentMonth = $month;
                             }
-                            echo "<div class='text-center'>";
-                            echo "<p class='text-panther-red-100 font-bold text-[32px] leading-[1.1]'>  <script>
-                            var scan = moment.utc('$scan', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
-                            document.write(scan.format('DD'));
-                        </script></p>";
-                            echo "<p class='text-black font-privacy font-bold uppercase leading-[1]'>  <script>
-                            var scan = moment.utc('$scan', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
-                            document.write(scan.format(`hh:mm <br/> a`));
-                        </script></p>";
-                            echo "</div>";
+                            $isClickableClass = ($isClickable) ? '' : 'not-clickable';
+                            echo "<li class='$isActive $isClickableClass tab-item' data-tab-target='#tab-$month-scan'>$month</li>";
                         }
+
+                        echo '</ul>';
+                        ?>
+                        <?php
+                        sort($scans);
+                        $currentMonth = null;
+                        $currentYear = date("Y");
+                        $currentYearText = date("y");
+                        foreach ($scans as $key => $scan) {
+                            $scanDate = new DateTime($scan);
+                            $year = $scanDate->format("Y");
+                            if ($year == $currentYear) {
+                                $month = $scanDate->format("F");
+                                $class = ($month == date('F')) ? 'active' : '';
+                                if ($month !== $currentMonth) {
+                                    if ($currentMonth !== null) {
+                                        echo "</div></div>";
+                                    }
+                                    echo "<div class='tabs-content max-w-[625px] w-full mx-auto mt-[25px] md:mt-[47px] pb-[40px] md:pb-[80px] $class' data-tab-content id='tab-$month-scan'><p class='text-[24px] font-bold leading-[1.3] text-right mb-[25px] md:mb-[47px] flex items-start justify-end gap-[18px]'>$month <span class='text-[48px] leading-[1.1]'>‘$currentYearText</span>
+                                    </p><div class='grid grid-cols-4 gap-[25px] md:grid-cols-7 lg:gap-[50px]'>";
+                                    $currentMonth = $month;
+                                }
+                                echo "<div class='text-center'>";
+                                echo "<p class='text-panther-red-100 font-bold text-[32px] leading-[1.1]'>  <script>
+            var scan = moment.utc('$scan', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
+            document.write(scan.format('DD'));
+        </script></p>";
+                                echo "<p class='text-black font-privacy font-bold uppercase leading-[1]'>  <script>
+            var scan = moment.utc('$scan', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
+            document.write(scan.format(`hh:mm <br/> a`));
+        </script></p>";
+                                echo "</div>";
+                            }
+                        }
+
                         if ($currentMonth !== null) {
                             echo "</div></div>";
                         }
                         ?>
+
+
 
                     </div>
                 </div>
