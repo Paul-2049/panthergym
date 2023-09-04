@@ -160,7 +160,7 @@ function filter_products()
 					<?php echo ($sale_price ? '$ ' . $sale_price : '$ ' . $regular_price); ?>
 				</div>
 			</a>
-<?php }
+		<?php }
 		wp_reset_postdata();
 	} else {
 		echo 'Not found';
@@ -192,3 +192,53 @@ add_action('wp_ajax_nopriv_filter_products', 'filter_products');
  */
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_login_form' );
+
+
+// Добавляем placeholder для всех полей на странице Checkout
+add_filter( 'woocommerce_checkout_fields', function( $fields ) {
+	if( !empty($fields) ) foreach ( $fields as $type => $val ) {
+		if ( !empty($val) ) foreach ( $val as $key => $attr ) {
+			if ( !empty($attr) && ( !array_key_exists('placeholder', $attr ) || empty( $attr['placeholder'] ) ) ) {
+				$fields[$type][$key]['placeholder'] = $attr['label'];
+
+				if($type == 'billing' && $key == 'billing_postcode') {
+					$fields[$type][$key]['class'][] = 'form-row-first';
+
+					if( ($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false ) {
+						unset( $fields[$type][$key]['class'][$key_id] );
+					}
+				}
+
+				if($type == 'billing' && $key == 'billing_phone') {
+					$fields[$type][$key]['class'][] = 'form-row-last';
+
+					if( ($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false ) {
+						unset( $fields[$type][$key]['class'][$key_id] );
+					}
+				}
+			}
+		}
+	}
+
+	return $fields;
+}, 10, 1 );
+
+/**
+ * Update the checkout create an account text
+ */
+add_filter( 'gettext', function ( $translated_text, $text, $domain ) {
+
+	// if not woocommerce then return
+	if ( 'woocommerce' !== $domain ) {
+		return $translated_text;
+	}
+
+	// check translated text and update
+	switch ( $translated_text ) {
+		case 'Create an account?' :
+			$translated_text = __( 'Checking out as Guest. Create and account?', 'woocommerce' );
+			break;
+	}
+	return $translated_text;
+
+}, 10, 3 );
