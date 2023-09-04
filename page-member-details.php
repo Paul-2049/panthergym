@@ -297,96 +297,6 @@ $current_logged_in_user = wp_get_current_user();
 
 <section class="member-details-section max-w-[919px] w-full mx-auto pb-[80px] lg:pb-[193px]">
     <h1 class="leading-[1.1] font-bold text-center text-[32px] md:text-[40px] uppercase mb-[20px] md:mb-[40px] text-black"><?php echo get_the_title(); ?></h1>
-    <!-- Show COnfirmation box -->
-    <?php /* if (array_key_exists('confirmation', $_GET)) : ?>
-        <?php if ('checkin_complete' === $_GET['confirmation']) : ?>
-            <div class="section">
-                <div class="container--1248 confirmation">
-                    <div>Check-In Complete</div>
-                </div>
-            </div>
-        <?php endif; ?>
-    <?php endif; */ ?>
-
-    <!-- Only show this section if they have a valid membership -->
-    <?php /* if ($valid_membership && $user_id) : ?>
-        <div class="section is--search-memberships">
-            <div class="container--1248 is--800" style="display: flex; flex-direction: column; padding-top: 50px;">
-                <h2>Available Actions</h2>
-                <div class="available-actions-info">Membership Level: <strong><?php echo $membership_title; ?></strong></div>
-                <div class="available-actions-info">Membership Status: <strong><?php echo $membership_status; ?></strong></div>
-                <div class="available-actions-info">Checked-in Today?
-                    <?php if ($checked_in_today) : ?>
-                        <span class="yes">YES</span>
-                    <?php else : ?>
-                        <span class="no">NO</span>
-                    <?php endif; ?>
-                    ( Latest check-in on:
-                    <script>
-                        var checkin = moment.utc("<?php echo $checkins[0]; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                        document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                    </script>
-                    )
-                </div>
-                <?php if ($valid_membership && 'free-membership' === $membership_type) : ?>
-                    <div class="available-actions-info">Drop-In Used Today?
-                        <?php if ($drop_in_used_this_date) : ?>
-                            <span class="yes">YES</span>
-                        <?php else : ?>
-                            <span class="no">NO</span>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
-
-                <div class="available-actions">
-
-                    <!-- If they have dropins with gear -->
-                    <?php if (count($dropins_with_gear) > 0 && !$checked_in_today && !$drop_in_used_this_date) : ?>
-                        <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doDropInCheckInAjax( event, <?php echo $user_id; ?>, 'with_gear', '<?php echo $event_date; ?>' )">
-                            Use Drop-In with Gear and Check-In
-                        </button>
-                    <?php endif; ?>
-
-                    <!-- If they have dropins without gear -->
-                    <?php if (count($dropins_without_gear) > 0 && !$checked_in_today && !$drop_in_used_this_date) : ?>
-                        <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doDropInCheckInAjax( event, <?php echo $user_id; ?>, 'without_gear', '<?php echo $event_date; ?>' )">
-                            Use Drop-In without Gear and Check-In
-                        </button>
-                    <?php endif; ?>
-
-                    <!-- Checkin -->
-                    <?php if (!$checked_in_today && ($drop_in_used_this_date || 'full-membership' === $membership_type)) : ?>
-                        <button type="button" class="elementor-button-link elementor-button elementor-size-sm" role="button" style="text-decoration: none;" onclick="doCheckIn( <?php echo $user_id; ?> )">
-                            Check-In
-                        </button>
-                    <?php endif; ?>
-
-
-                    <!-- Show Drop-In Purchase for Free Members only with valid membership -->
-                    <?php if ($valid_membership && 'free-membership' === $membership_type) : ?>
-                        <!-- <form action="<?php echo home_url('/member-purchase-drop-in/'); ?>" method="get">
-                                <input type="hidden" name="id" value="<?php echo $user_id; ?>">
-                                <input type="submit" value="Purchase a Drop-In">
-                            </form> -->
-                    <?php endif; ?>
-
-                    <?php if ($valid_membership && 'full-membership' === $membership_type && !$checked_in_today) : ?>
-                        <!-- <form action="" method="post">
-                                <input type="hidden" name="check_in" value="now">
-                                <input type="submit" value="Check-In">
-                            </form> -->
-                    <?php endif; ?>
-
-                    <!-- <button>Purchase at Juice Bar</button> -->
-                </div>
-            </div>
-        </div>
-    <?php endif; */ ?>
-    <!-- /Only show this section if they have a valid membership -->
-
-    <!-- <div class="section is--search-memberships wf-section">
-    <div class="container--1248 is--800"> -->
-
     <?php
     // continue as long as there is an id
     if ($user_id) {
@@ -508,22 +418,59 @@ $current_logged_in_user = wp_get_current_user();
 
                 <!-- QR Code Scans -->
                 <div id="QRCodeScans" class="w3-container w3-border tab" <?php if ('qrcodescans' !== $tab) echo 'style="display:none"'; ?>>
-                    <h2>QR Code Scans</h2>
-                    <ul style="margin-bottom: 50px; height: 300px; overflow-y: scroll;">
+                    <div class="pt-[30px] px-[15px] md:px-[26px] min-h-[520px]">
+                        <ul class="tabs-nav flex justify-between gap-[23px] overflow-x-auto overflow-y-hidden">
+                            <li class="active tab-item" data-tab-target="#tab-January">January</li>
+                            <li class="tab-item" data-tab-target="#tab-February">February</li>
+                            <li class="tab-item" data-tab-target="#tab-March">March</li>
+                            <li class="tab-item" data-tab-target="#tab-April">April</li>
+                            <li class="tab-item" data-tab-target="#tab-May">May</li>
+                            <li class="tab-item" data-tab-target="#tab-June">June</li>
+                            <li class="tab-item" data-tab-target="#tab-Jule">Jule</li>
+                            <li class="tab-item" data-tab-target="#tab-August">August</li>
+                            <li class="tab-item" data-tab-target="#tab-September">September</li>
+                            <li class="tab-item" data-tab-target="#tab-October">October</li>
+                            <li class="tab-item" data-tab-target="#tab-November">November</li>
+                            <li class="tab-item" data-tab-target="#tab-December">December</li>
+                        </ul>
                         <?php
+                        sort($scans);
+
+                        $currentMonth = null;
+                        $i = 0;
                         foreach ($scans as $key => $scan) {
-                        ?>
-                            <li>
-                                <script>
-                                    var scan = moment.utc("<?php echo $scan; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                    //document.write( scan.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
-                                    document.write(scan.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                                </script>
-                            </li>
-                        <?php
+                            $i++;
+                            if($i==1){
+                                $class = 'active';
+                            }else{
+                                $class = '';
+                            }
+                            $scanDate = new DateTime($scan);
+                            $month = $scanDate->format("F");
+                            if ($month !== $currentMonth) {
+                                if ($currentMonth !== null) {
+                                    echo "</div></div>";
+                                }
+                                echo "<div class='$class tabs-content max-w-[625px] w-full mx-auto mt-[25px] md:mt-[47px]' data-tab-content id='tab-$month'> <p class='text-[24px] font-bold leading-[1.1] text-right mb-[25px] md:mb-[47px]'>$month</p><div class='grid grid-cols-4 gap-[25px] md:grid-cols-7 lg:gap-[50px]'>";
+                                $currentMonth = $month;
+                            }
+                            echo "<div class='text-center'>";
+                            echo "<p class='text-panther-red-100 font-bold text-[32px] leading-[1.1]'>  <script>
+                            var scan = moment.utc('$scan', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
+                            document.write(scan.format('DD'));
+                        </script></p>";
+                            echo "<p class='text-black font-privacy font-bold uppercase leading-[1]'>  <script>
+                            var scan = moment.utc('$scan', 'YYYY-MM-DD HH:mm:ss').tz('America/Edmonton');
+                            document.write(scan.format(`hh:mm <br/> a`));
+                        </script></p>";
+                            echo "</div>";
+                        }
+                        if ($currentMonth !== null) {
+                            echo "</div></div>";
                         }
                         ?>
-                    </ul>
+
+                    </div>
                 </div>
                 <!-- /QR Code Scans -->
 
@@ -643,6 +590,7 @@ $current_logged_in_user = wp_get_current_user();
     <!-- </div>
 </div> -->
 </section>
+
 
 <?php
 get_footer();
