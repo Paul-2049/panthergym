@@ -48,16 +48,18 @@
                 <!-- information tabs -->
                 <div class="w3-container">
                     <div class="w3-bar w3-black">
-                        <button class="w3-bar-item w3-button tablink w3-active"
-                            onclick="openTab(event,'UserDetails')">Member Details</button>
-                        <button class="w3-bar-item w3-button tablink"
-                            onclick="openTab(event,'CheckIns')">Check-Ins</button>
-                        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'QRCodeScans')">QR Code
-                            Scans</button>
-                        <button class="w3-bar-item w3-button tablink"
-                            onclick="openTab(event,'Classes')">Classes</button>
-                        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Wellness')">Wellness
-                            Services</button>
+                        <div class="grid grid-cols-5 gap-0 min-w-[919px]">
+                            <button class="w3-bar-item w3-button tablink w3-active"
+                                onclick="openTab(event,'UserDetails')">Member Details</button>
+                            <button class="w3-bar-item w3-button tablink"
+                                onclick="openTab(event,'CheckIns')">Check-Ins</button>
+                            <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'QRCodeScans')">QR Code
+                                Scans</button>
+                            <button class="w3-bar-item w3-button tablink"
+                                onclick="openTab(event,'Classes')">Classes</button>
+                            <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Wellness')">Wellness
+                                Services</button>
+                        </div>
                     </div>
 
                     <!-- User Details -->
@@ -106,16 +108,34 @@
 
                     <!-- Check-Ins -->
                     <div id="CheckIns" class="w3-container w3-border tab" style="display:none">
-                        <h2>Check-Ins</h2>
-                        <ul style="margin-bottom: 50px; height: 300px; overflow-y: scroll;">
-                            <li>
-                                <script>
-                                    var checkin = moment.utc("<?php echo $checkin; ?>", "YYYY-MM-DD HH:mm:ss").tz("America/Edmonton");
-                                    //document.write( checkin.format("dddd, MMMM Do YYYY, h:mm:ss a") );  // includes day
-                                    document.write(checkin.format("MMMM Do YYYY, h:mm:ss a")); // without day
-                                </script>
-                            </li>
-                        </ul>
+                        <div class="pt-[30px] px-[15px] md:px-[26px] min-h-[520px]">
+                            <ul class="tabs-nav flex justify-between gap-[23px] overflow-x-auto overflow-y-hidden">
+                                <li class="active tab-item" data-tab-target="#tab-January">January</li>
+                                <li class="tab-item" data-tab-target="#tab-February">February</li>
+                                <li class="tab-item" data-tab-target="#tab-March">March</li>
+                                <li class="tab-item" data-tab-target="#tab-April">April</li>
+                                <li class="tab-item" data-tab-target="#tab-May">May</li>
+                                <li class="tab-item" data-tab-target="#tab-June">June</li>
+                                <li class="tab-item" data-tab-target="#tab-Jule">Jule</li>
+                                <li class="tab-item" data-tab-target="#tab-August">August</li>
+                                <li class="tab-item" data-tab-target="#tab-September">September</li>
+                                <li class="tab-item" data-tab-target="#tab-October">October</li>
+                                <li class="tab-item" data-tab-target="#tab-November">November</li>
+                                <li class="tab-item" data-tab-target="#tab-December">December</li>
+                            </ul>
+                            <div class="active tabs-content max-w-[625px] w-full mx-auto mt-[25px] md:mt-[47px]"
+                                data-tab-content id="tab-January">
+                                <p class="text-[24px] font-bold leading-[1.1] text-right mb-[25px] md:mb-[47px]">January
+                                </p>
+                                <div class="grid grid-cols-4 gap-[25px] md:grid-cols-7 lg:gap-[50px]">
+                                    <div class="text-center">
+                                        <p class="text-panther-red-100 font-bold text-[32px] leading-[1.1]">30</p>
+                                        <p class="text-black font-privacy font-bold uppercase leading-[1]">08:30<br>pm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <!-- /Check-Ins -->
 
