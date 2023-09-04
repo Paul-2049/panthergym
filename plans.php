@@ -40,7 +40,7 @@ get_header();
         $content = wp_kses($content, $allowed_html);
         $content = str_replace($search, $replace, $content);
     ?>
-        <section class="lg:pb-[108px] lg:pt-[148px] pb-[72px] pt-[104px] px-[30px]">
+        <section class="lg:pb-[108px] lg:pt-[148px] pb-[72px] pt-[104px] px-[30px] full-membership">
             <h2 class="h2 text-center mb-[25px]">
                 <?php echo esc_html($title); ?>
             </h2>
@@ -68,16 +68,21 @@ get_header();
                     ?>
                         <div class="tarif-js">
                             <div class="tarif-head">
-                                <div class="name">
-                                    – <?php echo esc_html($name); ?> –
+                                <div class="flex flex-col items-center">
+                                    <div class="name">
+                                        – <?php echo esc_html($name); ?> –
+                                    </div>
+                                    <div class="price <?php echo $size_price == 'small' ? 'small' : 'big'; ?>">
+                                        <?php echo esc_html($price); ?>
+                                    </div>
                                 </div>
-                                <div class="price <?php echo $size_price == 'small' ? 'small' : 'big'; ?>">
-                                    <?php echo esc_html($price); ?>
+                                <div class="flex flex-col items-center">
+                                    <div class="period">
+                                        <?php echo esc_html($period); ?>
+                                    </div>
+                                    <a href="<?php echo esc_url($cta['url']); ?>" class="btn-get"><?php echo esc_html($cta['title']); ?></a>
                                 </div>
-                                <div class="period">
-                                    <?php echo esc_html($period); ?>
-                                </div>
-                                <a href="<?php echo esc_url($cta['url']); ?>" class="btn-get"><?php echo esc_html($cta['title']); ?></a>
+
                             </div>
                             <div class="hidden border-b-[1px] border-black border-l-[1px] border-r-[1px] h-[0] md:block md:border-none md:h-auto rounded-b-[4px] tarif-options">
 
