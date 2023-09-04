@@ -38,7 +38,7 @@ $title = str_replace($search, $replace, $title);
 
         <div class="flex flex-col lg:flex-row max-w-[1260px] w-full mx-auto">
             <div class="flex flex-col">
-                <span class="lg:px-[22px] font-privacy leading-[1.5] text-[20px] font-bold lg:mb-[42px] block cursor-pointer relative mb-[15px]">Choose
+                <span class="lg:px-[22px] font-privacy leading-[1.5] text-[20px] font-bold lg:mb-[42px] block relative mb-[15px]">Choose
                     the topic:</span>
                 <ul class="tabs-nav lg:mr-[-15px] h-[51px] lg:h-auto overflow-hidden mb-[20px] lg:mb-0 gap-1 flex flex-col">
                     <div class="active-tab text-[18px] w-full font-privacy leading-[1] lg:hidden h-[51px] flex items-center justify-start relative rounded-[2px] min border-[1px] border-panther-grey-200 py-[10px] px-[15px] mb-[15px] after:absolute after:right-[15px] after:w-2 after:h-2 min-h-[46px] after:border-r-[1px] after:border-b-[1px] after:border-panther-grey-200 after:rotate-45 after:transition-transform after:duration-200 after:ease-in">
@@ -62,7 +62,7 @@ $title = str_replace($search, $replace, $title);
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M16.2643 17.0848L11.1555 11.976L12.3628 10.7687L17.4716 15.8775L16.2643 17.0848Z" fill="#E7E5E5" />
 						</svg>
 					</button>
-					<input class="js-search-input w-full py-[10px] pr-[15px] lg:py-[18px] lg:pr-[20px]" type="text" placeholder="Search by keyword">
+					<input class="js-search-input w-full py-[10px] pr-[15px] lg:py-[18px] lg:pr-[20px] font-privacy placeholder:font-privacy" type="text" placeholder="Search by keyword">
 				</form>
                 <?php while (have_rows('tabs_item')) : the_row();
                 ?>
