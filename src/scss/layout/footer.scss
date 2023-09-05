@@ -1,6 +1,6 @@
 @layer components {
   .footer-item-link {
-    @apply text-white uppercase text-[16px] leading-[32px] font-normal;
+    @apply text-white uppercase text-[16px] leading-[32px] font-normal hover:text-panther-red-100 transition-colors duration-200 ease-in;
   }
 
   .footer__container {
