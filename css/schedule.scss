@@ -344,6 +344,13 @@ body.page-template-calendar {
 				color: $color_black;
 				border-bottom: 1px solid $color_black;
 				line-height: 1.1;
+				cursor: pointer;
+
+				&:hover {
+					.title .name {
+						color: $color_red
+					}
+				}
 
 				&:last-child {
 					@include mobile {
@@ -426,6 +433,7 @@ body.page-template-calendar {
 						font-size: 16px;
 						font-weight: 700;
 						margin-bottom: 8px;
+						transition: all 0.3s linear;
 
 						@include mobile {
 							margin-bottom: 4px;

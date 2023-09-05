@@ -744,6 +744,10 @@ body.page-template-calendar .schedule_calendar .schedule_list .item {
   color: #000000;
   border-bottom: 1px solid #000000;
   line-height: 1.1;
+  cursor: pointer;
+}
+body.page-template-calendar .schedule_calendar .schedule_list .item:hover .title .name {
+  color: #E10A17;
 }
 @media screen and (max-width: 767px) {
   body.page-template-calendar .schedule_calendar .schedule_list .item:last-child {
@@ -828,6 +832,7 @@ body.page-template-calendar .schedule_calendar .schedule_list .item .title .name
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
+  transition: all 0.3s linear;
 }
 @media screen and (max-width: 767px) {
   body.page-template-calendar .schedule_calendar .schedule_list .item .title .name {
