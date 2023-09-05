@@ -44,7 +44,7 @@ get_header();
     $content = wp_kses($content, $allowed_html);
     $content = str_replace($search, $replace, $content);
   ?>
-    <section class="full-drop-in-pricing full-membership lg:pt-[152px] pt-[104px] px-[30px]">
+    <section class="full-drop-in-pricing lg:pt-[152px] pt-[104px] px-[30px]">
       <h2 class="h2 mb-[25px] text-center">
         <?php echo esc_html($title); ?>
       </h2>

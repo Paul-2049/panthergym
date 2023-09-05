@@ -1409,7 +1409,7 @@ video {
     margin-right: 33px;
   }
 }
-.full-membership .option{
+.option{
   display: flex;
   flex-direction: column;
   border-bottom-width: 1px;
@@ -1425,7 +1425,7 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.full-membership .option:last-child{
+.option:last-child{
   border-style: none;
 }
 .full-drop-in-pricing .tarif{
