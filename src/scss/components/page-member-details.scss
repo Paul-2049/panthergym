@@ -1,0 +1,45 @@
+@layer components {
+    .member-details-section {
+        .w3-container {
+            @apply max-w-[1110px] w-full shadow-card-membership-shadow;
+        }
+
+        .w3-bar {
+            @apply overflow-x-auto;
+        }
+
+        .w3-button {
+            @apply uppercase font-bold leading-[1.1] text-[16px] py-[20px] px-[20px] bg-panther-grey-1000 border-t-[3px] border-transparent hover:bg-panther-grey-800 transition-colors duration-200 ease-in;
+
+        }
+
+        .w3-button.w3-active {
+            @apply bg-white border-panther-red-100;
+        }
+    }
+
+    #UserDetails {
+        .avatar {
+            @apply rounded-full overflow-hidden w-[206px] h-[206px] shadow-avatar-shadow;
+        }
+        .wpkqcg_qrcode_wrapper img{
+            box-shadow: none !important;
+        }
+    }
+
+    #QRCodeScans,
+    #CheckIns {
+        .tab-item {
+            @apply p-0 m-0 bg-transparent font-base font-bold text-[16px] leading-[1.1];
+            clip-path: unset;
+        }
+
+        .tab-item.active {
+            @apply text-panther-red-100;
+        }
+
+        .tab-item.not-clickable {
+            @apply text-panther-grey-1000 pointer-events-none;
+        }
+    }
+}

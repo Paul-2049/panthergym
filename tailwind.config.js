@@ -39,11 +39,13 @@ export default {
           700: "#F4F4F4",
           800: "#F0F0F0",
           900: "#646464",
+          1000: "#DCE0E6",
         },
       },
       backgroundImage: {
         'red-bg': "url('../images/main-red-bg.png')",
         'checkbox-woo': "url('../images/checkbox-woo.svg')",
+        'search-icon': "url('../images/search-icon.svg')",
         'swiper-next': "url('../images/swiper-next.svg')",
         'swiper-prev': "url('../images/swiper-prev.svg')",
         'skew-bg-red': "url('../images/skew-bg-red.png')",
@@ -63,6 +65,8 @@ export default {
       boxShadow: {
         'card-shadow': '0px 0px 40px 0px rgba(0, 0, 0, 0.16)',
         'item-shadow': '0px 0px 40px 0px rgba(0, 0, 0, 0.70)',
+        'avatar-shadow': '0px 0px 10px 0px rgba(0, 0, 0, 0.25) inset',
+        'card-membership-shadow': '0px 0px 50px 0px rgba(0, 0, 0, 0.07)',
       }
     },
     fontFamily: {

@@ -20,7 +20,7 @@
     }
 
     .welcome-text {
-        @apply text-[40px] text-black font-bold leading-[1.1] uppercase text-center lg:text-left;
+        @apply text-[40px] text-black font-bold leading-[1.1] uppercase text-center lg:text-center;
     }
 
     .account-content {
@@ -44,11 +44,19 @@
     }
 
     .mp_wrapper {
-        @apply last:w-full last:max-w-[900px] last:text-center;
+        @apply last:w-full last:max-w-[900px] last:text-center mx-auto;
     }
 
     .mp_wrapper .mepr-account-change-password {
         @apply text-center text-panther-red-100;
+    }
+
+    .mp_wrapper .mepr-unauthorized-message {
+        @apply font-privacy text-black font-normal;
+    }
+
+    .mp_wrapper .mepr-login-actions {
+        @apply font-privacy text-black font-normal;
     }
 
     .mp_wrapper button,

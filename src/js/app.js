@@ -142,7 +142,6 @@ const swiper2 = new Swiper('.feedbackSwiper', {
     delay: 5000,
   },
 });
-
 const bullet_product = new Swiper('.bullet-slider-product', {
   spaceBetween: 22,
   slidesPerView: 4,
@@ -156,7 +155,6 @@ const mainProduct = new Swiper('.main-slider-product', {
     swiper: bullet_product,
   },
 });
-
 /* Библиотека для анимаций ===============================================================================
  *  документация: https://michalsnik.github.io/aos
  */
@@ -271,6 +269,39 @@ jQuery(document).ready(function ($) {
   $('.search--result-close-btn').on('click', function () {
     $('.search-popup').removeClass('active');
   });
+  $('.variable-items-wrapper[data-attribute_name="attribute_color"] li').on('click', function () {
+    var selectedColor = $(this).data('value');
+    var firstMatchFoundMain = false;
+    var firstMatchFoundBullet = false;
+
+    $('.attribute-image').each(function () {
+      var attributeColorMain = $(this).data('attribute_color');
+      if (attributeColorMain === selectedColor && !firstMatchFoundMain) {
+        $(this).css('display', 'block');
+        firstMatchFoundMain = true;
+        mainProduct.update();
+        var slideIndex = $(this).index();
+        mainProduct.slideTo(slideIndex);
+      } else {
+        $(this).css('display', 'none');
+      }
+    });
+
+    $('.bullet-attribute-image').each(function () {
+      var attributeColorBullet = $(this).data('attribute_color');
+      if (attributeColorBullet === selectedColor && !firstMatchFoundBullet) {
+        $(this).css('display', 'block');
+        $(this).addClass('swiper-slide-thumb-active');
+        firstMatchFoundBullet = true;
+        bullet_product.update();
+        var slideIndex = $(this).index();
+        bullet_product.slideTo(slideIndex);
+      } else {
+        $(this).css('display', 'none');
+        $(this).removeClass('swiper-slide-thumb-active');
+      }
+    });
+  });
 });
 // search =============================================================================================
 function highlightTabsContent(searchText) {
@@ -331,7 +362,6 @@ if (searchButton) {
     highlightTabsContent(searchText);
   });
 }
-
 // checkout page =================================================================================================
 var shipToDifferentAddressCheckbox = document.getElementById('ship-to-different-address-checkbox');
 var shippingAddress = document.querySelector('.shipping_address');
@@ -347,19 +377,3 @@ if (shipToDifferentAddressCheckbox) {
     }
   });
 }
-// add to card single product ===================================================================================
-const quantityInput = document.getElementById('quantityInput');
-const increaseButton = document.getElementById('increaseQuantity');
-const decreaseButton = document.getElementById('decreaseQuantity');
-
-increaseButton.addEventListener('click', () => {
-  let currentValue = parseInt(quantityInput.value);
-  quantityInput.value = currentValue + 1;
-});
-
-decreaseButton.addEventListener('click', () => {
-  let currentValue = parseInt(quantityInput.value);
-  if (currentValue > 1) {  // Изменили условие на currentValue > 1
-    quantityInput.value = currentValue - 1;
-  }
-});
