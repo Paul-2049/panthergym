@@ -21,7 +21,9 @@
 
 
 @mixin button_white {
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: auto;
 	height: 50px;
 	background: $color_white;

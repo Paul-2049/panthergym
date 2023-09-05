@@ -5,9 +5,9 @@
 		</div>
 
 		<div class="actions">
-			<button type="button" id="get_started_today">
+			<a href="<?= get_site_url(); ?>/plans/" class="button" id="get_started_today">
 				Get started today
-			</button>
+			</a>
 		</div>
 	</div>
 </div>

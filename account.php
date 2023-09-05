@@ -5,24 +5,32 @@
 */
 get_header();
 ?>
-<section class="flex h-[505px] items-end justify-end lg:h-[500px] relative">
+<section class="flex items-end justify-end <?= !is_lost_password_page() ? 'h-[505px] lg:h-[500px]' : 'h-[130px] md:h-[177px]'; ?> relative">
     <div class="absolute left-0 top-0 bg-black bottom-0 right-0 overflow-hidden">
         <img class="w-full h-full object-cover object-left-top sm:hidden" src="<?php the_field('bg_image_mob'); ?>" alt="">
         <img class="w-full h-full object-cover object-left-top hidden sm:block" src="<?php the_field('bg_image'); ?>" alt="">
     </div>
+
+	<?php if(!is_lost_password_page()) { ?>
     <div class="flex items-center 2xl:pl-[101px] bg-no-repeat bg-panther-red-100 bg-right-top clip-left h-[163px] justify-start lg:bg-red-bg lg:bg-transparent lg:h-[351px] lg:items-end lg:pb-[40px] lg:pl-[8%] lg:pr-[20px] lg:translate-y-[10%] lg:w-[50%] pb-[43px] pl-[12%] pt-[33px] text-left translate-y-[27%] w-[95%] xl:w-[48%] opacity-90">
         <h1 class="text-white h1"><?php the_title(); ?></h1>
     </div>
+	<?php } ?>
 </section>
+
+<?php if(is_lost_password_page()) {
+	echo do_shortcode('[gym_schedule id="head_bar"]Join now for $0 enrolment on the Ultimate and Performance Memberships! Ends August 31![/gym_schedule]');
+} ?>
+
 <section class="account-section">
-    <div class="w-full mx-auto max-w-[1470px] px-[30px] text-center">
+    <div class="container w-full mx-auto max-w-[1470px] px-[30px] text-center">
         <div class="account-head">
 			<?php if(is_user_logged_in()) { ?>
             <div class="qr-code">
                 <?php echo do_shortcode('[mepr-show if="loggedin"][kaya_qrcode_dynamic title_align="aligncenter" ecclevel="L" align="aligncenter" css_shadow="1"]https://panthergym.com/staging/member-details/?id=[mepr-account-info field="ID"][/kaya_qrcode_dynamic][/mepr-show]'); ?>
             </div>
 			<?php } ?>
-            <div class="account-wrap mx-auto max-w-[625px]">
+            <div class="account-wrap">
                 <div class="account-name">
                     <?php echo do_shortcode('[mepr-account-info field="first_name"]'); ?>
                 </div>
@@ -32,7 +40,7 @@ get_header();
                 </p>
             </div>
         </div>
-        <p class="account-content mx-auto max-w-[625px]">
+        <p class="account-content">
             <?php
             $text = get_field('sub_text');
             $allowed_html = array(
@@ -42,7 +50,7 @@ get_header();
             echo $text;
             ?>
         </p>
-        <div class="account-block mx-auto max-w-[625px]">
+        <div class="account-block">
             <?php echo do_shortcode('[mepr-account-form]'); ?>
         </div>
     </div>
