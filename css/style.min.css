@@ -1483,35 +1483,6 @@ video {
   height: 58px;
   width: 253px;
 }
-.option{
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
-.super-option{
-  display: flex;
-  min-height: 70px;
-  align-items: center;
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  padding-left: 40px;
-  font-weight: 700;
-}
-.options{
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 40px;
-  line-height: 2;
-}
-.extra-options{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 40px;
-  line-height: 2;
-}
 .tabs-nav.active{
   height: auto;
 }
@@ -2467,9 +2438,6 @@ video {
 .min-h-\[658px\]{
   min-height: 658px;
 }
-.min-h-\[70px\]{
-  min-height: 70px;
-}
 .\!w-\[55px\]{
   width: 55px !important;
 }
@@ -3184,10 +3152,6 @@ video {
   padding-top: 23px;
   padding-bottom: 23px;
 }
-.py-\[30px\]{
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
 .py-\[46px\]{
   padding-top: 46px;
   padding-bottom: 46px;
@@ -3293,9 +3257,6 @@ video {
 }
 .pb-\[80px\]{
   padding-bottom: 80px;
-}
-.pl-0{
-  padding-left: 0px;
 }
 .pl-\[10px\]{
   padding-left: 10px;
