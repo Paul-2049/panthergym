@@ -3,6 +3,116 @@
         @apply bg-white pt-[92px] lg:pt-[148px] pb-[70px] lg:pb-[100px];
     }
 
+    body.woocommerce-lost-password {
+        .account-section {
+            @apply bg-white pt-[38px] lg:pt-[65px] px-[30px];
+
+            .container {
+                @apply mx-auto max-w-[945px] px-[0px] text-center;
+            }
+
+            .account-wrap {
+                @apply w-full;
+            }
+
+            .welcome-text {
+                @apply text-[30px] w-full;
+            }
+
+            .account-content {
+                @apply mt-[20px] lg:mt-[40px] text-left mb-[48px] lg:mb-[63px] text-left sm:text-center text-[15px] lg:text-[20px];
+            }
+
+            .mp_wrapper {
+                @apply last:max-w-[unset];
+            }
+
+            #mepr_loginform label {
+                @apply text-[14px] font-bold;
+            }
+
+            .mp-form-label {
+                @apply text-left;
+            }
+
+            input[type="text"],
+            input[type="password"]{
+                @apply p-0 h-[50px] normal-case font-privacy text-[16px];
+
+                &::placeholder {
+                    @apply font-normal;
+                }
+            }
+
+            [type="submit"] {
+                @include button_red;
+                @apply cursor-pointer w-full sm:w-[185px] font-normal float-right m-0;
+            }
+
+            .form-row-first,
+            .form-row-last {
+                @apply text-[16px] font-privacy font-normal mb-[50px];
+
+                @media screen and (min-width: 576px) {
+                    width: 47% !important;
+                }
+
+                &.bold {
+                    @apply font-bold;
+                }
+
+                &.submit {
+                    @apply text-center mb-[30px] sm:mb-[50px];
+                }
+
+                &.forgot_password_block {
+                    @apply text-center sm:text-left mb-[30px] sm:mb-[50px];
+                }
+
+                a {
+                    @apply font-privacy text-[16px] font-normal underline;
+                    color: $color_red;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &.forgot_password {
+                        @apply leading-[20px] sm:leading-[50px];
+                    }
+                }
+            }
+
+            .form-row-first {
+                @apply float-left text-right;
+
+                &.no_account {
+                    @apply text-left sm:text-right;
+
+                    @media screen and (max-width: 575px) {
+                        width: calc(100% - 75px) !important;
+                    }
+                }
+            }
+
+            .form-row-last {
+                @apply float-right text-left ;
+
+                &.no_account {
+                    @apply text-right sm:text-left;
+
+                    @media screen and (max-width: 575px) {
+                        width: 75px !important;
+                    }
+                }
+            }
+
+            .mp-spacer {
+                clear: both;
+            }
+        }
+    }
+
     .qr-code {
         @apply w-[176px] h-[176px] mb-[20px] lg:mb-0 lg:mr-[50px];
     }
@@ -86,21 +196,6 @@
         @apply text-[16px] leading-[1.1] font-privacy text-black font-normal;
     }
 
-    .mp_wrapper.mp_login_form .mp-form-row.mepr_username {
-        @apply float-left;
-
-        @media screen and (min-width: 576px) {
-            width: 47% !important;
-        }
-    }
-
-    .mp_wrapper.mp_login_form .mp-form-row.mepr_password {
-        @apply float-right;
-
-        @media screen and (min-width: 576px) {
-            width: 47% !important;
-        }
-    }
 
     #mepr_loginform label{
         @apply flex items-center font-privacy;
