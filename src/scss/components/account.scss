@@ -52,7 +52,7 @@
     }
 
     .mp_wrapper .mepr-unauthorized-message {
-        @apply font-privacy text-black font-normal;
+        @apply hidden font-privacy text-black font-normal;
     }
 
     .mp_wrapper .mepr-login-actions {
@@ -79,11 +79,34 @@
     }
 
     .mp_wrapper .mp-form-row {
-        @apply mb-[35px] lg:mb-[28px]
+        @apply mb-[20px] lg:mb-[28px]
     }
 
     .mp-form-label {
         @apply text-[16px] leading-[1.1] font-privacy text-black font-normal;
     }
 
+    .mp_wrapper.mp_login_form .mp-form-row.mepr_username {
+        @apply float-left;
+
+        @media screen and (min-width: 576px) {
+            width: 47% !important;
+        }
+    }
+
+    .mp_wrapper.mp_login_form .mp-form-row.mepr_password {
+        @apply float-right;
+
+        @media screen and (min-width: 576px) {
+            width: 47% !important;
+        }
+    }
+
+    #mepr_loginform label{
+        @apply flex items-center font-privacy;
+    }
+
+    #mepr_loginform [name="rememberme"] {
+        @include checkbox;
+    }
 }
