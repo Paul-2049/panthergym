@@ -42,7 +42,7 @@
     }
 
     .tarif-head {
-      @apply pt-[31px] pb-[22px];
+      @apply pt-[31px] pb-[22px] min-h-[279px] h-auto;
     }
 
     .name {
