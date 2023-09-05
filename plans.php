@@ -47,7 +47,7 @@ get_header();
             <p class="font-privacy leading-[1.5] mx-auto text-center w-full max-w-[902px] lg:mb-[43px] mb-[57px] text-[20px]">
                 <?php echo $content; ?>
             </p>
-            <div class="w-full mx-auto auto-rows-auto gap-[15px] grid grid-cols-1 max-w-[1300px] md:grid-cols-4 px-[30px]">
+            <div class="w-full mx-auto auto-rows-auto grid grid-cols-1 max-w-[1300px] md:grid-cols-4 px-[30px]">
                 <?php if (have_rows('item')) : ?>
                     <?php while (have_rows('item')) : the_row();
                         $name = get_sub_field('name');
