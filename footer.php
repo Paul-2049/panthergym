@@ -64,7 +64,7 @@
       <div class="flex flex-col sm:flex-row justify-between sm:gap-5 gap-[40px] sm:items-center sm:w-[60%]">
         <div class="flex flex-col sm:flex-row justify-between sm:gap-8 sm:w-[1/2]">
           <?php foreach (udesly_get_menu("footer-privacy") as $menu_item) : ?>
-            <a href="<?php echo $menu_item->url; ?>" class="font-privacy text-[#646464]"><?php echo $menu_item->title; ?></a>
+            <a href="<?php echo $menu_item->url; ?>" class="font-privacy text-[#646464] hover:text-white transition-colors duration-200 ease-in"><?php echo $menu_item->title; ?></a>
           <?php endforeach ?>
 
           <!-- <span class="font-privacy text-[#646464]">Terms & Conditions</span> -->
