@@ -65,21 +65,4 @@
   .btn-get {
     @apply w-[253px] h-[58px];
   }
-
-  // card text
-  .option {
-    @apply pl-0 pb-0;
-  }
-
-  .super-option {
-    @apply pl-[40px] min-h-[70px] flex items-center border-b-[1px] border-black font-bold;
-  }
-
-  .options {
-    @apply pl-[40px] border-b-[1px] border-black py-[30px] leading-[2];
-  }
-
-  .extra-options {
-    @apply pl-[40px] py-[30px] leading-[2];
-  }
 }
