@@ -83,7 +83,7 @@
 				</div>
 			</div>
 
-			<div class="blocks_by_2">
+			<div class="blocks_by_2 no_account">
 				<div class="item bold">
 					Don’t have an account?
 				</div>

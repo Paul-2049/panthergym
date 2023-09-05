@@ -8,7 +8,7 @@ get_header();
     <div class="flex flex-col lg:flex-row max-w-[1290px] w-full mx-auto px-[15px]">
         <div class="filter-js flex flex-col max-w-[297px] w-full fixed lg:static top-0 left-0 -translate-x-full transition-transform duration-200 ease-in lg:translate-x-0 h-full z-10 bg-white justify-center lg:justify-start py-[20px] lg:py-0">
             <button class="close bg-accordion-icon bg-no-repeat bg-contain rotate-[45deg] w-[25px] h-[25px] absolute top-[15px] right-[15px] bg-transparent p-0 m-0 lg:hidden z-10" type="button"></button>
-            <span class="lg:px-[22px] font-privacy leading-[1.5] text-[20px] font-bold lg:mb-[42px] block cursor-pointer relative mb-[15px] pl-[15px] lg:pl-0">
+            <span class="lg:px-[22px] font-privacy leading-[1.5] text-[20px] font-bold lg:mb-[22px] block cursor-pointer relative mb-[15px] pl-[15px]">
                 <?php echo __('Categories'); ?></span>
             <ul class="lg:mr-[-15px] lg:h-auto mb-[20px] lg:mb-0 flex flex-col overflow-y-auto lg:overscroll-y-none">
                 <?php
@@ -47,7 +47,7 @@ get_header();
                         $regular_price = $product->price;
                         $sale_price = $product->sale_price;
                     ?>
-                        <a href="<?php the_permalink(); ?>" class="product-cart h-fit py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                        <a href="<?php the_permalink(); ?>" class="product-cart py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
                             <div class="thumbail mb-[16px]">
                                 <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                             </div>
