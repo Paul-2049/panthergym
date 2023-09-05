@@ -134,3 +134,43 @@
     @content
   }
 }
+
+@mixin checkbox(){
+	display: none;
+
+	&:checked ~ span:after,
+	&:checked ~ label:after {
+		border-color: #E10A17;
+	}
+
+	& ~ span,
+	& ~ label {
+		position: relative;
+		padding-left: 47px !important;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			display: block;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #000;
+			position: absolute;
+			top: -2px;
+			left: 0px;
+		}
+
+		&:after {
+			content: "";
+			border: solid #E0E0E0;
+			border-width: 0 2px 2px 0 !important;
+			position: absolute;
+			top: 2px;
+			left: 10px;
+			width: 9px;
+			height: 17px;
+			transform: rotate(45deg);
+			display: block;
+		}
+	}
+}
