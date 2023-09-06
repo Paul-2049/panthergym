@@ -5882,6 +5882,9 @@ form.form-search .js-search-input:focus-visible {
   .lg\:pb-\[34px\]{
     padding-bottom: 34px;
   }
+  .lg\:pb-\[23px\]{
+    padding-bottom: 23px;
+  }
   .lg\:text-left{
     text-align: left;
   }
