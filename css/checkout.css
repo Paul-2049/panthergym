@@ -94,7 +94,9 @@ body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .
   }
 }
 body.woocommerce-checkout .woocommerce-form-login-wrap .woocommerce-form-login .actions .buttons [name=login] {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: 50px;
   background: #FFFFFF;

@@ -1,10 +1,18 @@
 <?php
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
+
+$is_schedule = false;
+if(is_page()) {
+	global $post;
+	if($post->post_name === 'schedule') $is_schedule = true;
+}
+
 ?>
+
 <div class="embed-global w-embed" sym="true">
 	<style>
-		<?php if(get_page_template_slug() !== 'page-templates/calendar.php') { ?>
+		<?php if(!$is_schedule) { ?>
 		html {
 			font-size: calc(100vw/1440);
 		}
@@ -16,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 			-webkit-font-smoothing: antialiased;
 		}
 
-		<?php if(get_page_template_slug() !== 'page-templates/calendar.php') { ?>
+		<?php if(!$is_schedule) { ?>
 		@media only screen and (min-width: 1920px)  {
 			html {font-size: calc(100vw/1920);}
 		}
