@@ -56,6 +56,10 @@
 
 		a.item-link {
 			@apply lg:h-full lg:px-[15px] lg:py-[0px];
+
+			&.w--current {
+				@apply text-white lg:text-[#E10A17];
+			}
 		}
 	}
 }
