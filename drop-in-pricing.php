@@ -22,7 +22,7 @@ get_header();
     $bg_image = get_sub_field('bg_image');
   ?>
     <section class="flex bg-no-repeat bg-cover bg-[30%] bg-black h-[683px] items-end justify-end lg:h-[638px] xl:bg-left-bottom" style="background-image: url(<?php echo esc_url($bg_image); ?>);">
-      <div class="flex items-center 2xl:pl-[101px] bg-no-repeat bg-panther-red-100 bg-right-top clip-left h-[163px] justify-start pb-[43px] pl-[12%] pt-[33px] text-left translate-y-[27%] w-[95%] xl:bg-red-bg xl:bg-transparent xl:h-[461px] xl:items-end xl:pb-[40px] xl:pl-[8%] xl:pr-[20px] xl:translate-y-[10%] xl:w-[48%] opacity-90">
+      <div class="flex items-center 2xl:pl-[101px] bg-no-repeat bg-panther-red-100 bg-right-top clip-left h-[163px] justify-start pb-[43px] pl-[12%] pt-[33px] text-left translate-y-[27%] w-[95%] xl:bg-red-bg xl:bg-transparent xl:h-[461px] xl:items-end xl:pb-[36px] xl:pl-[8%] xl:pr-[20px] xl:translate-y-[10%] xl:w-[48%] opacity-90">
         <h1 class="h1 text-white"><?php echo $title; ?></h1>
       </div>
     </section>
