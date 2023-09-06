@@ -67,14 +67,15 @@ get_header();
               <?php while (have_rows('item')) : the_row();
                 $title = get_sub_field('title');
                 $image = get_sub_field('image');
+                $link_item = get_sub_field('link');
               ?>
                 <div class="swiper-slide transition">
-                  <div class="relative clip-trainer-card sm:max-w-[400px]">
+                  <a href="<?php echo esc_url($link_item);?>" class="relative clip-trainer-card sm:max-w-[400px] block">
                     <img src="<?php echo esc_url($image); ?>" alt="about-card">
-                    <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 card-text justify-center py-2 transition">
+                    <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 card-text justify-end py-2 transition">
                       <span class="font-bold text-white text-[24px] uppercase"><?php echo esc_html($title); ?></span>
                     </div>
-                  </div>
+                  </a>
                 </div>
               <?php endwhile; ?>
             <?php endif; ?>
