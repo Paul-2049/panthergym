@@ -29,7 +29,7 @@
     }
 
     .according-title {
-        @apply leading-[1.5] font-bold font-privacy text-[18px] text-black cursor-pointer relative after:w-[16px] after:h-[16px] after:bg-accordion-icon after:bg-no-repeat after:bg-contain after:top-[6px] after:right-0 after:absolute after:transition-all after:duration-[0.2s] after:ease-in pr-[16px] hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
+        @apply leading-[1.5] font-bold font-privacy text-[18px] text-black cursor-pointer relative after:w-[16px] after:h-[16px] after:bg-accordion-icon after:bg-no-repeat after:bg-contain after:top-[6px] after:right-0 after:absolute after:transition-all after:duration-[0.2s] after:ease-in pr-[16px] lg:hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
     }
 
     .according-title.active {
