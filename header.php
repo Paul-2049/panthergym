@@ -38,7 +38,7 @@
         <input type="submit" value="Search" class="btn--20 is--search w-button btn-search btn-secondary">
       </form>
     </div>
-    <header class="w-full absolute left-0 bg-transparent header lg:mt-0 lg:py-[19px] mt-[27px] top-0 z-[5]">
+    <header class="w-full absolute left-0 bg-transparent header lg:mt-0 lg:py-[19px] mt-[27px] top-0 z-[5] overflow-x-hidden">
       <div class="w-full mx-auto items-center max-w-[1470px] lg:px-[15px] gap-7 hidden justify-end lg:flex lg:mb-[23px]">
         <div class="search-btn-js">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -136,17 +136,17 @@
           <ul class="header-menu">
             <?php foreach (udesly_get_menu("navbar-menu", true) as $menu_item) : ?>
               <?php if (count($menu_item->items) == 0) : ?>
-                <li>
+                <li class="item_menu">
                   <a href="<?php echo $menu_item->url; ?>" class="item-link"><?php echo $menu_item->title; ?></a>
                 </li>
               <?php endif  ?>
               <?php if (count($menu_item->items) > 0) : ?>
                 <div data-hover="false" data-delay="0" data-w-id="49aed735-83d3-c986-6ea1-0660c88faf36" class="relative h-fit">
-                  <li class="sub-menu-js">
+                  <li class="sub-menu-js item_menu">
                     <div class="item-link cursor-pointer"><?php echo $menu_item->title; ?></div>
                   </li>
 
-                  <ul class="nav-sub-menu top-full w-max z-[2] lg:fixed lg:bg-white rounded-[10px] h-0 overflow-hidden">
+                  <ul class="nav-sub-menu top-full w-max z-[2] lg:fixed lg:bg-white">
                     <?php foreach ($menu_item->items as $sub_item) : ?>
                       <li>
                         <a href="<?php echo $sub_item->url; ?>" class="item-link lg:text-black"><?php echo $sub_item->title; ?></a>
