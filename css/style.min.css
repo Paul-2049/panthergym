@@ -5879,6 +5879,9 @@ form.form-search .js-search-input:focus-visible {
   .lg\:pb-\[36px\]{
     padding-bottom: 36px;
   }
+  .lg\:pb-\[34px\]{
+    padding-bottom: 34px;
+  }
   .lg\:text-left{
     text-align: left;
   }
@@ -6020,6 +6023,9 @@ form.form-search .js-search-input:focus-visible {
   }
   .xl\:pb-\[36px\]{
     padding-bottom: 36px;
+  }
+  .xl\:pb-\[34px\]{
+    padding-bottom: 34px;
   }
   .xl\:text-\[40px\]{
     font-size: 40px;
