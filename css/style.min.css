@@ -6018,6 +6018,9 @@ form.form-search .js-search-input:focus-visible {
   .xl\:pr-\[98px\]{
     padding-right: 98px;
   }
+  .xl\:pb-\[36px\]{
+    padding-bottom: 36px;
+  }
   .xl\:text-\[40px\]{
     font-size: 40px;
   }
