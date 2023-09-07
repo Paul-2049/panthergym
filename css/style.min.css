@@ -692,147 +692,50 @@ body{
 div.navbar {
     background-color: #FFF !important;
   }
-@media (min-width: 992px){
-  div.navbar--menu .navbar--menu-wrapper{
-    height: 96px;
-  }
+.header-menu .has_submenu:hover .nav-sub-menu{
+  top: 0px;
+  display: none;
+  opacity: 1;
 }
-div.navbar--menu .navbar--menu-wrapper .navlink{
-  display: flex;
-}
-@media (min-width: 992px){
-  div.navbar--menu .navbar--menu-wrapper .navlink{
-    height: 100%;
-    align-items: center;
-    text-align: center;
-  }
-  div.navbar--menu .navbar--menu-wrapper .nav--dropdown{
-    height: 100%;
-  }
-}
-div.navbar--menu .navbar--menu-wrapper .nav--dropdown-toggle{
-  display: flex;
-}
-@media (min-width: 992px){
-  div.navbar--menu .navbar--menu-wrapper .nav--dropdown-toggle{
-    height: 100%;
-  }
-  div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list{
-    position: absolute;
-    border-top-width: 3px;
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-  div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list.active, div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list.w--open{
+@media (min-width: 1024px){
+  .header-menu .has_submenu:hover .nav-sub-menu{
     top: 100%;
+    display: flex;
+  }
+}
+.header-menu .has_submenu.active .nav-sub-menu{
+  display: block;
+  padding-left: 15px;
+}
+@media (min-width: 1024px){
+  .header-menu .has_submenu.active .nav-sub-menu{
+    display: none;
     padding-left: 0px;
   }
-}
-@media screen and (min-width: 992px) {
-    div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list.active, div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list.w--open {
-      display: flex !important;
-      width: auto !important;
-      min-width: unset;
-      overflow: unset;
-      box-shadow: none;
-      height: 60px !important;
-      opacity: 1 !important;
-      z-index: 2;
-    }
-  }
-div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list:before{
-  display: none;
-}
-@media (min-width: 992px){
-  div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list:before{
-    top: -3px;
-    right: 100%;
-    display: block;
-    border-top-width: 3px;
+  .header-menu .has_submenu.active:hover .nav-sub-menu{
+    display: flex;
   }
 }
-div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list:after{
-  display: none;
-}
-@media (min-width: 992px){
-  div.navbar--menu .navbar--menu-wrapper .nav--dropdown-list:after{
-    top: -3px;
-    left: 100%;
-    display: block;
-    border-top-width: 3px;
-  }
-}
-div.navbar--menu .navbar--menu-wrapper .dropdown-link{
-  display: flex;
-}
-@media (min-width: 992px){
-  div.navbar--menu .navbar--menu-wrapper .dropdown-link{
-    height: 100%;
-    align-items: center;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-}
-.nav-sub-menu,
-  .nav--dropdown-list{
+.header-menu .has_submenu .nav-sub-menu{
   top: 100%;
   display: none;
-  height: auto;
-  width: max-content;
+  width: auto;
   align-items: center;
   border-radius: 0px;
   --tw-border-opacity: 1;
   border-color: rgb(225 10 23 / var(--tw-border-opacity));
 }
 @media (min-width: 1024px){
-  .nav-sub-menu,
-  .nav--dropdown-list{
+  .header-menu .has_submenu .nav-sub-menu{
     position: fixed;
     position: absolute;
+    height: 60px;
     border-top-width: 3px;
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 }
-.nav-sub-menu.active, .nav-sub-menu.w--open,
-  .nav--dropdown-list.active,
-  .nav--dropdown-list.w--open{
-  top: 0px;
-  display: block;
-  width: 100%;
-  padding-left: 15px;
-  opacity: 1;
-}
-@media (min-width: 1024px){
-  .nav-sub-menu.active, .nav-sub-menu.w--open,
-  .nav--dropdown-list.active,
-  .nav--dropdown-list.w--open{
-    top: 100%;
-    padding-left: 0px;
-  }
-}
-@media screen and (min-width: 1024px) {
-    .nav-sub-menu.active, .nav-sub-menu.w--open,
-    .nav--dropdown-list.active,
-    .nav--dropdown-list.w--open {
-      display: flex !important;
-      width: auto !important;
-      min-width: unset;
-      overflow: unset;
-      box-shadow: none;
-      height: 60px !important;
-      opacity: 1 !important;
-      z-index: 2;
-    }
-  }
-@media (min-width: 1024px){
-  .nav-sub-menu.w-dropdown-list,
-  .nav--dropdown-list.w-dropdown-list{
-    margin-left: -16rem;
-  }
-}
-.nav-sub-menu:before,
-  .nav--dropdown-list:before{
+.header-menu .has_submenu .nav-sub-menu:before{
   position: absolute;
   display: none;
   height: calc(100% + 3px);
@@ -845,16 +748,14 @@ div.navbar--menu .navbar--menu-wrapper .dropdown-link{
   content: var(--tw-content);
 }
 @media (min-width: 1024px){
-  .nav-sub-menu:before,
-  .nav--dropdown-list:before{
+  .header-menu .has_submenu .nav-sub-menu:before{
     top: -3px;
     right: 100%;
     display: block;
     border-top-width: 3px;
   }
 }
-.nav-sub-menu:after,
-  .nav--dropdown-list:after{
+.header-menu .has_submenu .nav-sub-menu:after{
   position: absolute;
   display: none;
   height: calc(100% + 3px);
@@ -867,15 +768,13 @@ div.navbar--menu .navbar--menu-wrapper .dropdown-link{
   content: var(--tw-content);
 }
 @media (min-width: 1024px){
-  .nav-sub-menu:after,
-  .nav--dropdown-list:after{
+  .header-menu .has_submenu .nav-sub-menu:after{
     top: -3px;
     left: 100%;
     display: block;
     border-top-width: 3px;
   }
-  .nav-sub-menu a.item-link,
-  .nav--dropdown-list a.item-link{
+  .header-menu .has_submenu .nav-sub-menu a.item-link{
     height: 100%;
     padding-left: 15px;
     padding-right: 15px;
@@ -883,14 +782,12 @@ div.navbar--menu .navbar--menu-wrapper .dropdown-link{
     padding-bottom: 0px;
   }
 }
-.nav-sub-menu a.item-link.w--current,
-  .nav--dropdown-list a.item-link.w--current{
+.header-menu .has_submenu .nav-sub-menu a.item-link.w--current{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 @media (min-width: 1024px){
-  .nav-sub-menu a.item-link.w--current,
-  .nav--dropdown-list a.item-link.w--current{
+  .header-menu .has_submenu .nav-sub-menu a.item-link.w--current{
     --tw-text-opacity: 1;
     color: rgb(225 10 23 / var(--tw-text-opacity));
   }
@@ -1065,7 +962,8 @@ div.navbar--menu .navbar--menu-wrapper .dropdown-link{
     padding-bottom: 100px;
   }
 }
-body.woocommerce-lost-password .account-section{
+body.woocommerce-lost-password .account-section,
+  body.page-template-page-login .account-section{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 30px;
@@ -1073,11 +971,13 @@ body.woocommerce-lost-password .account-section{
   padding-top: 38px;
 }
 @media (min-width: 1024px){
-  body.woocommerce-lost-password .account-section{
+  body.woocommerce-lost-password .account-section,
+  body.page-template-page-login .account-section{
     padding-top: 65px;
   }
 }
-body.woocommerce-lost-password .account-section .container{
+body.woocommerce-lost-password .account-section .container,
+  body.page-template-page-login .account-section .container{
   margin-left: auto;
   margin-right: auto;
   max-width: 945px;
@@ -1085,43 +985,53 @@ body.woocommerce-lost-password .account-section .container{
   padding-right: 0px;
   text-align: center;
 }
-body.woocommerce-lost-password .account-section .account-wrap{
+body.woocommerce-lost-password .account-section .account-wrap,
+  body.page-template-page-login .account-section .account-wrap{
   width: 100%;
 }
-body.woocommerce-lost-password .account-section .welcome-text{
+body.woocommerce-lost-password .account-section .welcome-text,
+  body.page-template-page-login .account-section .welcome-text{
   width: 100%;
   font-size: 30px;
 }
-body.woocommerce-lost-password .account-section .account-content{
+body.woocommerce-lost-password .account-section .account-content,
+  body.page-template-page-login .account-section .account-content{
   margin-top: 20px;
   margin-bottom: 48px;
   text-align: left;
   font-size: 15px;
 }
 @media (min-width: 576px){
-  body.woocommerce-lost-password .account-section .account-content{
+  body.woocommerce-lost-password .account-section .account-content,
+  body.page-template-page-login .account-section .account-content{
     text-align: center;
   }
 }
 @media (min-width: 1024px){
-  body.woocommerce-lost-password .account-section .account-content{
+  body.woocommerce-lost-password .account-section .account-content,
+  body.page-template-page-login .account-section .account-content{
     margin-top: 40px;
     margin-bottom: 63px;
     font-size: 20px;
   }
 }
-body.woocommerce-lost-password .account-section .mp_wrapper:last-child{
+body.woocommerce-lost-password .account-section .mp_wrapper:last-child,
+  body.page-template-page-login .account-section .mp_wrapper:last-child{
   max-width: unset;
 }
-body.woocommerce-lost-password .account-section #mepr_loginform label{
+body.woocommerce-lost-password .account-section #mepr_loginform label,
+  body.page-template-page-login .account-section #mepr_loginform label{
   font-size: 14px;
   font-weight: 700;
 }
-body.woocommerce-lost-password .account-section .mp-form-label{
+body.woocommerce-lost-password .account-section .mp-form-label,
+  body.page-template-page-login .account-section .mp-form-label{
   text-align: left;
 }
 body.woocommerce-lost-password .account-section input[type=text],
-  body.woocommerce-lost-password .account-section input[type=password]{
+  body.woocommerce-lost-password .account-section input[type=password],
+  body.page-template-page-login .account-section input[type=text],
+  body.page-template-page-login .account-section input[type=password]{
   height: 50px;
   padding: 0px;
   font-family: Open Sans, sans-serif;
@@ -1129,10 +1039,13 @@ body.woocommerce-lost-password .account-section input[type=text],
   text-transform: none;
 }
 body.woocommerce-lost-password .account-section input[type=text]::placeholder,
-  body.woocommerce-lost-password .account-section input[type=password]::placeholder{
+  body.woocommerce-lost-password .account-section input[type=password]::placeholder,
+  body.page-template-page-login .account-section input[type=text]::placeholder,
+  body.page-template-page-login .account-section input[type=password]::placeholder{
   font-weight: 400;
 }
-body.woocommerce-lost-password .account-section [type=submit] {
+body.woocommerce-lost-password .account-section [type=submit],
+  body.page-template-page-login .account-section [type=submit] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1159,11 +1072,13 @@ body.woocommerce-lost-password .account-section [type=submit] {
     font-weight: 400;
   }
 @media (min-width: 576px){
-  body.woocommerce-lost-password .account-section [type=submit]{
+  body.woocommerce-lost-password .account-section [type=submit],
+  body.page-template-page-login .account-section [type=submit]{
     width: 185px;
   }
 }
-body.woocommerce-lost-password .account-section [type=submit]:hover {
+body.woocommerce-lost-password .account-section [type=submit]:hover,
+  body.page-template-page-login .account-section [type=submit]:hover {
     background: #E10A17;
     color: #FFFFFF;
     border-color: #FFFFFF;
@@ -1172,7 +1087,9 @@ body.woocommerce-lost-password .account-section [type=submit]:hover {
     border-color: #E10A17;
   }
 body.woocommerce-lost-password .account-section .form-row-first,
-  body.woocommerce-lost-password .account-section .form-row-last{
+  body.woocommerce-lost-password .account-section .form-row-last,
+  body.page-template-page-login .account-section .form-row-first,
+  body.page-template-page-login .account-section .form-row-last{
   margin-bottom: 50px;
   font-family: Open Sans, sans-serif;
   font-size: 16px;
@@ -1180,39 +1097,53 @@ body.woocommerce-lost-password .account-section .form-row-first,
 }
 @media screen and (min-width: 576px) {
     body.woocommerce-lost-password .account-section .form-row-first,
-    body.woocommerce-lost-password .account-section .form-row-last {
+    body.woocommerce-lost-password .account-section .form-row-last,
+    body.page-template-page-login .account-section .form-row-first,
+    body.page-template-page-login .account-section .form-row-last {
       width: 47% !important;
     }
   }
 body.woocommerce-lost-password .account-section .form-row-first.bold,
-  body.woocommerce-lost-password .account-section .form-row-last.bold{
+  body.woocommerce-lost-password .account-section .form-row-last.bold,
+  body.page-template-page-login .account-section .form-row-first.bold,
+  body.page-template-page-login .account-section .form-row-last.bold{
   font-weight: 700;
 }
 body.woocommerce-lost-password .account-section .form-row-first.submit,
-  body.woocommerce-lost-password .account-section .form-row-last.submit{
+  body.woocommerce-lost-password .account-section .form-row-last.submit,
+  body.page-template-page-login .account-section .form-row-first.submit,
+  body.page-template-page-login .account-section .form-row-last.submit{
   margin-bottom: 30px;
   text-align: center;
 }
 @media (min-width: 576px){
   body.woocommerce-lost-password .account-section .form-row-first.submit,
-  body.woocommerce-lost-password .account-section .form-row-last.submit{
+  body.woocommerce-lost-password .account-section .form-row-last.submit,
+  body.page-template-page-login .account-section .form-row-first.submit,
+  body.page-template-page-login .account-section .form-row-last.submit{
     margin-bottom: 50px;
   }
 }
 body.woocommerce-lost-password .account-section .form-row-first.forgot_password_block,
-  body.woocommerce-lost-password .account-section .form-row-last.forgot_password_block{
+  body.woocommerce-lost-password .account-section .form-row-last.forgot_password_block,
+  body.page-template-page-login .account-section .form-row-first.forgot_password_block,
+  body.page-template-page-login .account-section .form-row-last.forgot_password_block{
   margin-bottom: 30px;
   text-align: center;
 }
 @media (min-width: 576px){
   body.woocommerce-lost-password .account-section .form-row-first.forgot_password_block,
-  body.woocommerce-lost-password .account-section .form-row-last.forgot_password_block{
+  body.woocommerce-lost-password .account-section .form-row-last.forgot_password_block,
+  body.page-template-page-login .account-section .form-row-first.forgot_password_block,
+  body.page-template-page-login .account-section .form-row-last.forgot_password_block{
     margin-bottom: 50px;
     text-align: left;
   }
 }
 body.woocommerce-lost-password .account-section .form-row-first a,
-  body.woocommerce-lost-password .account-section .form-row-last a{
+  body.woocommerce-lost-password .account-section .form-row-last a,
+  body.page-template-page-login .account-section .form-row-first a,
+  body.page-template-page-login .account-section .form-row-last a{
   font-family: Open Sans, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -1220,54 +1151,69 @@ body.woocommerce-lost-password .account-section .form-row-first a,
     color: #E10A17;
 }
 body.woocommerce-lost-password .account-section .form-row-first a:hover,
-  body.woocommerce-lost-password .account-section .form-row-last a:hover {
+  body.woocommerce-lost-password .account-section .form-row-last a:hover,
+  body.page-template-page-login .account-section .form-row-first a:hover,
+  body.page-template-page-login .account-section .form-row-last a:hover {
     text-decoration: none;
   }
 body.woocommerce-lost-password .account-section .form-row-first a.forgot_password,
-  body.woocommerce-lost-password .account-section .form-row-last a.forgot_password{
+  body.woocommerce-lost-password .account-section .form-row-last a.forgot_password,
+  body.page-template-page-login .account-section .form-row-first a.forgot_password,
+  body.page-template-page-login .account-section .form-row-last a.forgot_password{
   line-height: 20px;
 }
 @media (min-width: 576px){
   body.woocommerce-lost-password .account-section .form-row-first a.forgot_password,
-  body.woocommerce-lost-password .account-section .form-row-last a.forgot_password{
+  body.woocommerce-lost-password .account-section .form-row-last a.forgot_password,
+  body.page-template-page-login .account-section .form-row-first a.forgot_password,
+  body.page-template-page-login .account-section .form-row-last a.forgot_password{
     line-height: 50px;
   }
 }
-body.woocommerce-lost-password .account-section .form-row-first{
+body.woocommerce-lost-password .account-section .form-row-first,
+  body.page-template-page-login .account-section .form-row-first{
   float: left;
   text-align: right;
 }
-body.woocommerce-lost-password .account-section .form-row-first.no_account{
+body.woocommerce-lost-password .account-section .form-row-first.no_account,
+  body.page-template-page-login .account-section .form-row-first.no_account{
   text-align: left;
 }
 @media (min-width: 576px){
-  body.woocommerce-lost-password .account-section .form-row-first.no_account{
+  body.woocommerce-lost-password .account-section .form-row-first.no_account,
+  body.page-template-page-login .account-section .form-row-first.no_account{
     text-align: right;
   }
 }
 @media screen and (max-width: 575px) {
-    body.woocommerce-lost-password .account-section .form-row-first.no_account {
+    body.woocommerce-lost-password .account-section .form-row-first.no_account,
+    body.page-template-page-login .account-section .form-row-first.no_account {
       width: calc(100% - 75px) !important;
     }
   }
-body.woocommerce-lost-password .account-section .form-row-last{
+body.woocommerce-lost-password .account-section .form-row-last,
+  body.page-template-page-login .account-section .form-row-last{
   float: right;
   text-align: left;
 }
-body.woocommerce-lost-password .account-section .form-row-last.no_account{
+body.woocommerce-lost-password .account-section .form-row-last.no_account,
+  body.page-template-page-login .account-section .form-row-last.no_account{
   text-align: right;
 }
 @media (min-width: 576px){
-  body.woocommerce-lost-password .account-section .form-row-last.no_account{
+  body.woocommerce-lost-password .account-section .form-row-last.no_account,
+  body.page-template-page-login .account-section .form-row-last.no_account{
     text-align: left;
   }
 }
 @media screen and (max-width: 575px) {
-    body.woocommerce-lost-password .account-section .form-row-last.no_account {
+    body.woocommerce-lost-password .account-section .form-row-last.no_account,
+    body.page-template-page-login .account-section .form-row-last.no_account {
       width: 75px !important;
     }
   }
-body.woocommerce-lost-password .account-section .mp-spacer {
+body.woocommerce-lost-password .account-section .mp-spacer,
+  body.page-template-page-login .account-section .mp-spacer {
     clear: both;
   }
 .qr-code{
@@ -1346,7 +1292,7 @@ body.woocommerce-lost-password .account-section .mp-spacer {
     margin-bottom: 57px;
   }
 }
-.account-content>*{
+.account-content span{
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
 }
@@ -1939,6 +1885,10 @@ body.woocommerce-lost-password .account-section .mp-spacer {
   .full-drop-in-pricing .price{
     font-size: 64px;
   }
+}
+.full-drop-in-pricing .option{
+  font-size: 18px;
+  line-height: 3;
 }
 .promo{
   padding-top: 10px;
@@ -2972,6 +2922,9 @@ body.woocommerce-lost-password .account-section .mp-spacer {
 }
 .w-\[95\%\]{
   width: 95%;
+}
+.w-auto{
+  width: auto;
 }
 .w-fit{
   width: fit-content;
@@ -4047,6 +4000,9 @@ body.woocommerce-lost-password .account-section .mp-spacer {
 }
 .leading-\[39\.6px\]{
   line-height: 39.6px;
+}
+.leading-\[3\]{
+  line-height: 3;
 }
 .leading-\[42px\]{
   line-height: 42px;
@@ -5587,45 +5543,6 @@ form.form-search .js-search-input:focus-visible {
     left: 22px;
   }
 }
-@media (min-width: 992px){
-  .ml\:absolute{
-    position: absolute;
-  }
-  .ml\:left-full{
-    left: 100%;
-  }
-  .ml\:right-full{
-    right: 100%;
-  }
-  .ml\:top-\[-3px\]{
-    top: -3px;
-  }
-  .ml\:top-full{
-    top: 100%;
-  }
-  .ml\:block{
-    display: block;
-  }
-  .ml\:h-\[96px\]{
-    height: 96px;
-  }
-  .ml\:h-full{
-    height: 100%;
-  }
-  .ml\:items-center{
-    align-items: center;
-  }
-  .ml\:border-t-\[3px\]{
-    border-top-width: 3px;
-  }
-  .ml\:bg-white{
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-  .ml\:text-center{
-    text-align: center;
-  }
-}
 @media (min-width: 1024px){
   .lg\:static{
     position: static;
@@ -5726,9 +5643,6 @@ form.form-search .js-search-input:focus-visible {
   .lg\:ml-0{
     margin-left: 0px;
   }
-  .lg\:ml-\[-16rem\]{
-    margin-left: -16rem;
-  }
   .lg\:mr-\[-15px\]{
     margin-right: -15px;
   }
@@ -5803,6 +5717,9 @@ form.form-search .js-search-input:focus-visible {
   }
   .lg\:h-\[588px\]{
     height: 588px;
+  }
+  .lg\:h-\[60px\]{
+    height: 60px;
   }
   .lg\:h-\[617px\]{
     height: 617px;
