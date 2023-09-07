@@ -40,14 +40,14 @@ get_header();
                     </svg>
                 </span>
             </div>
-            <div class="product-list grid w-full lg:pl-[60px] gap-x-[30px] gap-y-[43px] grid-cols-1 bm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
+            <div class="product-list grid w-full lg:pl-[60px] gap-x-[14px] gap-y-[43px] grid-cols-1 bm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post();
                         $product = wc_get_product($post->ID);
                         $regular_price = $product->price;
                         $sale_price = $product->sale_price;
                     ?>
-                        <a href="<?php the_permalink(); ?>" class="product-cart py-[15px] px-[10px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                        <a href="<?php the_permalink(); ?>" class="product-cart py-[15px] px-[18px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
                             <div class="thumbail mb-[16px]">
                                 <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                             </div>

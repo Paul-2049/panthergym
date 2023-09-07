@@ -9,6 +9,7 @@ include_once THEME_DIR . '/acf/schedule-event.php';
 // Подключаем классы
 require_once( __DIR__ . '/classes/GYM_ACCOUNT.php');
 require_once( __DIR__ . '/classes/GYM_SCHEDULE.php');
+require_once( __DIR__ . '/classes/GYM_HEADER.php');
 
 add_action('wp_enqueue_scripts', 'panther_child_css', 1001);
 function panther_child_css()

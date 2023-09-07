@@ -72,7 +72,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   font-weight: 400;
   line-height: 1.1;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .gym_shedule_popup .inner {
     padding: 40px 30px;
   }
@@ -82,7 +82,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   max-width: 658px;
   padding-bottom: 100px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .gym_shedule_popup .inner[data-step=auth] {
     padding-bottom: 40px;
   }
@@ -136,7 +136,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   margin-top: 50px;
   margin-bottom: 80px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .gym_shedule_popup .inner[data-step=auth] .actions {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -382,7 +382,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   background: #E10A17;
   padding: 24px 0px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .schedule_head_bar {
     padding: 36px 30px 47px;
   }
@@ -395,7 +395,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   margin: 0 auto;
   padding: 0px 15px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .schedule_head_bar .container {
     padding: 0px;
     flex-wrap: wrap;
@@ -420,7 +420,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
     padding-right: 34px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .schedule_head_bar .text {
     padding: 0px;
     margin-bottom: 30px;
@@ -431,7 +431,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
 .schedule_head_bar .actions {
   width: 214px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .schedule_head_bar .actions {
     display: flex;
     justify-content: center;
@@ -478,7 +478,7 @@ body.page-template-calendar header {
   background: #000;
   height: 177px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   body.page-template-calendar header {
     height: 76px;
     margin-top: 0px;
@@ -487,7 +487,7 @@ body.page-template-calendar header {
 body.page-template-calendar .main-wrapper {
   padding-top: 177px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   body.page-template-calendar .main-wrapper {
     padding-top: 76px;
   }
@@ -571,7 +571,7 @@ body.page-template-calendar .schedule_calendar .schedule_header .schedule_days .
     border-right: 1px solid transparent;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   body.page-template-calendar .schedule_calendar .schedule_header .schedule_days .item {
     width: 88px;
   }
@@ -593,7 +593,7 @@ body.page-template-calendar .schedule_calendar .schedule_header .schedule_days .
   transform: rotate(10deg);
   transition: all 0.3s linear;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   body.page-template-calendar .schedule_calendar .schedule_header .schedule_days .item:before, body.page-template-calendar .schedule_calendar .schedule_header .schedule_days .item:after {
     width: 45px;
     bottom: -4px;
@@ -798,7 +798,7 @@ body.page-template-calendar .schedule_calendar .schedule_list .item .duration {
   width: 13%;
   text-align: center;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   body.page-template-calendar .schedule_calendar .schedule_list .item .duration {
     width: 35%;
   }
@@ -815,7 +815,7 @@ body.page-template-calendar .schedule_calendar .schedule_list .item .title {
   text-align: left;
   padding-left: 80px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   body.page-template-calendar .schedule_calendar .schedule_list .item .title {
     width: calc(100% - 18% - 35%);
     padding-left: 20px;
