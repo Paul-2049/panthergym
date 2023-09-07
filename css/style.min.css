@@ -1886,6 +1886,10 @@ body.woocommerce-lost-password .account-section .mp-spacer,
     font-size: 64px;
   }
 }
+.full-drop-in-pricing .option{
+  font-size: 18px;
+  line-height: 3;
+}
 .promo{
   padding-top: 10px;
   padding-bottom: 30px;
@@ -3997,6 +4001,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .leading-\[39\.6px\]{
   line-height: 39.6px;
 }
+.leading-\[3\]{
+  line-height: 3;
+}
 .leading-\[42px\]{
   line-height: 42px;
 }
@@ -5651,7 +5658,6 @@ form.form-search .js-search-input:focus-visible {
     left: 22px;
   }
 }
-
 @media (min-width: 1024px){
   .lg\:static{
     position: static;
