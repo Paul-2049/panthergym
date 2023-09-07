@@ -43,23 +43,10 @@ class GYM_SCHEDULE {
 	public static function getEventsForDay( $date ){
 		if( empty($date) ) $date = date('Y-m-d');
 
-		global $wpdb;
-		$start_from = $date == date('Y-m-d') ? date('Y-m-d H:i') : $date . ' 00:01';
-		$events = $wpdb->get_results("
-			SELECT 
-			    {$wpdb->posts}.*,
-			    event_from.meta_value AS 'event_from',
-			    event_to.meta_value AS 'event_to'
-			FROM {$wpdb->posts}
-			LEFT JOIN {$wpdb->postmeta} event_from ON {$wpdb->posts}.ID = event_from.post_id
-			LEFT JOIN {$wpdb->postmeta} event_to ON {$wpdb->posts}.ID = event_to.post_id
-			WHERE {$wpdb->posts}.post_type = 'tribe_events'
-			AND {$wpdb->posts}.post_status = 'publish'
-			AND event_from.meta_key = '_EventStartDate'
-			AND event_from.meta_value <= '{$start_from}'
-		    AND event_to.meta_key = '_EventEndDate'
-			AND event_to.meta_value >= '{$date}  23:59'
-		");
+		$events = tribe_get_events([
+			'start_date' => $date,
+			'end_date' => $date . ' 23:59'
+		]);
 
 		return $events;
 	}
