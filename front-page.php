@@ -320,10 +320,10 @@ get_header();
     $cta1 = get_sub_field('cta1');
     $cta2 = get_sub_field('cta2');
   ?>
-    <section class="relative h-max-[350px] lg:py-[68px] py-[46px]">
+    <section class="relative h-max-[350px] lg:py-[68px] py-[46px] flex justify-center items-center">
       <div class="w-full absolute top-0 bg-white h-[50%]"></div>
       <div class="w-full absolute bottom-0 bg-black-darkgray-gradient h-[50%]"></div>
-      <div class="flex flex-col relative shadow-[0_0_40px_0_#00000029] rounded-[8px] overflow-hidden max-w-[1200px] mx-5 sm:mx-auto">
+      <div class="flex flex-col relative shadow-[0_0_40px_0_#00000029] rounded-[8px] overflow-hidden max-w-[1200px] w-full mx-5 sm:mx-auto">
         <div class="absolute top-0 left-0 right-0 bottom-0">
           <img class="w-full h-full object-cover object-left-top sm:hidden" src="<?php echo esc_url($bg_image_mob); ?>" alt="img">
           <img class="w-full h-full object-cover object-left-top hidden sm:block" src="<?php echo esc_url($bg_image_desk); ?>" alt="img">
