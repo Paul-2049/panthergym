@@ -4,7 +4,7 @@
 	}
 }
 
-@mixin tablet($break_point: 1024px) {
+@mixin tablet($break_point: 1023px) {
 	@media screen and (max-width: $break_point) {
 		@content;
 	}
