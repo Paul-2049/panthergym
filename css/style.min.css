@@ -3676,6 +3676,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .pb-\[35px\]{
   padding-bottom: 35px;
 }
+.pb-\[38px\]{
+  padding-bottom: 38px;
+}
 .pb-\[40px\]{
   padding-bottom: 40px;
 }
@@ -5829,6 +5832,9 @@ form.form-search .js-search-input:focus-visible {
   }
   .lg\:h-\[617px\]{
     height: 617px;
+  }
+  .lg\:h-\[638px\]{
+    height: 638px;
   }
   .lg\:h-\[665px\]{
     height: 665px;
