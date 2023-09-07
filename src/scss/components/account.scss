@@ -3,7 +3,8 @@
         @apply bg-white pt-[92px] lg:pt-[148px] pb-[70px] lg:pb-[100px];
     }
 
-    body.woocommerce-lost-password {
+    body.woocommerce-lost-password,
+    body.page-template-page-login {
         .account-section {
             @apply bg-white pt-[38px] lg:pt-[65px] px-[30px];
 
@@ -134,7 +135,11 @@
     }
 
     .account-content {
-        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left [&>*]:text-panther-red-100 max-w-[894px] w-full mb-[53px] lg:mb-[57px];
+        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left max-w-[894px] w-full mb-[53px] lg:mb-[57px];
+
+        span {
+            @apply text-panther-red-100;
+        }
     }
 
     .account-block {
