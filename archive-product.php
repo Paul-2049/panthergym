@@ -2,8 +2,6 @@
 get_header();
 ?>
 
-<section class="bg-black h-[130px] md:h-[177px]">
-</section>
 <section class="pt-[44px] pb-[55px] lg:pb-[114px]">
     <div class="flex flex-col lg:flex-row max-w-[1290px] w-full mx-auto px-[15px]">
         <div class="filter-js flex flex-col max-w-[297px] w-full fixed lg:static top-0 left-0 -translate-x-full transition-transform duration-200 ease-in lg:translate-x-0 h-full z-10 bg-white justify-center lg:justify-start py-[20px] lg:py-0">

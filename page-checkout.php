@@ -1,8 +1,7 @@
 <?php
 get_header();
 ?>
-<section class="bg-black h-[130px] md:h-[177px]">
-</section>
+
 <div class="w-full mx-auto pt-[30px] px-[15px] max-w-[1280px]">
     <?php
     /* breadcrumb Yoast */
