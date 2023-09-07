@@ -1,35 +1,141 @@
 @layer components {
-  .item-link {
-    @apply text-white uppercase text-[18px] leading-[1.6] font-bold lg:hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
-  }
+	body {
+		@apply overflow-x-hidden;
+	}
 
-  .footer-item-link {
-    @apply text-white uppercase text-[16px] leading-[32px] font-normal;
-  }
+	.item-link {
+		@apply text-white uppercase text-[18px] leading-[1.6] font-bold lg:hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
+	}
 
-  .work-day {
-    @apply text-white uppercase text-[16px] leading-[32px] font-normal min-w-[120px];
-  }
+	.footer-item-link {
+		@apply text-white uppercase text-[16px] leading-[32px] font-normal;
+	}
 
-  .open-time {
-    @apply text-[#646464] text-[16px] leading-[32px] font-normal;
-  }
+	.work-day {
+		@apply text-white uppercase text-[16px] leading-[32px] font-normal min-w-[120px];
+	}
 
-  .header-menu {
-    @apply flex flex-col gap-[20px] lg:flex-row lg:gap-[36px] text-white lg:justify-end;
-    font-family: 'Rajdhani', sans-serif;
-  }
-  .cart-block .cart--link.w-inline-block{
-    @apply flex flex-row gap-[9px] items-center;
-    #cart-count{
-      @apply text-white text-[12px] leading-[1.6] uppercase font-bold min-w-[15px] h-[15px] rounded-[50%] flex items-center justify-center bg-panther-red-100;
-    }
-  }
-  .nav-sub-menu.active{
-    @apply h-auto pl-[15px] lg:p-[15px];
-  }
+	.open-time {
+		@apply text-[#646464] text-[16px] leading-[32px] font-normal;
+	}
+
+	.header-menu {
+		@apply flex flex-col gap-[20px] lg:flex-row lg:gap-[0px] text-white lg:justify-end;
+		font-family: 'Rajdhani', sans-serif;
+
+		.item-link {
+			@apply flex lg:py-[22px] lg:px-[27px] lg:whitespace-nowrap;
+
+			&:hover {
+				@apply lg:bg-white/[.07];
+			}
+		}
+
+		.item_menu.active {
+			@apply lg:bg-white/[.07];
+		}
+	}
+
+	.cart-block .cart--link.w-inline-block {
+		@apply flex flex-row gap-[9px] items-center;
+		#cart-count {
+			@apply text-white text-[12px] leading-[1.6] uppercase font-bold min-w-[15px] h-[15px] rounded-[50%] flex items-center justify-center bg-panther-red-100;
+		}
+	}
+
+	div.navbar {
+		background-color: #FFF !important;
+	}
+	div.navbar--menu .navbar--menu-wrapper {
+		@apply ml:h-[96px];
+
+		.navlink {
+			@apply flex ml:text-center ml:items-center ml:h-full;
+		}
+
+		.nav--dropdown {
+			@apply ml:h-full;
+		}
+
+		.nav--dropdown-toggle {
+			@apply flex ml:h-full;
+		}
+
+		.nav--dropdown-list {
+			@apply ml:absolute ml:bg-white ml:border-t-[3px];
+
+			&.active,
+			&.w--open {
+				@apply ml:top-full ml:pl-0;
+
+				@media screen and (min-width: 992px) {
+					display: flex !important;
+					width: auto !important;
+					min-width: unset;
+					overflow: unset;
+					box-shadow: none;
+					height: 60px !important;
+					opacity: 1 !important;
+					z-index: 2;
+				}
+			}
+
+			&:before {
+				@apply hidden ml:block ml:top-[-3px] ml:right-full ml:border-t-[3px];
+			}
+
+			&:after {
+				@apply hidden ml:block ml:top-[-3px] ml:left-full ml:border-t-[3px];
+			}
+		}
+
+		.dropdown-link {
+			@apply flex ml:items-center ml:h-full ml:py-0;
+		}
+	}
+
+	.nav-sub-menu,
+	.nav--dropdown-list {
+		@apply hidden items-center h-auto lg:absolute top-full w-max lg:fixed lg:bg-white lg:border-t-[3px] border-[#E10A17] rounded-none;
+
+		&.active,
+		&.w--open {
+			@apply block w-full top-[0px] lg:top-full pl-[15px] lg:pl-0 opacity-100;
+
+			@media screen and (min-width: 1024px) {
+				display: flex !important;
+				width: auto !important;
+				min-width: unset;
+				overflow: unset;
+				box-shadow: none;
+				height: 60px !important;
+				opacity: 1 !important;
+				z-index: 2;
+			}
+		}
+
+		&.w-dropdown-list {
+			@apply lg:ml-[-16rem];
+		}
+
+		&:before {
+			@apply hidden lg:block content-[""] h-[calc(100%+3px)] lg:top-[-3px] w-[100vw] absolute lg:right-full bg-white lg:border-t-[3px] border-[#E10A17];
+		}
+
+		&:after {
+			@apply hidden lg:block content-[""] h-[calc(100%+3px)] lg:top-[-3px] w-[100vw] absolute lg:left-full bg-white lg:border-t-[3px] border-[#E10A17];
+		}
+
+		a.item-link {
+			@apply lg:h-full lg:px-[15px] lg:py-[0px];
+
+			&.w--current {
+				@apply text-white lg:text-[#E10A17];
+			}
+		}
+	}
 }
 
 .menu-open .nav-js {
-  transform: translateX(0);
+	transform: translateX(0);
 }
