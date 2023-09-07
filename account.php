@@ -12,7 +12,7 @@ get_header();
     </div>
 
 	<?php if(!is_lost_password_page()) { ?>
-    <div class="flex items-center 2xl:pl-[101px] bg-no-repeat bg-panther-red-100 bg-right-top clip-left h-[163px] justify-start lg:bg-red-bg lg:bg-transparent lg:h-[351px] lg:items-end lg:pb-[23px] lg:pl-[8%] lg:pr-[20px] lg:translate-y-[10%] lg:w-[50%] pb-[43px] pl-[12%] pt-[33px] text-left translate-y-[27%] w-[95%] xl:w-[48%] opacity-90">
+    <div class="flex items-end 2xl:pl-[101px] bg-no-repeat bg-panther-red-100 bg-right-top clip-left h-[163px] justify-start lg:bg-red-bg lg:bg-transparent lg:h-[351px] lg:items-end lg:pb-[23px] lg:pl-[8%] lg:pr-[20px] lg:translate-y-[10%] lg:w-[50%] pb-[38px] pl-[12%] pt-[33px] text-left translate-y-[27%] w-[95%] xl:w-[48%] opacity-90">
         <h1 class="text-white h1"><?php the_title(); ?></h1>
     </div>
 	<?php } ?>
