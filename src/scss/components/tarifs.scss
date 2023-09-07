@@ -56,6 +56,9 @@
     .price {
       @apply before:pr-[5px] after:content-['day'] after:text-[24px] after:lowercase after:absolute after:top-0 after:right-0 after:-translate-x-[-100%] after:translate-y-1 after:pl-[5px] md:text-[64px];
     }
+    .option {
+      @apply text-[18px] leading-[3];
+    }
   }
 
   .promo {
