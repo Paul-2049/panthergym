@@ -12,8 +12,6 @@ if ($product->is_type('variable')) {
 }
 ?>
 
-<section class="bg-black h-[130px] md:h-[177px]">
-</section>
 <div class="mx-auto pt-[30px] lg:px-[15px] px-[29px] w-full max-w-[1470px]">
     <?php
     /* breadcrumb Yoast */
