@@ -46,91 +46,43 @@
 	div.navbar {
 		background-color: #FFF !important;
 	}
-	div.navbar--menu .navbar--menu-wrapper {
-		@apply ml:h-[96px];
 
-		.navlink {
-			@apply flex ml:text-center ml:items-center ml:h-full;
+	.header-menu .has_submenu {
+		&:hover {
+			.nav-sub-menu {
+				@apply hidden lg:flex top-[0px] lg:top-full opacity-100;
+			}
 		}
 
-		.nav--dropdown {
-			@apply ml:h-full;
-		}
-
-		.nav--dropdown-toggle {
-			@apply flex ml:h-full;
-		}
-
-		.nav--dropdown-list {
-			@apply ml:absolute ml:bg-white ml:border-t-[3px];
-
-			&.active,
-			&.w--open {
-				@apply ml:top-full ml:pl-0;
-
-				@media screen and (min-width: 992px) {
-					display: flex !important;
-					width: auto !important;
-					min-width: unset;
-					overflow: unset;
-					box-shadow: none;
-					height: 60px !important;
-					opacity: 1 !important;
-					z-index: 2;
-				}
+		&.active {
+			.nav-sub-menu {
+				@apply block lg:hidden pl-[15px] lg:pl-0;
 			}
 
+			&:hover {
+				.nav-sub-menu {
+					@apply lg:flex;
+				}
+			}
+		}
+
+		.nav-sub-menu {
+			@apply hidden items-center lg:h-[60px] lg:absolute top-full w-auto lg:fixed lg:bg-white lg:border-t-[3px] border-[#E10A17] rounded-none;
+
 			&:before {
-				@apply hidden ml:block ml:top-[-3px] ml:right-full ml:border-t-[3px];
+				@apply hidden lg:block content-[""] h-[calc(100%+3px)] lg:top-[-3px] w-[100vw] absolute lg:right-full bg-white lg:border-t-[3px] border-[#E10A17];
 			}
 
 			&:after {
-				@apply hidden ml:block ml:top-[-3px] ml:left-full ml:border-t-[3px];
+				@apply hidden lg:block content-[""] h-[calc(100%+3px)] lg:top-[-3px] w-[100vw] absolute lg:left-full bg-white lg:border-t-[3px] border-[#E10A17];
 			}
-		}
 
-		.dropdown-link {
-			@apply flex ml:items-center ml:h-full ml:py-0;
-		}
-	}
+			a.item-link {
+				@apply lg:h-full lg:px-[15px] lg:py-[0px];
 
-	.nav-sub-menu,
-	.nav--dropdown-list {
-		@apply hidden items-center h-auto lg:absolute top-full w-max lg:fixed lg:bg-white lg:border-t-[3px] border-[#E10A17] rounded-none;
-
-		&.active,
-		&.w--open {
-			@apply block w-full top-[0px] lg:top-full pl-[15px] lg:pl-0 opacity-100;
-
-			@media screen and (min-width: 1024px) {
-				display: flex !important;
-				width: auto !important;
-				min-width: unset;
-				overflow: unset;
-				box-shadow: none;
-				height: 60px !important;
-				opacity: 1 !important;
-				z-index: 2;
-			}
-		}
-
-		&.w-dropdown-list {
-			@apply lg:ml-[-16rem];
-		}
-
-		&:before {
-			@apply hidden lg:block content-[""] h-[calc(100%+3px)] lg:top-[-3px] w-[100vw] absolute lg:right-full bg-white lg:border-t-[3px] border-[#E10A17];
-		}
-
-		&:after {
-			@apply hidden lg:block content-[""] h-[calc(100%+3px)] lg:top-[-3px] w-[100vw] absolute lg:left-full bg-white lg:border-t-[3px] border-[#E10A17];
-		}
-
-		a.item-link {
-			@apply lg:h-full lg:px-[15px] lg:py-[0px];
-
-			&.w--current {
-				@apply text-white lg:text-[#E10A17];
+				&.w--current {
+					@apply text-white lg:text-[#E10A17];
+				}
 			}
 		}
 	}
