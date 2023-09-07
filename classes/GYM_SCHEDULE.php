@@ -83,6 +83,35 @@ class GYM_SCHEDULE {
 			]) );
 		}
 
+		if(empty( $_POST['event_id'] )) return;
+
+		// Make booking
+		$event_id = $_POST['event_id'];
+		$tickets = Tribe__Tickets__Tickets::get_all_event_tickets( $event_id );
+		$user = wp_get_current_user();
+		$booking = false;
+		if( !empty( $tickets ) ) foreach( $tickets as $ticket ) {
+			if($ticket->stock() > 0 || $ticket->stock() == -1) {
+				$provider = tribe_tickets_get_ticket_provider( $ticket->ID );
+
+				$attendee_data = [
+					'title'     => date('Y-m-d H:i'),
+					'full_name' => $user->display_name,
+					'email'     => $user->user_email,
+				];
+				$provider->create_attendee( $ticket->ID, $attendee_data );
+
+				$booking = true;
+			}
+		}
+
+		if( !$booking ) {
+			wp_die( json_encode([
+				'status' => 'error',
+				'message' => 'No free places. Please select a schedule for another time'
+			]) );
+		}
+
 		wp_die( json_encode([
 			'status' => 'success'
 		]) );
