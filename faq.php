@@ -16,9 +16,6 @@
 
 get_header();
 ?>
-
-<section class="bg-black h-[130px] md:h-[177px]">
-</section>
 <?php
 $title = get_field('title');
 $cta = get_field('cta');

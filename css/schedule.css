@@ -484,14 +484,6 @@ body.page-template-calendar header {
     margin-top: 0px;
   }
 }
-body.page-template-calendar .main-wrapper {
-  padding-top: 177px;
-}
-@media screen and (max-width: 1023px) {
-  body.page-template-calendar .main-wrapper {
-    padding-top: 76px;
-  }
-}
 body.page-template-calendar .schedule_calendar {
   font-size: 14px;
 }

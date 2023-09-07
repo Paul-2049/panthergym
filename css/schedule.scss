@@ -84,14 +84,6 @@ body.page-template-calendar {
 		}
 	}
 
-	.main-wrapper {
-		padding-top: 177px;
-
-		@include tablet {
-			padding-top: 76px;
-		}
-	}
-
 	.schedule_calendar {
 		font-size: 14px;
 

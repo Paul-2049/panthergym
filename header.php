@@ -141,7 +141,7 @@
                 </li>
               <?php endif  ?>
               <?php if (count($menu_item->items) > 0) : ?>
-                <div data-hover="false" data-delay="0" data-w-id="49aed735-83d3-c986-6ea1-0660c88faf36" class="relative h-fit">
+                <div data-hover="false" data-delay="0" data-w-id="49aed735-83d3-c986-6ea1-0660c88faf36" class="relative h-fit has_submenu">
                   <li class="sub-menu-js item_menu">
                     <div class="item-link cursor-pointer"><?php echo $menu_item->title; ?></div>
                   </li>
