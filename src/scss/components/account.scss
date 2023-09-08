@@ -117,7 +117,9 @@
     .qr-code {
         @apply w-[176px] h-[176px] mb-[20px] lg:mb-0 lg:mr-[50px];
     }
-
+    .qr-code img{
+        box-shadow: none !important;
+    }
     .account-head {
         @apply flex flex-col items-center lg:flex-row;
     }
