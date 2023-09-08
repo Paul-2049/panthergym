@@ -117,7 +117,9 @@
     .qr-code {
         @apply w-[176px] h-[176px] mb-[20px] lg:mb-0 lg:mr-[50px];
     }
-
+    .qr-code img{
+        box-shadow: none !important;
+    }
     .account-head {
         @apply flex flex-col items-center lg:flex-row;
     }
@@ -143,7 +145,7 @@
     }
 
     .account-block {
-        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full;
+        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full lg:pl-[50px];
     }
 
     #mepr-account-nav {
@@ -159,7 +161,7 @@
     }
 
     .mp_wrapper {
-        @apply last:w-full last:max-w-[900px] last:text-center mx-auto;
+        @apply last:w-full last:max-w-[900px] last:text-center;
     }
 
     .mp_wrapper .mepr-account-change-password {
