@@ -19,7 +19,7 @@ get_header();
 </section>
 
 <?php if(is_lost_password_page()) {
-	echo do_shortcode('[gym_schedule id="head_bar"]Join now for $0 enrolment on the Ultimate and Performance Memberships! Ends August 31![/gym_schedule]');
+	echo do_shortcode('[gym_schedule id="head_bar" hide="auth"]Join now for $0 enrolment on the Ultimate and Performance Memberships! Ends August 31![/gym_schedule]');
 } ?>
 
 <section class="account-section">

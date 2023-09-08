@@ -30,6 +30,11 @@ class GYM_SCHEDULE {
 	public function shortcode( $atts, $shortcode_content = null ) {
 		if ( empty($atts) ) return;
 		if ( empty($atts['id']) ) return;
+
+		if( !empty( $atts["hide"] ) ) {
+			if( $atts["hide"] == 'auth' && is_user_logged_in() ) return;
+		}
+
 		if( !file_exists( THEME_DIR . '/shortcodes/schedule-' . $atts["id"] . '.php' ) ) return;
 
 		ob_start();
