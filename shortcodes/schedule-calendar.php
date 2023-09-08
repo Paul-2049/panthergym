@@ -82,8 +82,7 @@
 							<div class="block_2">
 								<div class="left">
 									<?php
-									$e = tribe_get_event( $event->ID );
-									$available = tribe_events_count_available_tickets( $e );
+									$available = tribe_events_count_available_tickets( $event );
 									if( $available >= 0 ) {
 										echo $available . ' spots left';
 									} else {

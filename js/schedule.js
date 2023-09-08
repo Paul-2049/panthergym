@@ -67,6 +67,7 @@ jQuery(document).ready(function($){
 		};
 
 		jQuery.post(ajaxurl, data, function (response) {
+			let scroll_to_top = true;
 			$buttom.removeAttr('disabled');
 
 			if($('.gym_shedule_popup').hasClass('auth')) {
@@ -91,11 +92,18 @@ jQuery(document).ready(function($){
 				if($('.gym_shedule_popup').hasClass('done')) {
 					$('.gym_shedule_popup').removeClass('done');
 				}
+			} else if(response.status == 'error') {
+				$buttom.after('<div class="error">'+ response.message +'</div>')
+				$buttom.remove();
+				scroll_to_top = false;
 			}
 
-			$('.gym_shedule_popup').animate({
-				scrollTop: 0
-			}, 300);
+			if(scroll_to_top) {
+				$('.gym_shedule_popup').animate({
+					scrollTop: 0
+				}, 300);
+			}
+
 		}, 'json');
 	}).on('submit', 'form#schedule-login', function(e){
 		e.preventDefault();

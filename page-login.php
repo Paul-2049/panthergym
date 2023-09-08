@@ -4,6 +4,10 @@
  */
 
 get_header();
+
+echo do_shortcode(
+	'[gym_schedule id="head_bar" hide="auth"]Join now for $0 enrolment on the Ultimate and Performance Memberships! Ends August 31![/gym_schedule]'
+);
 ?>
 
 <section class="account-section">

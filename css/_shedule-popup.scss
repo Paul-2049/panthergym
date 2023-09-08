@@ -335,6 +335,10 @@ body.shedule_popup {
 				border-color: $color_red;
 			}
 		}
+
+		.error {
+			color: $color_red;
+		}
 	}
 
 	button[disabled] {

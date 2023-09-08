@@ -30,6 +30,11 @@ class GYM_SCHEDULE {
 	public function shortcode( $atts, $shortcode_content = null ) {
 		if ( empty($atts) ) return;
 		if ( empty($atts['id']) ) return;
+
+		if( !empty( $atts["hide"] ) ) {
+			if( $atts["hide"] == 'auth' && is_user_logged_in() ) return;
+		}
+
 		if( !file_exists( THEME_DIR . '/shortcodes/schedule-' . $atts["id"] . '.php' ) ) return;
 
 		ob_start();
@@ -43,23 +48,10 @@ class GYM_SCHEDULE {
 	public static function getEventsForDay( $date ){
 		if( empty($date) ) $date = date('Y-m-d');
 
-		global $wpdb;
-		$start_from = $date == date('Y-m-d') ? date('Y-m-d H:i') : $date . ' 00:01';
-		$events = $wpdb->get_results("
-			SELECT 
-			    {$wpdb->posts}.*,
-			    event_from.meta_value AS 'event_from',
-			    event_to.meta_value AS 'event_to'
-			FROM {$wpdb->posts}
-			LEFT JOIN {$wpdb->postmeta} event_from ON {$wpdb->posts}.ID = event_from.post_id
-			LEFT JOIN {$wpdb->postmeta} event_to ON {$wpdb->posts}.ID = event_to.post_id
-			WHERE {$wpdb->posts}.post_type = 'tribe_events'
-			AND {$wpdb->posts}.post_status = 'publish'
-			AND event_from.meta_key = '_EventStartDate'
-			AND event_from.meta_value <= '{$start_from}'
-		    AND event_to.meta_key = '_EventEndDate'
-			AND event_to.meta_value >= '{$date}  23:59'
-		");
+		$events = tribe_get_events([
+			'start_date' => $date,
+			'end_date' => $date . ' 23:59'
+		]);
 
 		return $events;
 	}
@@ -80,6 +72,35 @@ class GYM_SCHEDULE {
 		if ( !is_user_logged_in() ) {
 			wp_die( json_encode([
 				'status' => 'auth'
+			]) );
+		}
+
+		if(empty( $_POST['event_id'] )) return;
+
+		// Make booking
+		$event_id = $_POST['event_id'];
+		$tickets = Tribe__Tickets__Tickets::get_all_event_tickets( $event_id );
+		$user = wp_get_current_user();
+		$booking = false;
+		if( !empty( $tickets ) ) foreach( $tickets as $ticket ) {
+			if($ticket->stock() > 0 || $ticket->stock() == -1) {
+				$provider = tribe_tickets_get_ticket_provider( $ticket->ID );
+
+				$attendee_data = [
+					'title'     => date('Y-m-d H:i'),
+					'full_name' => $user->display_name,
+					'email'     => $user->user_email,
+				];
+				$provider->create_attendee( $ticket->ID, $attendee_data );
+
+				$booking = true;
+			}
+		}
+
+		if( !$booking ) {
+			wp_die( json_encode([
+				'status' => 'error',
+				'message' => 'No free places. Please select a schedule for another time'
 			]) );
 		}
 
