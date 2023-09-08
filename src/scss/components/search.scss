@@ -5,11 +5,19 @@
         }
 
         h1 {
-            @apply lg:mb-[31px] mb-[25px] text-center font-bold font-base uppercase leading-[1.1] tracking-[2px] lg:text-[36px];
+            @apply lg:mb-[31px]
+            mb-[25px]
+            text-center
+            font-bold
+            font-base
+            uppercase
+            leading-[1.1]
+            tracking-[2px]
+            text-[36px];
         }
 
         .search--form {
-            @apply flex gap-0 relative mb-[48px];
+            @apply flex flex-row items-center justify-center gap-0 relative mb-[48px];
 
             .dashicons-search {
                 @apply absolute
@@ -38,14 +46,20 @@
                 font-privacy
                 text-[15px]
                 font-normal
-                w-[calc(100%-218px)];
+                w-[calc(100%-135px)]
+                sm:w-[calc(100%-218px)];
 
                 outline: none;
             }
 
             [type="submit"] {
                 @include button_red;
-                @apply max-w-[218px] w-full mx-0 text-[16px] h-[57px];
+                @apply w-full
+                max-w-[135px]
+                sm:max-w-[218px]
+                mx-0
+                text-[16px]
+                h-[57px];
             }
         }
 
