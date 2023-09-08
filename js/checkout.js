@@ -68,22 +68,17 @@ jQuery(document).ready(function($){
 
 	$('form.checkout').on('submit', function(e) {
         var valid = true;
-
-        // Проверяем каждое обязательное поле
         $('.woocommerce-checkout .validate-required input, .woocommerce-checkout .validate-required select, .woocommerce-checkout .validate-required textarea').each(function() {
             var $this = $(this);
-
             if ($this.val() === '') {
                 valid = false;
                 $this.addClass('input-error');
-                $this.after('<div class="error">This field is required!</div>');
+                $this.after('<div class="error text-panther-red-100">This field is required!</div>');
             } else {
                 $this.removeClass('input-error');
-                $this.next('.error').remove();
+                $this.next('.error.text-panther-red-100').remove();
             }
         });
-
-        // Если хотя бы одно поле не прошло валидацию, останавливаем отправку формы
         if (!valid) {
             e.preventDefault();
         }
