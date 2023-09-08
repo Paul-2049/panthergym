@@ -244,3 +244,19 @@ add_filter( 'gettext', function ( $translated_text, $text, $domain ) {
 	return $translated_text;
 
 }, 10, 3 );
+
+
+
+function custom_memberpress_account_subscriptions($content) {
+    // Проверяем, что мы находимся на странице аккаунта и информация о подписках выводится
+    if (is_account_page() && strpos($content, '[mepr-account-subscriptions') !== false) {
+        // Здесь вы можете кастомизировать вывод информации о подписках
+        $custom_output = '<p>Это ваш кастомизированный вид информации о подписках.</p>';
+        
+        // Заменяем стандартный вывод информации о подписках на кастомизированный
+        $content = preg_replace('/\[mepr-account-subscriptions[^\]]*\]/', $custom_output, $content, 1);
+    }
+
+    return $content;
+}
+add_filter('the_content', 'custom_memberpress_account_subscriptions');
