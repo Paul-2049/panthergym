@@ -1227,6 +1227,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
     margin-right: 50px;
   }
 }
+.qr-code img {
+    box-shadow: none !important;
+  }
 .account-head{
   display: flex;
   flex-direction: column;
@@ -1309,6 +1312,7 @@ body.woocommerce-lost-password .account-section .mp-spacer,
     flex-direction: row;
     align-items: flex-start;
     gap: 160px;
+    padding-left: 50px;
   }
 }
 #mepr-account-nav{
@@ -1334,10 +1338,6 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .mepr-active-nav-tab{
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
-}
-.mp_wrapper{
-  margin-left: auto;
-  margin-right: auto;
 }
 .mp_wrapper:last-child{
   width: 100%;
@@ -2196,6 +2196,127 @@ body.woocommerce-lost-password .account-section .mp-spacer,
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
 }
+body.search .search-section{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 892px;
+}
+body.search h1{
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: Rajdhani, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+@media (min-width: 1024px){
+  body.search h1{
+    margin-bottom: 31px;
+    font-size: 36px;
+  }
+}
+body.search .search--form{
+  position: relative;
+  margin-bottom: 48px;
+  display: flex;
+  gap: 0px;
+}
+body.search .search--form .dashicons-search{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  height: 100%;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
+}
+body.search .search--form [type=search]{
+  height: 57px;
+  width: calc(100% - 218px);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-width: 1px;
+  border-right-width: 0px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  padding-left: 60px;
+  padding-right: 15px;
+  font-family: Open Sans, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+    outline: none;
+}
+body.search .search--form [type=submit] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    background: #FFFFFF;
+    color: #E10A17;
+    border: 1px solid #E10A17;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    clip-path: unset;
+    padding: 0px 15px;
+    transition: all 0.3s linear;
+    background: #E10A17;
+    color: #FFFFFF;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 57px;
+    width: 100%;
+    max-width: 218px;
+    font-size: 16px;
+  }
+body.search .search--form [type=submit]:hover {
+    background: #E10A17;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    background: #FFFFFF;
+    color: #E10A17;
+    border-color: #E10A17;
+  }
+body.search .search--grid{
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+body.search .search--grid a{
+  display: block;
+  height: auto;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  padding: 15px;
+}
+body.search .search--grid a:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 10 23 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+body.search .search--grid .search-result-item:last-child a{
+  border-width: 0px;
+}
+body.search [data-node-type=search-result-empty]{
+  text-align: center;
+}
 .filter-js.active{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2923,6 +3044,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .w-\[95\%\]{
   width: 95%;
 }
+.w-\[calc\(100\%-218px\)\]{
+  width: calc(100% - 218px);
+}
 .w-auto{
   width: auto;
 }
@@ -2991,6 +3115,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 }
 .max-w-\[171px\]{
   max-width: 171px;
+}
+.max-w-\[218px\]{
+  max-width: 218px;
 }
 .max-w-\[219px\]{
   max-width: 219px;
@@ -3283,6 +3410,12 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .rounded-t-\[4px\]{
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+}
+.rounded-bl-\[2px\]{
+  border-bottom-left-radius: 2px;
+}
+.rounded-tl-\[2px\]{
+  border-top-left-radius: 2px;
 }
 .border{
   border-width: 1px;
@@ -3740,6 +3873,12 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .pl-\[40px\]{
   padding-left: 40px;
 }
+.pl-\[60px\]{
+  padding-left: 60px;
+}
+.pr-\[15px\]{
+  padding-right: 15px;
+}
 .pr-\[16px\]{
   padding-right: 16px;
 }
@@ -4025,6 +4164,10 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .text-\[\#646464\]{
   --tw-text-opacity: 1;
   color: rgb(100 100 100 / var(--tw-text-opacity));
+}
+.text-\[\#BDBDBD\]{
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
 }
 .text-\[\#E10A17\]{
   --tw-text-opacity: 1;
@@ -5227,10 +5370,6 @@ form.form-search .js-search-input:focus-visible {
   max-width: unset;
 }
 
-.last\:text-center:last-child{
-  text-align: center;
-}
-
 .hover\:border-panther-grey-200:hover{
   --tw-border-opacity: 1;
   border-color: rgb(75 75 75 / var(--tw-border-opacity));
@@ -5658,6 +5797,7 @@ form.form-search .js-search-input:focus-visible {
     left: 22px;
   }
 }
+
 @media (min-width: 1024px){
   .lg\:static{
     position: static;
