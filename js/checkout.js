@@ -59,4 +59,10 @@ jQuery(document).ready(function($){
 			node.val(node.val().replace(/[^0-9]/g,'') );
 		});
 	}
+	if($('#shipping_postcode').length) {
+		$('#shipping_postcode').bind( 'keyup blur', function(){
+			var node = $(this);
+			node.val(node.val().replace(/[^0-9]/g,'') );
+		});
+	}
 });
