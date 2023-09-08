@@ -238,7 +238,7 @@ add_filter( 'gettext', function ( $translated_text, $text, $domain ) {
 	// check translated text and update
 	switch ( $translated_text ) {
 		case 'Create an account?' :
-			$translated_text = __( 'Checking out as Guest. Create and account?', 'woocommerce' );
+			$translated_text = __( 'Checking out as Guest. Crating account?', 'woocommerce' );
 			break;
 	}
 	return $translated_text;
