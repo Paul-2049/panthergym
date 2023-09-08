@@ -65,4 +65,27 @@ jQuery(document).ready(function($){
 			node.val(node.val().replace(/[^0-9]/g,'') );
 		});
 	}
+
+	$('form.checkout').on('submit', function(e) {
+        var valid = true;
+
+        // Проверяем каждое обязательное поле
+        $('.woocommerce-checkout .validate-required input, .woocommerce-checkout .validate-required select, .woocommerce-checkout .validate-required textarea').each(function() {
+            var $this = $(this);
+
+            if ($this.val() === '') {
+                valid = false;
+                $this.addClass('input-error');
+                $this.after('<div class="error">This field is required!</div>');
+            } else {
+                $this.removeClass('input-error');
+                $this.next('.error').remove();
+            }
+        });
+
+        // Если хотя бы одно поле не прошло валидацию, останавливаем отправку формы
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
 });
