@@ -65,4 +65,22 @@ jQuery(document).ready(function($){
 			node.val(node.val().replace(/[^0-9]/g,'') );
 		});
 	}
+
+	$('form.checkout').on('submit', function(e) {
+        var valid = true;
+        $('.woocommerce-checkout .validate-required input, .woocommerce-checkout .validate-required select, .woocommerce-checkout .validate-required textarea').each(function() {
+            var $this = $(this);
+            if ($this.val() === '') {
+                valid = false;
+                $this.addClass('input-error');
+                $this.after('<div class="error text-panther-red-100">This field is required!</div>');
+            } else {
+                $this.removeClass('input-error');
+                $this.next('.error.text-panther-red-100').remove();
+            }
+        });
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
 });
