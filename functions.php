@@ -8,6 +8,7 @@ include_once THEME_DIR . '/acf/schedule-event.php';
 
 // Подключаем классы
 require_once( __DIR__ . '/classes/GYM_ACCOUNT.php');
+require_once( __DIR__ . '/classes/GYM_REDIRECT.php');
 require_once( __DIR__ . '/classes/GYM_SCHEDULE.php');
 require_once( __DIR__ . '/classes/GYM_HEADER.php');
 
