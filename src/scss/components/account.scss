@@ -158,6 +158,10 @@
 
     .mepr-nav-item {
         @apply m-0 p-0 hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
+
+        a {
+            @apply font-base;
+        }
     }
 
     .mepr-active-nav-tab {
