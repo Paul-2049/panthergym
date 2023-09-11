@@ -7,7 +7,6 @@ get_header();
 ?>
 <?php if (have_rows('main')) : ?>
     <?php while (have_rows('main')) : the_row();
-        $title = get_sub_field('title');
         $bg_image_mob = get_sub_field('bg_image_mob');
         $bg_image = get_sub_field('bg_image');
     ?>
