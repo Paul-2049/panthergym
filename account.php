@@ -9,6 +9,8 @@ get_header();
     <?php while (have_rows('main')) : the_row();
         $bg_image_mob = get_sub_field('bg_image_mob');
         $bg_image = get_sub_field('bg_image');
+
+		if(!empty( $bg_image_mob ) && !empty($bg_image)) {
     ?>
         <section class="flex items-end justify-end <?= !is_lost_password_page() ? 'h-[505px] lg:h-[500px]' : 'h-[130px] md:h-[177px]'; ?> relative">
             <div class="absolute left-0 top-0 bg-black bottom-0 right-0 overflow-hidden">
@@ -22,7 +24,7 @@ get_header();
                 </div>
             <?php } ?>
         </section>
-    <?php endwhile; ?>
+    <?php } endwhile; ?>
 <?php endif; ?>
 
 <?php if (is_lost_password_page()) {
