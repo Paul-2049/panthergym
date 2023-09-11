@@ -1340,6 +1340,15 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .mepr-nav-item{
   margin: 0px;
   padding: 0px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.mepr-nav-item:hover{
+  --tw-text-opacity: 1;
+  color: rgb(225 10 23 / var(--tw-text-opacity));
 }
 .mepr-active-nav-tab{
   --tw-text-opacity: 1;
