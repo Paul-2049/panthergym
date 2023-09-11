@@ -1,16 +1,16 @@
 <?php
 
-if ( !defined('THEME_DIR')) define('THEME_DIR', __DIR__);
-if ( !defined('THEME_URL')) define('THEME_URL', get_stylesheet_directory_uri());
+if (!defined('THEME_DIR')) define('THEME_DIR', __DIR__);
+if (!defined('THEME_URL')) define('THEME_URL', get_stylesheet_directory_uri());
 
 // ACF
 include_once THEME_DIR . '/acf/schedule-event.php';
 
 // Подключаем классы
-require_once( __DIR__ . '/classes/GYM_ACCOUNT.php');
-require_once( __DIR__ . '/classes/GYM_REDIRECT.php');
-require_once( __DIR__ . '/classes/GYM_SCHEDULE.php');
-require_once( __DIR__ . '/classes/GYM_HEADER.php');
+require_once(__DIR__ . '/classes/GYM_ACCOUNT.php');
+require_once(__DIR__ . '/classes/GYM_REDIRECT.php');
+require_once(__DIR__ . '/classes/GYM_SCHEDULE.php');
+require_once(__DIR__ . '/classes/GYM_HEADER.php');
 
 add_action('wp_enqueue_scripts', 'panther_child_css', 1001);
 function panther_child_css()
@@ -19,7 +19,7 @@ function panther_child_css()
 	wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/css/style.min.css');
 	wp_enqueue_script('app-js', get_stylesheet_directory_uri() . '/js/app.min.js', array('jquery'), null, true);
 
-	if(is_checkout()) {
+	if (is_checkout()) {
 		wp_enqueue_style('gym-checkout', THEME_URL . '/css/checkout.css');
 		wp_enqueue_script('gym-checkout', THEME_URL . '/js/checkout.js', ['jquery-core'], null, true);
 	}
@@ -192,30 +192,30 @@ add_action('wp_ajax_nopriv_filter_products', 'filter_products');
  * @compatible    WC 3.5.4
  * @donate $9     https://businessbloomer.com/bloomer-armada/
  */
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-add_action( 'woocommerce_checkout_before_customer_details', 'woocommerce_checkout_login_form' );
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
+add_action('woocommerce_checkout_before_customer_details', 'woocommerce_checkout_login_form');
 
 
 // Добавляем placeholder для всех полей на странице Checkout
-add_filter( 'woocommerce_checkout_fields', function( $fields ) {
-	if( !empty($fields) ) foreach ( $fields as $type => $val ) {
-		if ( !empty($val) ) foreach ( $val as $key => $attr ) {
-			if ( !empty($attr) && ( !array_key_exists('placeholder', $attr ) || empty( $attr['placeholder'] ) ) ) {
+add_filter('woocommerce_checkout_fields', function ($fields) {
+	if (!empty($fields)) foreach ($fields as $type => $val) {
+		if (!empty($val)) foreach ($val as $key => $attr) {
+			if (!empty($attr) && (!array_key_exists('placeholder', $attr) || empty($attr['placeholder']))) {
 				$fields[$type][$key]['placeholder'] = $attr['label'];
 
-				if($type == 'billing' && $key == 'billing_postcode') {
+				if ($type == 'billing' && $key == 'billing_postcode') {
 					$fields[$type][$key]['class'][] = 'form-row-first';
 
-					if( ($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false ) {
-						unset( $fields[$type][$key]['class'][$key_id] );
+					if (($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false) {
+						unset($fields[$type][$key]['class'][$key_id]);
 					}
 				}
 
-				if($type == 'billing' && $key == 'billing_phone') {
+				if ($type == 'billing' && $key == 'billing_phone') {
 					$fields[$type][$key]['class'][] = 'form-row-last';
 
-					if( ($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false ) {
-						unset( $fields[$type][$key]['class'][$key_id] );
+					if (($key_id = array_search('form-row-wide', $fields[$type][$key]['class'])) !== false) {
+						unset($fields[$type][$key]['class'][$key_id]);
 					}
 				}
 			}
@@ -223,25 +223,32 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 	}
 
 	return $fields;
-}, 10, 1 );
+}, 10, 1);
 
 /**
  * Update the checkout create an account text
  */
-add_filter( 'gettext', function ( $translated_text, $text, $domain ) {
+add_filter('gettext', function ($translated_text, $text, $domain) {
 
 	// if not woocommerce then return
-	if ( 'woocommerce' !== $domain ) {
+	if ('woocommerce' !== $domain) {
 		return $translated_text;
 	}
 
 	// check translated text and update
-	switch ( $translated_text ) {
-		case 'Create an account?' :
-			$translated_text = __( 'Checking out as Guest. Crating account?', 'woocommerce' );
+	switch ($translated_text) {
+		case 'Create an account?':
+			$translated_text = __('Checking out as Guest. Crating account?', 'woocommerce');
 			break;
 	}
 	return $translated_text;
+}, 10, 3);
 
-}, 10, 3 );
+// Prohibiting updates plugin Seraphinite Accelerator
+function remove_plugin_updates($value)
+{
+	unset($value->response['seraphinite-accelerator-ext/plugin_root.php']);
+	return $value;
+}
 
+add_filter('site_transient_update_plugins', 'remove_plugin_updates');
