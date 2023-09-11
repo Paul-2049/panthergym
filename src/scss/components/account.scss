@@ -182,7 +182,7 @@
     [type='button'],
     [type='reset'],
     [type='submit'] {
-        @apply text-white uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-panther-red-100 bg-no-repeat bg-center bg-cover py-[17px] px-[47px] block w-fit mx-auto hover:bg-panther-red-200 transition-colors duration-200 ease-in;
+        @apply text-white uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-panther-red-100 bg-no-repeat bg-center bg-cover py-[17px] px-[47px] block w-fit mx-auto hover:bg-panther-red-200 transition-colors duration-200 ease-in cursor-pointer;
     }
     .mp_wrapper .mepr-account-change-password{
         @apply underline hover:no-underline underline-offset-2;
