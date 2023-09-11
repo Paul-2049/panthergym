@@ -1433,6 +1433,10 @@ body.woocommerce-lost-password .account-section .mp-spacer,
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.mp_wrapper select#mepr-address-country,
+  .mp_wrapper select#mepr-address-state{
+  text-transform: none;
+}
 .mp_wrapper .mp-form-row{
   margin-bottom: 20px;
 }
