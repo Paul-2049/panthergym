@@ -203,6 +203,11 @@
         @apply py-[8px] px-0 uppercase text-[20px] font-bold text-black font-base leading-[1.1] border-t-0 border-l-0 border-r-0 border-b-[1px] border-black bg-transparent;
     }
 
+    .mp_wrapper select#mepr-address-country,
+    .mp_wrapper select#mepr-address-state {
+        @apply normal-case;
+    }
+
     .mp_wrapper .mp-form-row {
         @apply mb-[20px] lg:mb-[28px]
     }
