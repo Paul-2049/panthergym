@@ -1350,6 +1350,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
 }
+.mepr-nav-item a{
+  font-family: Rajdhani, sans-serif;
+}
 .mepr-active-nav-tab{
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
