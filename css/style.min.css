@@ -1319,7 +1319,6 @@ body.woocommerce-lost-password .account-section .mp-spacer,
     flex-direction: row;
     align-items: flex-start;
     gap: 160px;
-    padding-left: 50px;
   }
 }
 #mepr-account-nav{
@@ -3171,6 +3170,9 @@ body.search [data-node-type=search-result-empty]{
 }
 .max-w-\[1240px\]{
   max-width: 1240px;
+}
+.max-w-\[1249px\]{
+  max-width: 1249px;
 }
 .max-w-\[1256px\]{
   max-width: 1256px;
