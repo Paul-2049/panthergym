@@ -23,7 +23,7 @@ get_header();
 } ?>
 
 <section class="account-section">
-    <div class="container w-full mx-auto max-w-[1470px] px-[30px] text-center">
+    <div class="container w-full mx-auto max-w-[1249px] px-[30px] text-center">
         <div class="account-head">
 			<?php if(is_user_logged_in()) { ?>
             <div class="qr-code">
