@@ -21,7 +21,7 @@
             }
 
             .account-content {
-                @apply mt-[20px] lg:mt-[40px] text-left mb-[48px] lg:mb-[63px] text-left sm:text-center text-[15px] lg:text-[20px];
+                @apply mt-[20px] lg:mt-[40px] text-left mb-[48px] lg:mb-[63px] sm:text-center text-[15px] lg:text-[20px];
             }
 
             .mp_wrapper {
@@ -37,7 +37,7 @@
             }
 
             input[type="text"],
-            input[type="password"]{
+            input[type="password"] {
                 @apply p-0 h-[50px] normal-case font-privacy text-[16px];
 
                 &::placeholder {
@@ -54,8 +54,8 @@
             .form-row-last {
                 @apply text-[16px] font-privacy font-normal mb-[50px];
 
-                @media screen and (min-width: 576px) {
-                    width: 47% !important;
+                @media screen and (min-width:576px) {
+                    width:47% !important;
                 }
 
                 &.bold {
@@ -72,10 +72,10 @@
 
                 a {
                     @apply font-privacy text-[16px] font-normal underline;
-                    color: $color_red;
+                    color:$color_red;
 
                     &:hover {
-                        text-decoration: none;
+                        text-decoration:none;
                     }
 
                     &.forgot_password {
@@ -90,26 +90,26 @@
                 &.no_account {
                     @apply text-left sm:text-right;
 
-                    @media screen and (max-width: 575px) {
-                        width: calc(100% - 75px) !important;
+                    @media screen and (max-width:575px) {
+                        width:calc(100% - 75px) !important;
                     }
                 }
             }
 
             .form-row-last {
-                @apply float-right text-left ;
+                @apply float-right text-left;
 
                 &.no_account {
                     @apply text-right sm:text-left;
 
-                    @media screen and (max-width: 575px) {
-                        width: 75px !important;
+                    @media screen and (max-width:575px) {
+                        width:75px !important;
                     }
                 }
             }
 
             .mp-spacer {
-                clear: both;
+                clear:both;
             }
         }
     }
@@ -118,8 +118,12 @@
         @apply w-[176px] h-[176px] mb-[20px] lg:mb-0 lg:mr-[50px];
     }
 
+    .qr-code img {
+        box-shadow:none !important;
+    }
+
     .account-head {
-        @apply flex flex-col items-center lg:flex-row;
+        @apply flex flex-col items-center lg:flex-row max-w-[900px] w-full ml-auto mr-0 justify-start;
     }
 
     .account-wrap {
@@ -135,7 +139,7 @@
     }
 
     .account-content {
-        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left max-w-[894px] w-full mb-[53px] lg:mb-[57px];
+        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left max-w-[900px] w-full mb-[53px] lg:mb-[57px] ml-auto mr-0;
 
         span {
             @apply text-panther-red-100;
@@ -143,7 +147,7 @@
     }
 
     .account-block {
-        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full;
+        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full lg:pl-[50px];
     }
 
     #mepr-account-nav {
@@ -159,7 +163,7 @@
     }
 
     .mp_wrapper {
-        @apply last:w-full last:max-w-[900px] last:text-center mx-auto;
+        @apply last:w-full last:max-w-[900px] last:text-center;
     }
 
     .mp_wrapper .mepr-account-change-password {
@@ -202,11 +206,36 @@
     }
 
 
-    #mepr_loginform label{
+    #mepr_loginform label {
         @apply flex items-center font-privacy;
     }
 
     #mepr_loginform [name="rememberme"] {
         @include checkbox;
+    }
+
+    .mp_wrapper table.mepr-account-table {
+        border:none !important;
+    }
+
+    .mp_wrapper table.mepr-account-table thead tr {
+        border-radius:2px;
+        border:1px solid #000 !important;
+    }
+
+    .mp_wrapper table.mepr-account-table th {
+        @apply py-[17px] pl-[15px] lg:pl-[36px] text-left text-[20px] font-bold leading-[1.1] uppercase;
+    }
+
+    .mp_wrapper table.mepr-account-table td {
+        @apply pt-[15px] pl-[15px] lg:pt-[31px] lg:pl-[36px] text-left border-none font-privacy font-bold;
+    }
+
+    .mp_wrapper table.mepr-account-table tr {
+        @apply pr-[10px] border-none;
+    }
+
+    .mp_wrapper table.mepr-account-table .mepr-account-actions a {
+        @apply text-[16px] font-privacy font-bold leading-[1.1] text-center inline-flex items-center justify-center text-panther-red-100;
     }
 }

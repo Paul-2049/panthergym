@@ -1,0 +1,95 @@
+@layer components {
+    body.search {
+        .search-section {
+            @apply w-full max-w-[892px] mx-auto;
+        }
+
+        h1 {
+            @apply lg:mb-[31px]
+            mb-[25px]
+            text-center
+            font-bold
+            font-base
+            uppercase
+            leading-[1.1]
+            tracking-[2px]
+            text-[36px];
+        }
+
+        .search--form {
+            @apply flex flex-row items-center justify-center gap-0 relative mb-[48px];
+
+            .dashicons-search {
+                @apply absolute
+                top-0
+                left-0
+                w-[60px]
+                h-full
+                flex
+                items-center
+                justify-center
+                text-[18px]
+                text-[#BDBDBD];
+            }
+
+            [type="search"] {
+                @apply rounded-tl-[2px]
+                rounded-bl-[2px]
+                border-[1px]
+                border-r-0
+                border-solid
+                border-black
+                h-[57px]
+                pl-[60px]
+                pr-[15px]
+                text-black
+                font-privacy
+                text-[15px]
+                font-normal
+                w-[calc(100%-135px)]
+                sm:w-[calc(100%-218px)];
+
+                outline: none;
+            }
+
+            [type="submit"] {
+                @include button_red;
+                @apply w-full
+                max-w-[135px]
+                sm:max-w-[218px]
+                mx-0
+                text-[16px]
+                h-[57px];
+            }
+        }
+
+        .search--grid {
+            @apply border-[1px]
+            border-solid
+            border-black;
+
+            a {
+                @apply block
+                w-full
+                h-auto
+                p-[15px]
+                border-b-[1px]
+                border-solid
+                border-black;
+
+                &:hover {
+                    @apply bg-[#E10A17]
+                    text-white;
+                }
+            }
+
+            .search-result-item:last-child a {
+                @apply border-0;
+            }
+        }
+
+        [data-node-type="search-result-empty"] {
+            @apply text-center;
+        }
+    }
+}
