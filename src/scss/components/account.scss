@@ -147,7 +147,7 @@
     }
 
     .account-block {
-        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full lg:pl-[50px];
+        @apply flex flex-col gap-[45px] lg:gap-[160px] items-center justify-start lg:flex-row lg:items-start w-full;
     }
 
     #mepr-account-nav {
