@@ -152,10 +152,12 @@
 
     #mepr-account-nav {
         @apply flex flex-col text-center lg:text-left text-[20px] leading-[2.4] uppercase font-bold text-black;
+
+        
     }
 
     .mepr-nav-item {
-        @apply m-0 p-0;
+        @apply m-0 p-0 hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
     }
 
     .mepr-active-nav-tab {
