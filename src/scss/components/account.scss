@@ -123,7 +123,7 @@
     }
 
     .account-head {
-        @apply flex flex-col items-center lg:flex-row max-w-[1065px] w-full ml-auto mr-0 justify-start;
+        @apply flex flex-col items-center lg:flex-row max-w-[920px] w-full ml-auto mr-0 justify-start;
     }
 
     .account-wrap {
@@ -139,7 +139,7 @@
     }
 
     .account-content {
-        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left max-w-[1065px] w-full mb-[53px] lg:mb-[57px] ml-auto mr-0;
+        @apply text-[20px] font-privacy mt-[18px] lg:mt-[32px] text-left max-w-[900px] w-full mb-[53px] lg:mb-[57px] ml-auto mr-0;
 
         span {
             @apply text-panther-red-100;
