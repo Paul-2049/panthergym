@@ -20,7 +20,8 @@ const filePaths = {
     scss: `${srcFolder}/scss/style.scss`,
     html: `${srcFolder}/*.html`,
     static: `${srcFolder}/static/**/*.*`,
-    svgIcons: `${srcFolder}/icons/*.svg`,
+    svgIcons: `${srcFolder}/icons/**/*.svg`,
+    php: './**/*.php',
   },
   watch: {
     js: `${srcFolder}/js/**/*.js`,
@@ -28,6 +29,7 @@ const filePaths = {
     html: `${srcFolder}/**/*.html`,
     images: `${srcFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
     static: `${srcFolder}/static/**/*.*`,
+    php: './**/*.php',
   },
   clean: buildFolder,
   buildFolder: buildFolder,
