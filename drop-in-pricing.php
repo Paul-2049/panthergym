@@ -33,6 +33,7 @@ get_header();
     $title = get_sub_field('title');
     $sub_title = get_sub_field('sub_title');
     $content = get_sub_field('content');
+    $product_plans = get_sub_field('item');
     $allowed_html = array(
       'a'     => array(
         'href' => array(),
@@ -52,15 +53,17 @@ get_header();
       <p class="font-privacy leading-[1.5] text-center mx-auto text-[20px] lg:mb-[43px] max-w-[902px] mb-[57px] w-full">
         <?php echo $content; ?>
       </p>
-
-      <div class="flex flex-wrap gap-[48px] max-w-[850px] mx-auto w-full">
-        <?php if (have_rows('item')) : ?>
-          <?php while (have_rows('item')) : the_row();
-            $name = get_sub_field('name');
-            $price = get_sub_field('price');
-            $promo = get_sub_field('promo');
-            $cta = get_sub_field('cta');
-            $option = get_sub_field('option');
+      <?php if ($product_plans) : ?>
+        <div class="flex flex-wrap gap-[48px] max-w-[850px] mx-auto w-full">
+          <?php
+          foreach ($product_plans as $product) :
+            setup_postdata($product);
+            $name = $product->get_name();
+            $promo = get_field('promo');
+            $period_interval = $product->subscription_period_interval;
+            $period = $product->subscription_period;
+            $price = $product->get_price();
+            $option = $product->get_description();
             $allowed_html = array(
               'ul'     => array(),
               'li'     => array(),
@@ -70,6 +73,8 @@ get_header();
             $replace = array('<ul class="option">');
             $option = wp_kses($option, $allowed_html);
             $option = str_replace($search, $replace, $option);
+            $product_id = $product->get_id();
+            $add_to_cart_url = esc_url($product->add_to_cart_url());
           ?>
             <div class="tarif tarif-js">
               <div class="tarif-head">
@@ -77,18 +82,20 @@ get_header();
                   – <?php echo esc_html($name); ?> –
                 </div>
                 <div class="price">
-                  <?php echo esc_html($price); ?>
+                  <?php echo wc_price($price); ?>
                 </div>
                 <div class="promo"><?php echo esc_html($promo); ?></div>
-                <a href="<?php echo esc_url($cta['url']); ?>" class="btn-get"><?php echo esc_html($cta['title']); ?></a>
+                <a href="<?php echo $add_to_cart_url; ?>" class="add-to-cart-link btn-get" rel="nofollow">GET STARTED</a>
               </div>
               <div class="border-b-[1px] border-black border-l-[1px] border-r-[1px] h-[0] md:border-none md:h-auto rounded-b-[4px] tarif-options">
                 <?php echo $option; ?>
               </div>
             </div>
-          <?php endwhile; ?>
-        <?php endif; ?>
-      </div>
+          <?php endforeach;
+          wp_reset_postdata();
+          ?>
+        </div>
+      <?php endif; ?>
     </section>
   <?php endwhile; ?>
 <?php endif; ?>
