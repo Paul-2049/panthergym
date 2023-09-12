@@ -1,6 +1,6 @@
 @layer components {
     .account-section {
-        @apply bg-white pt-[92px] lg:pt-[148px] pb-[70px] lg:pb-[100px];
+        @apply bg-white pt-[65px] lg:pt-[65px] pb-[70px] lg:pb-[100px];
     }
 
     body.woocommerce-lost-password,
@@ -203,9 +203,57 @@
         @apply py-[8px] px-0 uppercase text-[20px] font-bold text-black font-base leading-[1.1] border-t-0 border-l-0 border-r-0 border-b-[1px] border-black bg-transparent;
     }
 
-    .mp_wrapper select#mepr-address-country,
+    .mp_wrapper .select2-container {
+        @apply w-full max-w-full px-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-black bg-transparent;
+
+        .selection {
+            @apply w-full;
+        }
+
+        .select2-selection--single {
+            @apply flex items-center uppercase text-[20px] font-bold text-black font-base leading-[1.1] h-[46px] border-0 bg-transparent;
+
+            span {
+                @apply flex items-center h-full;
+            }
+        }
+
+        .select2-selection__rendered {
+            @apply uppercase text-[20px] p-0 font-bold text-black font-base leading-[1.1];
+        }
+    }
+
+    form.mepr-account-form {
+        .select2 {
+            @apply hidden;
+        }
+
+        select[required] + .select2 {
+            @apply flex;
+        }
+    }
+
+    .select2-dropdown {
+        .select2-results__option {
+            @apply text-[18px] px-[15px] py-[7px] font-normal text-black font-base leading-[1.1];
+        }
+
+        .select2-results__option::before {
+            display: none !important;
+        }
+
+        .select2-results__option--selected,
+        .select2-results__option--highlighted.select2-results__option--selectable {
+            @apply text-panther-red-100 transition-colors duration-[0.2s] ease-in bg-transparent;
+        }
+    }
+
     .mp_wrapper select#mepr-address-state {
         @apply normal-case;
+
+        option {
+            @apply text-[10px];
+        }
     }
 
     .mp_wrapper .mp-form-row {
