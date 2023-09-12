@@ -119,7 +119,7 @@ get_header();
   ?>
     <section class="relative bg-panther-white-100 lg:pt-[225px]">
       <div class="w-full absolute top-0 bg-black h-[38%] lg:bg-[#101010] md:h-[28%]">
-        <img class="bottom-[-180px] absolute left-[40px]" src="<?php echo THEME_URL; ?>/images/white-sand2.svg">
+        <img class="bottom-[-180px] absolute left-[40px]" src="<?php echo get_stylesheet_directory_uri(); ?>/images/white-sand2.svg">
         <img class="w-full absolute left-0 right-0 bottom-[-4px]" src="<?php echo get_stylesheet_directory_uri(); ?>/images/line.svg">
       </div>
       <div class="flex flex-col bg-panther-white-100 gap-5 md:flex-row md:gap-0">
