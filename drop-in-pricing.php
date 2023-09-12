@@ -59,7 +59,7 @@ get_header();
           foreach ($product_plans as $product) :
             setup_postdata($product);
             $name = $product->get_name();
-            $promo = get_field('promo');
+            $promo = get_field('promo', $product->ID);
             $period_interval = $product->subscription_period_interval;
             $period = $product->subscription_period;
             $price = $product->get_price();
