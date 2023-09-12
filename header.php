@@ -38,8 +38,8 @@
         <input type="submit" value="Search" class="btn--20 is--search w-button btn-search btn-secondary">
       </form>
     </div>
-    <header class="w-full left-0 <?= GYM_HEADER::hasBgImage() ? 'bg-transparent absolute' : 'bg-black' ?> header lg:mt-0 lg:pt-[19px] mt-[27px] top-0 z-[5]">
-      <div class="w-full mx-auto items-center max-w-[1470px] lg:px-[15px] gap-7 hidden justify-end lg:flex lg:mb-[23px]">
+    <header class="w-full left-0 <?= GYM_HEADER::hasBgImage() ? 'bg-transparent absolute' : 'bg-black' ?> header lg:mt-0 lg:pb-[19px] lg:pt-[10px] mt-[27px] top-0 z-[5]">
+      <div class="w-full mx-auto items-center max-w-[1470px] lg:px-[15px] gap-7 hidden justify-end lg:flex lg:mb-[10px]">
         <div class="search-btn-js">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91006 12.5893C10.915 12.5893 13.3511 10.1533 13.3511 7.14834C13.3511 4.14335 10.915 1.70733 7.91006 1.70733C4.90507 1.70733 2.46905 4.14335 2.46905 7.14834C2.46905 10.1533 4.90507 12.5893 7.91006 12.5893ZM7.91006 14.2967C11.858 14.2967 15.0584 11.0963 15.0584 7.14834C15.0584 3.20042 11.858 0 7.91006 0C3.96214 0 0.761719 3.20042 0.761719 7.14834C0.761719 11.0963 3.96214 14.2967 7.91006 14.2967Z" fill="white" />

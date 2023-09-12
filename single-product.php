@@ -136,7 +136,7 @@ if ($related_products) :
     ?>
         <section class="relative h-max-[350px] lg:pb-[68px] pb-[46px]">
             <div class="w-full absolute bg-black-darkgray-gradient bottom-0 h-[50%]"></div>
-            <div class="flex flex-col relative border-[1px] border-panther-grey-900 max-w-[1200px] mx-5 overflow-hidden rounded-[8px] shadow-[0_0_40px_0_#00000029] sm:mx-auto">
+            <div class="flex flex-col relative max-w-[1200px] w-full mx-5 overflow-hidden rounded-[8px] shadow-[0_0_40px_0_#00000029] sm:mx-auto">
                 <div class="absolute bottom-0 left-0 right-0 top-0">
                     <img class="w-full h-full object-cover object-left-top sm:hidden" src="<?php echo esc_url($bg_image_mob); ?>" alt="img">
                     <img class="w-full h-full object-cover object-left-top hidden sm:block" src="<?php echo esc_url($bg_image_desk); ?>" alt="img">
