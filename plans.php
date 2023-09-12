@@ -50,8 +50,11 @@ get_header();
             </p>
             <?php if ($product_plans) : ?>
                 <div class="grid grid-cols-1 gap-[35px] lg:gap-0 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto px-[30px] max-w-[1300px] w-full mx-auto">
-                    <?php foreach ($product_plans as $product) :
+                    <?php
+                    $i = 0;
+                    foreach ($product_plans as $product) :
                         setup_postdata($product);
+                        $i++;
                         $name = $product->get_name();
                         $period_interval = $product->subscription_period_interval;
                         $period = $product->subscription_period;
@@ -75,7 +78,7 @@ get_header();
                                     <div class="name">
                                         – <?php echo esc_html($name); ?> –
                                     </div>
-                                    <div class="price <?php echo $size_price == 'small' ? 'small' : 'big'; ?>">
+                                    <div class="price <?php echo $i == 1 || $i == 2 ? 'small' : 'big'; ?>">
                                         <?php echo wc_price($price); ?>
                                     </div>
                                 </div>
