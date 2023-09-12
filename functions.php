@@ -16,8 +16,15 @@ add_action('wp_enqueue_scripts', 'panther_child_css', 1001);
 function panther_child_css()
 {
 	wp_deregister_style('style');
-	wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/css/style.min.css');
-	wp_enqueue_script('app-js', get_stylesheet_directory_uri() . '/js/app.min.js', array('jquery'), null, true);
+
+	// SELECT 2
+	if( is_account_page() ) {
+		wp_enqueue_style('select2-4.1.0-rc.0', THEME_URL . '/assets/libs/select2/css/select2.min.css');
+		wp_enqueue_script('select2-4.1.0-rc.0', THEME_URL . '/assets/libs/select2/js/select2.min.js', ['jquery-core'], null, true);
+	}
+
+	wp_enqueue_style('styles', THEME_URL . '/css/style.min.css');
+	wp_enqueue_script('app-js', THEME_URL . '/js/app.min.js', ['jquery'], null, true);
 
 	if (is_checkout()) {
 		wp_enqueue_style('gym-checkout', THEME_URL . '/css/checkout.css');
