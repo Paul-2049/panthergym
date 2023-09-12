@@ -32,6 +32,7 @@ get_header();
     <?php while (have_rows('plan_membership')) : the_row();
         $title = get_sub_field('title');
         $content = get_sub_field('content');
+        $product_plans = get_sub_field('item');
         $allowed_html = array(
             'span'     => array(),
         );
@@ -47,15 +48,15 @@ get_header();
             <p class="font-privacy leading-[1.5] mx-auto text-center w-full max-w-[902px] lg:mb-[43px] mb-[57px] text-[20px]">
                 <?php echo $content; ?>
             </p>
-            <div class="grid grid-cols-1 gap-[35px] lg:gap-0 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto px-[30px] max-w-[1300px] w-full mx-auto">
-                <?php if (have_rows('item')) : ?>
-                    <?php while (have_rows('item')) : the_row();
-                        $name = get_sub_field('name');
-                        $size_price = get_sub_field('size_price');
-                        $price = get_sub_field('price');
-                        $period = get_sub_field('period');
-                        $cta = get_sub_field('cta');
-                        $option = get_sub_field('option');
+            <?php if ($product_plans) : ?>
+                <div class="grid grid-cols-1 gap-[35px] lg:gap-0 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto px-[30px] max-w-[1300px] w-full mx-auto">
+                    <?php foreach ($product_plans as $product) :
+                        setup_postdata($product);
+                        $name = $product->get_name();
+                        $period_interval = $product->subscription_period_interval;
+                        $period = $product->subscription_period;
+                        $price = $product->get_price();
+                        $option = $product->get_description();
                         $allowed_html = array(
                             'ul'     => array(),
                             'li'     => array(),
@@ -65,6 +66,8 @@ get_header();
                         $replace = array('<ul class="option">');
                         $option = wp_kses($option, $allowed_html);
                         $option = str_replace($search, $replace, $option);
+                        $product_id = $product->get_id();
+                        $add_to_cart_url = esc_url($product->add_to_cart_url());
                     ?>
                         <div class="tarif-js">
                             <div class="tarif-head">
@@ -73,16 +76,15 @@ get_header();
                                         – <?php echo esc_html($name); ?> –
                                     </div>
                                     <div class="price <?php echo $size_price == 'small' ? 'small' : 'big'; ?>">
-                                        <?php echo esc_html($price); ?>
+                                        <?php echo wc_price($price); ?>
                                     </div>
                                 </div>
                                 <div class="flex flex-col items-center">
                                     <div class="period">
-                                        <?php echo esc_html($period); ?>
+                                        <?php echo esc_html($period_interval . '&nbsp;' . $period); ?>
                                     </div>
-                                    <a href="<?php echo esc_url($cta['url']); ?>" class="btn-get"><?php echo esc_html($cta['title']); ?></a>
+                                    <a href="<?php echo $add_to_cart_url; ?>" class="add-to-cart-link btn-get" rel="nofollow">GET STARTED</a>
                                 </div>
-
                             </div>
                             <div class="hidden border-b-[1px] border-black border-l-[1px] border-r-[1px] h-[0] md:block md:border-none md:h-auto rounded-b-[4px] tarif-options">
 
@@ -90,9 +92,11 @@ get_header();
 
                             </div>
                         </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+                    <?php endforeach;
+                    wp_reset_postdata();
+                    ?>
+                </div>
+            <?php endif; ?>
         </section>
     <?php endwhile; ?>
 <?php endif; ?>

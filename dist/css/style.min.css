@@ -1942,7 +1942,7 @@ form.mepr-account-form select[required] + .select2{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.tarif-head .price{
+.tarif-head .price bdi{
   position: relative;
   font-family: Open Sans, sans-serif;
   font-size: 50px;
@@ -1952,7 +1952,7 @@ form.mepr-account-form select[required] + .select2{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.tarif-head .price::before{
+.tarif-head .price bdi .woocommerce-Price-currencySymbol{
   position: absolute;
   top: 0px;
   left: 0px;
@@ -1961,17 +1961,20 @@ form.mepr-account-form select[required] + .select2{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   font-size: 24px;
   line-height: 1.1;
-  --tw-content: "$";
-  content: var(--tw-content);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.tarif-head .price.small{
+.tarif-head .price.small bdi{
   font-size: 24px;
   line-height: 1.3;
 }
-.tarif-head .price.small::before{
-  content: var(--tw-content);
-  --tw-translate-y: 3px;
+.tarif-head .price.small bdi .woocommerce-Price-currencySymbol{
+  position: static;
+  --tw-translate-x: 0px;
+  --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  font-size: 24px;
+  line-height: 1.3;
 }
 .tarif-head .period{
   margin-bottom: 20px;
@@ -1979,7 +1982,7 @@ form.mepr-account-form select[required] + .select2{
   font-family: Open Sans, sans-serif;
   font-size: 20px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   line-height: 1.1;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -3411,8 +3414,16 @@ body.search [data-node-type=search-result-empty]{
   --tw-translate-x: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.translate-x-0{
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .translate-x-\[-100\%\]{
   --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-1{
+  --tw-translate-y: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-y-\[-50\%\]{
@@ -5218,11 +5229,6 @@ form.form-search .js-search-input:focus-visible {
   left: 10px;
 }
 
-.before\:top-0::before{
-  content: var(--tw-content);
-  top: 0px;
-}
-
 .before\:mr-\[17px\]::before{
   content: var(--tw-content);
   margin-right: 17px;
@@ -5271,18 +5277,6 @@ form.form-search .js-search-input:focus-visible {
 .before\:w-\[30px\]::before{
   content: var(--tw-content);
   width: 30px;
-}
-
-.before\:-translate-x-full::before{
-  content: var(--tw-content);
-  --tw-translate-x: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.before\:translate-y-\[3px\]::before{
-  content: var(--tw-content);
-  --tw-translate-y: 3px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .before\:rounded-\[100\%\]::before{
@@ -5342,30 +5336,15 @@ form.form-search .js-search-input:focus-visible {
   padding-right: 5px;
 }
 
-.before\:text-\[24px\]::before{
-  content: var(--tw-content);
-  font-size: 24px;
-}
-
 .before\:text-\[50px\]::before{
   content: var(--tw-content);
   font-size: 50px;
-}
-
-.before\:leading-\[1\.1\]::before{
-  content: var(--tw-content);
-  line-height: 1.1;
 }
 
 .before\:text-\[\#E10A17\]::before{
   content: var(--tw-content);
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
-}
-
-.before\:content-\[\'\$\'\]::before{
-  --tw-content: '$';
-  content: var(--tw-content);
 }
 
 .after\:absolute::after{
