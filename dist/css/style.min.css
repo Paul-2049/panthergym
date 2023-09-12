@@ -955,6 +955,7 @@ div.navbar {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 65px;
   padding-bottom: 70px;
+  font-family: Open Sans, sans-serif;
 }
 @media (min-width: 1024px){
   .account-section{
@@ -1357,6 +1358,9 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 .mepr-active-nav-tab{
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
+}
+.mp_wrapper{
+  font-family: Open Sans, sans-serif;
 }
 .mp_wrapper:last-child{
   width: 100%;
@@ -5618,6 +5622,10 @@ form.form-search .js-search-input:focus-visible {
 
 .last\:max-w-\[unset\]:last-child{
   max-width: unset;
+}
+
+.last\:text-center:last-child{
+  text-align: center;
 }
 
 .hover\:border-panther-grey-200:hover{

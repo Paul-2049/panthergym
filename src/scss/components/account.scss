@@ -3,7 +3,7 @@
 
 @layer components {
     .account-section {
-        @apply bg-white pt-[65px] lg:pt-[65px] pb-[70px] lg:pb-[100px];
+        @apply bg-white pt-[65px] lg:pt-[65px] pb-[70px] lg:pb-[100px] font-privacy;
     }
 
     body.woocommerce-lost-password,
@@ -172,7 +172,7 @@
     }
 
     .mp_wrapper {
-        @apply last:w-full last:max-w-[900px] last:text-center;
+        @apply last:w-full last:max-w-[900px] last:text-center font-privacy;
     }
 
     .mp_wrapper .mepr-account-change-password {
