@@ -1449,6 +1449,18 @@ body.woocommerce-lost-password .account-section .mp-spacer,
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.mp_wrapper textarea.invalid,
+  .mp_wrapper select.invalid,
+  .mp_wrapper input[type=text].invalid,
+  .mp_wrapper input[type=url].invalid,
+  .mp_wrapper input[type=email].invalid,
+  .mp_wrapper input[type=tel].invalid,
+  .mp_wrapper input[type=number].invalid,
+  .mp_wrapper input[type=password].invalid {
+    border: 0px !important;
+    border-bottom: 2px solid #E10A17 !important;
+    background-color: transparent !important;
+  }
 .mp_wrapper .select2-container{
   width: 100%;
   max-width: 100%;
