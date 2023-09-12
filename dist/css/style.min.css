@@ -1961,6 +1961,8 @@ form.mepr-account-form select[required] + .select2{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   font-size: 24px;
   line-height: 1.1;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .tarif-head .price.small bdi{
   font-size: 24px;
@@ -1980,7 +1982,7 @@ form.mepr-account-form select[required] + .select2{
   font-family: Open Sans, sans-serif;
   font-size: 20px;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   line-height: 1.1;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -3418,6 +3420,10 @@ body.search [data-node-type=search-result-empty]{
 }
 .translate-x-\[-100\%\]{
   --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-1{
+  --tw-translate-y: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-y-\[-50\%\]{

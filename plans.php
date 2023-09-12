@@ -50,26 +50,11 @@ get_header();
             </p>
             <?php if ($product_plans) : ?>
                 <div class="grid grid-cols-1 gap-[35px] lg:gap-0 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto px-[30px] max-w-[1300px] w-full mx-auto">
-                    <?php
-                    /*           $name = get_sub_field('name');
-                    $size_price = get_sub_field('size_price');
-                    $price = get_sub_field('price');
-                    $period = get_sub_field('period');
-                    $cta = get_sub_field('cta');
-                    $option = get_sub_field('option');
-                    $allowed_html = array(
-                        'ul'     => array(),
-                        'li'     => array(),
-                        'strong'     => array(),
-                    );
-                    $search  = array('<ul>');
-                    $replace = array('<ul class="option">');
-                    $option = wp_kses($option, $allowed_html);
-                    $option = str_replace($search, $replace, $option); */
-                    ?>
                     <?php foreach ($product_plans as $product) :
                         setup_postdata($product);
                         $name = $product->get_name();
+                        $period_interval = $product->subscription_period_interval;
+                        $period = $product->subscription_period;
                         $price = $product->get_price();
                         $option = $product->get_description();
                         $allowed_html = array(
@@ -96,7 +81,7 @@ get_header();
                                 </div>
                                 <div class="flex flex-col items-center">
                                     <div class="period">
-                                        <?php /* echo esc_html($period); */ ?>
+                                        <?php echo esc_html($period_interval . '&nbsp;' . $period); ?>
                                     </div>
                                     <a href="<?php echo $add_to_cart_url; ?>" class="add-to-cart-link btn-get" rel="nofollow">GET STARTED</a>
                                 </div>

@@ -11,7 +11,7 @@
         @apply text-white font-privacy font-bold leading-[1.1] uppercase text-[50px] relative;
 
         .woocommerce-Price-currencySymbol {
-          @apply text-[24px] absolute top-0 left-0 leading-[1.1] -translate-x-full translate-y-1;
+          @apply text-[24px] absolute top-0 left-0 leading-[1.1] -translate-x-full translate-y-1 text-white;
         }
       }
 
@@ -29,7 +29,7 @@
     }
 
     .period {
-      @apply text-white font-privacy font-bold leading-[1.1] uppercase text-[20px] mb-[20px] md:mb-[18px] text-center;
+      @apply text-white font-privacy font-bold leading-[1.1] capitalize text-[20px] mb-[20px] md:mb-[18px] text-center;
     }
   }
 
