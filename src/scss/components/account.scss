@@ -1,3 +1,6 @@
+@import "../config/vars";
+@import "../config/mixins";
+
 @layer components {
     .account-section {
         @apply bg-white pt-[65px] lg:pt-[65px] pb-[70px] lg:pb-[100px];
