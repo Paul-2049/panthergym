@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Главная</title>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="w-full absolute left-0 bg-transparent header lg:mt-0 lg:py-[19px] mt-[27px] top-0 z-[5]">
+  <div class="w-full mx-auto items-center max-w-[1470px] lg:px-[15px] gap-7 hidden justify-end lg:flex lg:mb-[23px]">
+    <div class="search-btn-js">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91006 12.5893C10.915 12.5893 13.3511 10.1533 13.3511 7.14834C13.3511 4.14335 10.915 1.70733 7.91006 1.70733C4.90507 1.70733 2.46905 4.14335 2.46905 7.14834C2.46905 10.1533 4.90507 12.5893 7.91006 12.5893ZM7.91006 14.2967C11.858 14.2967 15.0584 11.0963 15.0584 7.14834C15.0584 3.20042 11.858 0 7.91006 0C3.96214 0 0.761719 3.20042 0.761719 7.14834C0.761719 11.0963 3.96214 14.2967 7.91006 14.2967Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91006 12.5893C10.915 12.5893 13.3511 10.1533 13.3511 7.14834C13.3511 4.14335 10.915 1.70733 7.91006 1.70733C4.90507 1.70733 2.46905 4.14335 2.46905 7.14834C2.46905 10.1533 4.90507 12.5893 7.91006 12.5893ZM7.91006 14.2967C11.858 14.2967 15.0584 11.0963 15.0584 7.14834C15.0584 3.20042 11.858 0 7.91006 0C3.96214 0 0.761719 3.20042 0.761719 7.14834C0.761719 11.0963 3.96214 14.2967 7.91006 14.2967Z" fill="#E7E5E5"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6393 17.0848L11.5305 11.976L12.7378 10.7687L17.8466 15.8775L16.6393 17.0848Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6393 17.0848L11.5305 11.976L12.7378 10.7687L17.8466 15.8775L16.6393 17.0848Z" fill="#E7E5E5"/>
+      </svg>
+    </div>
+    <div class="flex items-center gap-[9px] user-block">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4.90904 3.86365C4.90904 1.72982 6.74061 0 8.99997 0C11.2593 0 13.0909 1.72982 13.0909 3.86365C13.0909 5.99749 11.2593 7.72731 8.99997 7.72731C6.74061 7.72731 4.90904 5.99749 4.90904 3.86365ZM8.99997 1.54546C7.64436 1.54546 6.54541 2.58335 6.54541 3.86365C6.54541 5.14396 7.64436 6.18185 8.99997 6.18185C10.3556 6.18185 11.4545 5.14396 11.4545 3.86365C11.4545 2.58335 10.3556 1.54546 8.99997 1.54546Z" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.818115 16.2273C0.818115 11.9597 4.48126 8.50004 8.99997 8.50004C13.5187 8.50004 17.1818 11.9597 17.1818 16.2273V17.0001H0.818115V16.2273ZM2.50513 15.4546H15.4948C15.0922 12.4052 12.3379 10.0455 8.99997 10.0455C5.66209 10.0455 2.90775 12.4052 2.50513 15.4546Z" fill="white"/>
+        </svg>
+      </span>
+      <a class="font-bold font-base leading-[1.6] text-[18px] text-panther-red-100 uppercase" href="#">
+        Login
+      </a>
+    </div>
+    <div class="cart-block">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+        <g clip-path="url(#clip0_5_20)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.833374 0.791626H4.85831L5.48331 3.95829H19.5359L16.4109 11.875H7.04581L7.35831 13.4583H15.8334V15.0416H5.9751L3.4751 2.37496H0.833374V0.791626ZM6.73331 10.2916H15.2559L17.1309 5.54163H5.79581L6.73331 10.2916Z" fill="white"/>
+          <path d="M6.66671 17.0208C6.66671 16.365 7.22635 15.8333 7.91671 15.8333C8.60706 15.8333 9.16671 16.365 9.16671 17.0208C9.16671 17.6766 8.60706 18.2083 7.91671 18.2083C7.22635 18.2083 6.66671 17.6766 6.66671 17.0208Z" fill="white"/>
+          <path d="M12.5 17.0208C12.5 16.365 13.0597 15.8333 13.75 15.8333C14.4404 15.8333 15 16.365 15 17.0208C15 17.6766 14.4404 18.2083 13.75 18.2083C13.0597 18.2083 12.5 17.6766 12.5 17.0208Z" fill="white"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_5_20">
+            <rect width="20" height="19" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <div class="flex items-center w-full mx-auto max-w-[1470px] gap-2 lg:justify-between lg:px-[15px] lg:py-[0] pb-[10px] pt-[17px] px-[29px]">
+    <div class="burger-js cursor-pointer lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <g clip-path="url(#clip0_88_824)">
+          <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" fill="white"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_88_824">
+            <rect width="24" height="24" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+    <div class="lg:ml-0 logo ml-[30px]">
+      <img src="images/logo-header.svg" alt="">
+    </div>
+    <nav class="flex flex-col w-full left-0 bg-panther-red-100 duration-[0.3s] ease-in fixed h-screen lg:bg-transparent lg:h-auto lg:justify-end lg:overflow-y-visible lg:p-0 lg:static lg:translate-x-0 nav-js overflow-y-auto pb-16 pt-12 px-7 text-white top-0 transition-all translate-x-[-100%] z-10">
+      <div class="flex items-center justify-between lg:hidden mb-9">
+        <div class="close-js cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <g clip-path="url(#clip0_146_1478)">
+              <path d="M12.2466 10.586L17.1966 5.63599L18.6106 7.04999L13.6606 12L18.6106 16.95L17.1966 18.364L12.2466 13.414L7.29657 18.364L5.88257 16.95L10.8326 12L5.88257 7.04999L7.29657 5.63599L12.2466 10.586Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_146_1478">
+                <rect width="24" height="24" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="user-icon cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+            <g clip-path="url(#clip0_146_1485)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.40904 4.36365C5.40904 2.22982 7.24061 0.5 9.49997 0.5C11.7593 0.5 13.5909 2.22982 13.5909 4.36365C13.5909 6.49749 11.7593 8.22731 9.49997 8.22731C7.24061 8.22731 5.40904 6.49749 5.40904 4.36365ZM9.49997 2.04546C8.14436 2.04546 7.04541 3.08335 7.04541 4.36365C7.04541 5.64396 8.14436 6.68185 9.49997 6.68185C10.8556 6.68185 11.9545 5.64396 11.9545 4.36365C11.9545 3.08335 10.8556 2.04546 9.49997 2.04546Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.31812 16.7273C1.31812 12.4597 4.98126 9.00004 9.49997 9.00004C14.0187 9.00004 17.6818 12.4597 17.6818 16.7273V17.5001H1.31812V16.7273ZM3.00513 15.9546H15.9948C15.5922 12.9052 12.8379 10.5455 9.49997 10.5455C6.16209 10.5455 3.40775 12.9052 3.00513 15.9546Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_146_1485">
+                <rect width="18" height="17" fill="white" transform="translate(0.5 0.5)"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <ul class="header-menu">
+        <li><a class="item-link" href="#">About us</a></li>
+        <div data-hover="false" data-delay="0" data-w-id="49aed735-83d3-c986-6ea1-0660c88faf36" class="relative h-fit">
+          <li class="sub-menu-js">
+            <div class="item-link cursor-pointer">Plans</div>
+          </li>
+          <ul class="h-0 lg:bg-white nav-sub-menu overflow-hidden rounded-[10px] top-full w-max z-[2] lg:absolute">
+              <li>
+                <a href="#" class="item-link lg:text-black">test</a>
+              </li>
+              <li>
+                <a href="#" class="item-link lg:text-black">Wellness services</a>
+              </li>
+              <li>
+                <a href="#" class="item-link lg:text-black">Wellness services</a>
+              </li>
+              <li>
+                <a href="#" class="item-link lg:text-black">test</a>
+              </li>
+          </ul>
+        </div>
+        <div data-hover="false" data-delay="0" data-w-id="49aed735-83d3-c986-6ea1-0660c88faf36" class="relative h-fit">
+          <li class="sub-menu-js">
+            <div class="item-link cursor-pointer">Plans</div>
+          </li>
+          <ul class="h-0 lg:bg-white nav-sub-menu overflow-hidden rounded-[10px] top-full w-max z-[2] lg:fixed">
+              <li>
+                <a href="#" class="item-link lg:text-black">test</a>
+              </li>
+              <li>
+                <a href="#" class="item-link lg:text-black">Wellness services</a>
+              </li>
+              <li>
+                <a href="#" class="item-link lg:text-black">Wellness services</a>
+              </li>
+              <li>
+                <a href="#" class="item-link lg:text-black">test</a>
+              </li>
+          </ul>
+        </div>
+        <li><a class="item-link" href="#">Wellness services</a></li>
+        <li><a class="item-link" href="#">Gym Services</a></li>
+        <li><a class="item-link" href="#">Plans</a></li>
+        <li><a class="item-link" href="#">Drop-ins</a></li>
+        <li><a class="item-link" href="#">Gear</a></li>
+        <li><a class="item-link" href="#">FAQ</a></li>
+        <li><a class="item-link" href="#">Contact</a></li>
+      </ul>
+      <ul class="header-menu lg:hidden mt-[20px]">
+        <li><a class="item-link" href="#">Search</a></li>
+        <li><a class="item-link" href="#">Login</a></li>
+      </ul>
+      <div class="btn-rectangle lg:hidden mt-[44px] mx-auto">
+        BECOME A MEMBER
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <main class="page">
+      <div data-observ></div>
+      <section class="flex flex-col justify-between bg-[url('../images/home-main.jpg')] bg-center bg-cover bg-no-repeat items-center lg:flex-row lg:pt-[143px] pt-[104px]">
+  <div class="relative h-auto lg:h-[665px]">
+    <img style="height: inherit" class="lg:object-contain	 lg:opacity-40 pb-[147px] lg:pb-[51px]" src="images/home-after-man.png" alt="">
+    <img class="h-full absolute bottom-0 left-0 lg:object-cover mx-auto right-0" src="images/home-main-man.png" alt="">
+  </div>
+  <div class="flex flex-col w-full items-center justify-center 2xl:pl-[12%] bg-no-repeat bg-panther-red-100 bg-right-top lg:bg-red-bg lg:bg-transparent lg:clip-left lg:items-start lg:min-h-[461px] lg:pb-[65px] lg:pl-[8%] lg:pr-[20px] lg:pt[69px] lg:text-left lg:w-[55%] min-h-[334px] pb-[35px] pt-[27px] px-[31px] text-center">
+    <h1 class="w-full text-white h1 lg:mb-[42px] max-w-[650px] mb-[34px]">EDMONTON BOXING GYM & TRAINING
+      CENTER</h1>
+    <a href="#" class="btn-secondary">
+      <span class="!font-bold">
+        BECOME A MEMBER
+      </span>
+    </a>
+  </div>
+</section>
+
+      <section class="bg-black lg:pt-[119px] pt-[94px]">
+  <div class="flex flex-col w-full items-center mx-auto justify-center max-w-[1240px]">
+    <div class="w-full !px-[60px] swiper !pb-[50px] !pt-[15px] aboutSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide transition">
+          <div class="relative clip-trainer-card sm:max-w-[400px]">
+            <img src="./images/about-card1.png" alt="about-card">
+            <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 card-text justify-center py-2 transition">
+              <span class="font-bold text-white text-[24px] uppercase">OUR CLASSES</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide transition">
+          <div class="relative clip-trainer-card sm:max-w-[400px]">
+            <img src="./images/about-card2.png" alt="about-card">
+            <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 card-text justify-center py-2 transition">
+              <span class="font-bold text-white text-[24px] uppercase">OUR SCHEDULE</span>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide transition">
+          <div class="relative clip-trainer-card sm:max-w-[400px]">
+            <img src="./images/about-card3.png" alt="about-card">
+            <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 card-text justify-center py-2 transition">
+              <span class="font-bold text-white text-[24px] uppercase">OUR GEAR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="font-privacy font-bold leading-[1.1] italic after:bg-grey-gradient lg:after:absolute lg:after:h-[217px] lg:after:left-0 lg:after:top-0 lg:after:w-full lg:mt-[-94px] lg:pt-[130px] lg:text-[200px] overflow-hidden relative text-[128px] text-animate text-panther-grey-300 uppercase whitespace-nowrap">
+    <span>NOT JUST ANOTHER BOXING GYM</span>
+  </div>
+  <div class="relative z-[1] lg:bg-grey-black-gradient mt-[-45px]">
+    <div class="w-full mx-auto max-w-[1210px]">
+      <iframe class="w-full h-[190px] lg:h-[588px] lg:mb-[70px] mb-[32px]" src="https://www.youtube.com/embed/4-zjQvTDnbw" title="Gym Promo video/Gym commercial/Cinematic fitness film/Gym Motivation/Fitness promo video/Sony a7III" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="text-white content lg:px-0 px-[31px]">
+        <p class="content-p">
+          Panther Gym is more than just a local boxing gym, it’s a place where a young athlete, a middle-aged business
+          owner, a stay at home mom, a first timer, and a seasoned pro can all feel welcome, comfortable, and challenged
+          to be their best.</p>
+        <p class="content-p">
+          We are more than just a training facility, with memberships including access to combat classes, gym area,
+          steam rooms, juice bar, massage, acupuncture, and more.
+        </p>
+        <p class="content-p">
+          If you’re looking for something more than your average boxing gym, then your search is over. We look forward
+          to seeing you in the ring.
+        </p>
+        <a href="">
+          Read more
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="relative bg-panther-white-100 lg:pt-[225px]">
+  <div class="w-full absolute top-0 bg-black h-[38%] lg:bg-[#101010] md:h-[28%]">
+    <img class="bottom-[-180px] absolute left-[40px]" src="./images/white-sand2.svg">
+    <img class="w-full absolute left-0 right-0 bottom-[-4px]" src="./images/line.svg">
+  </div>
+  <div class="flex flex-col bg-panther-white-100 gap-5 md:flex-row md:gap-0">
+    <img class="relative z-10 lg:absolute lg:bottom-0 lg:left-0 max-md:h-[360px] max-md:self-center max-md:w-fit max-w-[750px]" src="images/man-pa.png" alt="">
+    <div class="flex flex-col w-full items-center justify-end pb-[100px] relative z-10">
+      <h2 class="!font-bold h2 text-center mb-[25px] leading-[39.6px] lg:leading-[44px] lg:mb-[38px] lg:text-[40px] text-[36px] text-panther-red-100">PANTHER CLASSES</h2>
+      <p class="font-privacy lg:text-[20px] text-[18px] text-center leading-[27px] lg:leading-[30px] lg:mb-[50px] max-w-[562px] mb-[63px] mx-auto px-[15px] w-full">
+        Sign up for any of our active & engaging classes as a drop-in guest or full gym member and get your sweat on.
+      </p>
+      <div class="relative">
+        <img class="w-full absolute top-[-50px]" src="./images/black-sand.svg">
+        <a href="" class="font-bold btn-primary mx-auto relative z-10">
+          BECOME A MEMBER
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="lg:pb-[71px] lg:pt-[83px] pb-[112px] pt-[70px]">
+  <div class="flex flex-col w-full items-center mx-auto px-[15px] max-w-[1470px]">
+    <h2 class="!font-bold h2 text-center mb-[25px] lg:mb-[42px]">
+      NO GEAR? NO WORRIES
+    </h2>
+    <p class="font-privacy lg:text-[20px] text-[18px] text-center mx-auto w-full leading-[1.5] max-w-[794px]">
+      We have boxing gear for rent for drop-in guests and top-of-the-line Panther Gear for those that are ready to get
+      serious about their training.
+    </p>
+    <div class="auto-rows-auto bm:grid-cols-2 gap-4 grid grid-cols-1 lg:grid-cols-4 lg:mb-[66px] lg:mt-[64px] mb-[70px] mt-[48px]">
+      <a href="" class="rounded-[6px] border-transparent ease-in transition-all duration-[0.3s] border-b-[8px] hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px]">
+        <div class="mb-[16px] thumbail">
+          <img src="images/product.png" alt="">
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 category mb-[10px]">
+          Sparring Gloves
+        </div>
+        <div class="!font-bold font-base leading-[1.1] mb-[18px] text-[24px] text-black title">
+          RIVAL RS11V EVOLUTION SPARRING GLOVES
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 price">
+          $189.95
+        </div>
+      </a>
+      <a href="" class="rounded-[6px] border-transparent ease-in transition-all duration-[0.3s] border-b-[8px] hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px]">
+        <div class="mb-[16px] thumbail">
+          <img src="images/product.png" alt="">
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 category mb-[10px]">
+          Sparring Gloves
+        </div>
+        <div class="!font-bold font-base leading-[1.1] mb-[18px] text-[24px] text-black title">
+          RIVAL RS11V EVOLUTION SPARRING GLOVES
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 price">
+          $189.95
+        </div>
+      </a>
+      <a href="" class="rounded-[6px] border-transparent ease-in transition-all duration-[0.3s] border-b-[8px] hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px]">
+        <div class="mb-[16px] thumbail">
+          <img src="images/product.png" alt="">
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 category mb-[10px]">
+          Sparring Gloves
+        </div>
+        <div class="!font-bold font-base leading-[1.1] mb-[18px] text-[24px] text-black title">
+          RIVAL RS11V EVOLUTION SPARRING GLOVES
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 price">
+          $189.95
+        </div>
+      </a>
+      <a href="" class="rounded-[6px] border-transparent ease-in transition-all duration-[0.3s] border-b-[8px] hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px]">
+        <div class="mb-[16px] thumbail">
+          <img src="images/product.png" alt="">
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 category mb-[10px]">
+          Sparring Gloves
+        </div>
+        <div class="!font-bold font-base leading-[1.1] mb-[18px] text-[24px] text-black title">
+          RIVAL RS11V EVOLUTION SPARRING GLOVES
+        </div>
+        <div class="font-privacy font-bold leading-[1.1] text-[15px] text-panther-red-100 price">
+          $189.95
+        </div>
+      </a>
+    </div>
+    <a href="" class="!font-bold btn-primary">
+      SHOP NOW
+    </a>
+  </div>
+</section>
+
+      <section class="bg-no-repeat bg-center bg-cover bg-[url('../images/rest-bg.jpg')] lg:pb-[160px] lg:pt-[130px] pb-[119px] pt-[30px]">
+  <div class="flex flex-col w-full items-center mx-auto px-[15px] max-w-[1200px]">
+    <h2 class="text-white h2 !font-bold text-center">WHAT MAKES US DIFFERENT FROM THE REST?</h2>
+    <div class="auto-rows-auto bm:grid-cols-2 gap-4 grid grid-cols-1 lg:grid-cols-3 lg:mt-[90px] mt-[37px]">
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.2s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon1.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Weight Training</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon2.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Cardio Room</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon3.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Lockers & Showers</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon4.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Steam Room</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon5.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Acupunture</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon6.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Chiro</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon7.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Massage</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon8.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Juice Bar</p>
+      </div>
+      <div class="flex items-center border-[1px] border-solid border-transparent cursor-pointer ease-in gap-[24px] hover:bg-panther-grey-100 hover:border-panther-grey-200 justify-start lg:gap-[34px] lg:p-[20px] p-[15px] rounded-[6px] transition-all duration-[0.3s]">
+        <div class="rounded-[6px] bg-panther-red-100 h-[66px] lg:h-[90px] lg:p-[9px] lg:w-[90px] p-[6px] w-[66px]">
+          <img src="images/icon9.png" alt="">
+        </div>
+        <p class="text-white font-base tracking-[1px] !font-bold leading-[1.1] text-[20px] uppercase">Differently Abled</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="relative">
+  <div class="w-full absolute top-0 bg-white h-[80%]"></div>
+  <div class="w-full absolute bottom-0 bg-black h-[20%]"></div>
+  <div class="flex flex-row justify-between absolute bottom-0 h-[30%] w-full">
+    <img class="h-fit" src="./images/white-sand.png" alt="sand">
+    <img class="h-fit" src="./images/white-sand.png" alt="sand">
+  </div>
+  <div class="flex flex-col justify-center items-center relative">
+    <p class="bg-no-repeat bg-center bg-cover bg-[url('../images/gray-bg.png')] h2 lg:mt-[105px] max-sm:text-center max-sm:w-full mb-[20px] mt-[62px] not-italic py-4 sm:px-[150px] sm:text-[40px] text-[36px]">
+      OUR TRAINERS
+    </p>
+    <p class="font-privacy lg:text-[20px] text-[18px] text-center leading-[27px] lg:leading-[30px] max-w-[800px] mb-[40px] sm:mb-[90px]">
+      If you want
+      to be the best, you have to
+      train with the
+      best. Our
+      trainers have years of professional boxing
+      experience under their belts.</p>
+    <div class="flex flex-col w-full items-center mx-auto justify-center max-w-[1320px] mb-[120px]">
+      <div class="w-full !px-[60px] swiper !py-[15px] after:text-[#E10A17] after:text-[50px] before:text-[#E10A17] before:text-[50px] max-xl:after:hidden max-xl:before:hidden trainerSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide transition">
+            <div class="relative clip-trainer-card sm:max-w-[400px]">
+              <img src="./images/victoria.png" alt="victoria">
+              <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 lg:pb-[15px] lg:pt-[37px] pb-[12px] pt-[30px]">
+                <span class="font-bold text-white font-base tracking-[1px] leading-[26.4px] text-[24px]">Victoria
+                  Kim</span>
+                <span class="font-bold text-white font-base tracking-[1px] leading-[11px] text-[10px]">PROFESSIONAL
+                  BOXER</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide transition">
+            <div class="relative clip-trainer-card sm:max-w-[400px]">
+              <img src="./images/alex.png" alt="alex">
+              <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 lg:pb-[15px] lg:pt-[37px] pb-[12px] pt-[30px]">
+                <span class="font-bold text-white font-base tracking-[1px] leading-[26.4px] text-[24px]">Alex
+                  Spark</span>
+                <span class="font-bold text-white font-base tracking-[1px] leading-[11px] text-[10px]">PROFESSIONAL
+                  BOXER</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide transition">
+            <div class="relative clip-trainer-card sm:max-w-[400px]">
+              <img src="./images/tom.png" alt="tom">
+              <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 lg:pb-[15px] lg:pt-[37px] pb-[12px] pt-[30px]">
+                <span class="font-bold text-white font-base tracking-[1px] leading-[26.4px] text-[24px]">Tom
+                  Hardy</span>
+                <span class="font-bold text-white font-base tracking-[1px] leading-[11px] text-[10px]">PROFESSIONAL
+                  BOXER</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide transition">
+            <div class="relative clip-trainer-card sm:max-w-[400px]">
+              <img src="./images/andy.png" alt="andy">
+              <div class="flex flex-col w-full left-0 absolute bg-[#E10A17] bottom-0 px-[40px] right-0 lg:pb-[15px] lg:pt-[37px] pb-[12px] pt-[30px]">
+                <span class="font-bold text-white font-base tracking-[1px] leading-[26.4px] text-[24px]">Andy
+                  Braun</span>
+                <span class="font-bold text-white font-base tracking-[1px] leading-[11px] text-[10px]">PROFESSIONAL
+                  BOXER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-no-repeat bg-center !h-full !top-0 !w-[55px] after:hidden bg-contain opacity-100 !left-0 bg-swiper-prev swiper-button-prev">
+        </div>
+        <div class="bg-no-repeat bg-center !h-full !top-0 !w-[55px] after:hidden bg-contain opacity-100 !right-0 bg-swiper-next swiper-button-next">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+      <section>
+  <div class="flex flex-col lg:flex-row lg:bg-black lg:pb-[100px]">
+    <div class="lg:w-1/2">
+      <img class="w-full h-full" src="./images/training.png" alt="training">
+    </div>
+    <div class="flex flex-col justify-center bg-white lg:px-[60px] lg:py-14 lg:w-1/2 max-lg:items-center max-lg:pt-[60px] px-[15px]">
+      <p class="font-privacy font-bold leading-[1.1] italic h1 lg:text-[40px] max-lg:text-center text-[#E10A17] text-[36px] tracking-[0]">
+        RESULTS YOU CAN <br> EXPECT FROM TRAINING <br> WITH PANTHER GYM
+      </p>
+      <ul class="my-[30px]">
+        <li class="flex items-center flex-row gap-5">
+          <img src="./images/checkmark.svg" alt="checkmark">
+          <p class="font-bold text-[20px] leading-[32px]">INCREASED STRENGTH & AGILITY</p>
+        </li>
+        <li class="flex items-center flex-row gap-5">
+          <img src="./images/checkmark.svg" alt="checkmark">
+          <p class="font-bold text-[20px] leading-[32px]">BURN FAT FASTER</p>
+        </li>
+        <li class="flex items-center flex-row gap-5">
+          <img src="./images/checkmark.svg" alt="checkmark">
+          <p class="font-bold text-[20px] leading-[32px]">LESS STRESS & MORE ENERGY</p>
+        </li>
+        <li class="flex items-center flex-row gap-5">
+          <img src="./images/checkmark.svg" alt="checkmark">
+          <p class="font-bold text-[20px] leading-[32px]">IMPROVED MENTAL HEALTH</p>
+        </li>
+        <li class="flex items-center flex-row gap-5">
+          <img src="./images/checkmark.svg" alt="checkmark">
+          <p class="font-bold text-[20px] leading-[32px]">COMRADERY & FRIENDSHIP</p>
+        </li>
+      </ul>
+      <button class="font-bold btn-primary w-fit">
+        JOIN US
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section>
+  <div class="flex flex-col justify-center items-center gap-[15px] lg:mt-[100px] mt-[95px]">
+    <p class="text-black font-base h1 leading-[35.2px] lg:leading-[52.8px] lg:text-[48px] not-italic text-[32px]">
+      Excellent</p>
+    <p class="font-privacy lg:text-[20px] text-[18px]">
+      Based on <span class="font-privacy font-bold lg:text-[20px] text-[18px] underline">57 reviews<span>
+    </span></span></p>
+    <div class="flex items-center justify-center flex-row gap-[10px]">
+      <img src="./images/star.svg" alt="star">
+      <img src="./images/star.svg" alt="star">
+      <img src="./images/star.svg" alt="star">
+      <img src="./images/star.svg" alt="star">
+      <img src="./images/star.svg" alt="star">
+    </div>
+  </div>
+  
+  <div class="flex items-center flex-row justify-between max-w-[1200px] mt-[16px] mx-[32px] sm:mx-auto">
+    <img src="./images/google-logo.png" alt="googleLogo">
+    <a class="font-normal leading-[24px] text-[16px] underline" href="#">Write a review</a>
+  </div>
+  
+  <div class="flex flex-col w-full items-center mx-auto justify-center max-w-[1320px]">
+    <div class="w-full !px-[60px] swiper !pb-[50px] feedbackSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/feedback.png" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/feedback.png" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/feedback.png" alt="feedback">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/feedback.png" alt="feedback">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      
+      <div class="!h-full !top-0 !w-[55px] !bg-white after:!text-[30px] after:text-[#A4A4A4] !left-0 swiper-button-prev"></div>
+      <div class="!h-full !top-0 !w-[55px] !bg-white after:!text-[30px] after:text-[#A4A4A4] !right-0 swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+      <section class="relative h-max-[350px] lg:py-[68px] py-[46px]">
+  <div class="w-full absolute top-0 bg-white h-[50%]"></div>
+  <div class="w-full absolute bottom-0 bg-black-darkgray-gradient h-[50%]"></div>
+  <div class="flex flex-col relative border-[1px] border-panther-grey-900 max-w-[1200px] mx-5 overflow-hidden rounded-[8px] shadow-[0_0_40px_0_#00000029] sm:mx-auto">
+    <div class="absolute top-0 left-0 right-0 bottom-0">
+      <img class="w-full h-full object-cover object-left-top sm:hidden" src="images/boxer-vertical.jpg" alt="">
+      <img class="w-full h-full object-cover object-left-top hidden sm:block" src="images/boxer.jpg" alt="">
+    </div>
+    <div class="flex flex-col justify-center relative md:w-[820px] pb-[60px] pt-[300px] px-[25px] sm:px-[60px] sm:py-[80px] sm:self-end z-[1]">
+      <p class="font-privacy font-bold italic leading-[42px] max-lg:hidden text-[40px] text-left text-white">READY TO GET
+        STARTED?</p>
+      <p class="font-privacy font-bold italic leading-[42px] lg:hidden text-[38px] mb-[20px] text-left text-white">READY TO <br> GET STARTED?
+      </p>
+      <p class="font-privacy font-bold italic leading-[42px] max-lg:hidden text-[40px] text-[#E10A17] text-right"> JOIN PANTHER GYM
+        TODAY</p>
+      <p class="font-privacy font-bold italic leading-[42px] lg:hidden text-[38px] text-[#E10A17]"> JOIN PANTHER <br> GYM TODAY</p>
+      <div class="flex flex-col justify-center items-center gap-5 mt-[30px] sm:flex-row sm:gap-1">
+        <button class="btn-primary whitespace-nowrap">
+          BECOME A MEMBER
+        </button>
+        <button class="btn-primary">
+          BOOK CLASSES
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="bg-black footer">
+  <div class="footer__container">
+    <div class="flex flex-col sm:flex-row justify-between sm:gap-5 gap-[75px] py-8">
+      <div class="flex flex-col justify-center sm:w-[40%]">
+        <img class="mb-[50px] mx-auto sm:ml-0 w-fit" src="./images/panther-logo.png">
+        <p class="font-privacy text-white text-[16px] leading-[24px] mb-[40px]">
+          Panther Gym is an Edmonton based Boxing Gym & Training Center. Ready to get in shape and become disciplined?
+          Reach out today or come to one of our walk-in classes.
+        </p>
+        <div class="mb-[20px]">
+          <p class="font-privacy text-white">9556 82 Ave NW, Edmonton,</p>
+          <p class="font-privacy text-white">AB T6C 0Z8P</p>
+        </div>
+        <div class="flex flex-col">
+          <a href="tel:7807186161" class="font-privacy text-white">P: (780) 718-6161</a>
+          <a href="mailto:info@panthergym.com" class="font-privacy text-white">E: info@panthergym.com</a>
+        </div>
+      </div>
+      <div class="flex flex-col sm:w-[50%]">
+        <div class="flex flex-col mb-[60px]">
+          <p class="font-bold text-white font-base text-[20px] max-lg:text-center mb-[18px]">SIGN UP FOR OUR NEWSLETTER</p>
+          <div class="flex flex-row justify-between border-b border-solid border-white gap-[15px] max-w-[400px] pb-[10px] px-[15px]">
+            <input class="font-privacy text-white text-[16px] bg-transparent sm:min-w-[300px]" placeholder="E-mail">
+            <button class="font-bold font-base py-[8px] text-[#E10A17] text-[16px]">Submit</button>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-[50px] sm:justify-between">
+          <div class="flex flex-col gap-[15px]">
+            <span class="font-bold text-white font-base text-[20px]">LINKS</span>
+            <ul class="flex flex-col">
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Home</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Plans</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">About Us</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Gear</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">FAQ</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-[15px]">
+            <span class="font-bold text-white font-base text-[20px]">CLASSES & SERVICES</span>
+            <ul class="flex flex-col">
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Home</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Plans</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">About Us</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Gear</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">FAQ</a></li>
+              <li><a class="font-privacy capitalize footer-item-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-[15px]">
+            <span class="font-bold text-white font-base text-[20px]">HOURS</span>
+            <ul class="flex flex-col">
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Monday</span>
+                <span class="open-time">8am - 6pm</span>
+              </li>
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Tuesday</span>
+                <span class="open-time">8am - 6pm</span>
+              </li>
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Wednesday</span>
+                <span class="open-time">8am - 6pm</span>
+              </li>
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Thursday</span>
+                <span class="open-time">8am - 6pm</span>
+              </li>
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Friday</span>
+                <span class="open-time">8am - 6pm</span>
+              </li>
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Saturday</span>
+                <span class="open-time">8am - 6pm</span>
+              </li>
+              <li class="flex flex-row">
+                <span class="capitalize work-day">Sunday</span>
+                <span class="open-time">Closed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-[#2B2B2B] border-solid border-t max-sm:gap-[20px] mb-[100px] pt-[34px] sm:mb-[60px]">
+      <p class="font-privacy text-[#646464] sm:w-[40%]">© Panther Gym 2023 – All rights reserved</p>
+      <div class="flex flex-col sm:flex-row justify-between sm:gap-5 gap-[40px] sm:items-center sm:w-[60%]">
+        <div class="flex flex-col sm:flex-row justify-between sm:gap-8 sm:w-1/2">
+          <span class="font-privacy text-[#646464] duration-200 ease-in hover:text-white transition-colors">Privacy Policy</span>
+          <span class="font-privacy text-[#646464]">Terms & Conditions</span>
+        </div>
+        <ul class="flex items-center justify-center flex-row gap-[22px] sm:w-1/2">
+          <li>
+            <a href="#">
+            <span>
+             <img src="./images/Facebook.svg" alt="facebook">
+            </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <span>
+             <img src="./images/Twitter.svg" alt="facebook">
+            </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <span>
+             <img src="./images/Instagram.svg" alt="facebook">
+            </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <span>
+             <img src="./images/LinkedIn.svg" alt="facebook">
+            </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <span>
+             <img src="./images/YouTube.svg" alt="facebook">
+            </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="js/app.min.js"></script>
+
+</body>
+
+</html>
