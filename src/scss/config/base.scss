@@ -74,6 +74,12 @@ body {
   overflow: hidden; // clip - если используется в проекте position: sticky
 }
 
+main {
+  a {
+    @apply font-privacy;
+  }
+}
+
 .page {
   position: relative;
   flex: 1 1 auto;

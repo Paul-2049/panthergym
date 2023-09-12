@@ -152,10 +152,16 @@
 
     #mepr-account-nav {
         @apply flex flex-col text-center lg:text-left text-[20px] leading-[2.4] uppercase font-bold text-black;
+
+        
     }
 
     .mepr-nav-item {
-        @apply m-0 p-0;
+        @apply m-0 p-0 hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
+
+        a {
+            @apply font-base;
+        }
     }
 
     .mepr-active-nav-tab {
@@ -197,6 +203,11 @@
     .mp_wrapper input[type=number],
     .mp_wrapper input[type=password] {
         @apply py-[8px] px-0 uppercase text-[20px] font-bold text-black font-base leading-[1.1] border-t-0 border-l-0 border-r-0 border-b-[1px] border-black bg-transparent;
+    }
+
+    .mp_wrapper select#mepr-address-country,
+    .mp_wrapper select#mepr-address-state {
+        @apply normal-case;
     }
 
     .mp_wrapper .mp-form-row {
