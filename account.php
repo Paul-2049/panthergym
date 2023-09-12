@@ -9,6 +9,8 @@ get_header();
     <?php while (have_rows('main')) : the_row();
         $bg_image_mob = get_sub_field('bg_image_mob');
         $bg_image = get_sub_field('bg_image');
+
+		if(!empty( $bg_image_mob ) && !empty($bg_image)) {
     ?>
         <section class="flex items-end justify-end <?= !is_lost_password_page() ? 'h-[505px] lg:h-[500px]' : 'h-[130px] md:h-[177px]'; ?> relative pt-[1px]">
             <div class="absolute left-0 top-0 bg-black bottom-0 right-0 overflow-hidden">
@@ -22,14 +24,14 @@ get_header();
                 </div>
             <?php } ?>
         </section>
-    <?php endwhile; ?>
+    <?php } endwhile; ?>
 <?php endif; ?>
 
 <?php if (is_lost_password_page()) {
     echo do_shortcode('[gym_schedule id="head_bar" hide="auth"]Join now for $0 enrolment on the Ultimate and Performance Memberships! Ends August 31![/gym_schedule]');
 } ?>
 
-<section class="account-section">
+<section class="account-section pt-[1px]">
     <div class="container w-full mx-auto max-w-[1249px] px-[30px] text-center">
         <div class="account-head">
             <?php if (is_user_logged_in()) { ?>
