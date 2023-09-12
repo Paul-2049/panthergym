@@ -1,6 +1,9 @@
+@import "../config/vars";
+@import "../config/mixins";
+
 @layer components {
     .account-section {
-        @apply bg-white pt-[65px] lg:pt-[65px] pb-[70px] lg:pb-[100px];
+        @apply bg-white pt-[65px] lg:pt-[65px] pb-[70px] lg:pb-[100px] font-privacy;
     }
 
     body.woocommerce-lost-password,
@@ -160,7 +163,7 @@
         @apply m-0 p-0 hover:text-panther-red-100 transition-colors duration-[0.2s] ease-in;
 
         a {
-            @apply font-base;
+            @apply no-underline font-base;
         }
     }
 
@@ -169,7 +172,7 @@
     }
 
     .mp_wrapper {
-        @apply last:w-full last:max-w-[900px] last:text-center;
+        @apply last:w-full last:max-w-[900px] last:text-center font-privacy;
     }
 
     .mp_wrapper .mepr-account-change-password {
@@ -190,9 +193,6 @@
     [type='submit'] {
         @apply text-white uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-panther-red-100 bg-no-repeat bg-center bg-cover py-[17px] px-[47px] block w-fit mx-auto hover:bg-panther-red-200 transition-colors duration-200 ease-in cursor-pointer;
     }
-    .mp_wrapper .mepr-account-change-password{
-        @apply underline hover:no-underline underline-offset-2;
-    }
 
     .mp_wrapper textarea,
     .mp_wrapper select,
@@ -203,6 +203,12 @@
     .mp_wrapper input[type=number],
     .mp_wrapper input[type=password] {
         @apply py-[8px] px-0 uppercase text-[20px] font-bold text-black font-base leading-[1.1] border-t-0 border-l-0 border-r-0 border-b-[1px] border-black bg-transparent;
+
+        &.invalid {
+            border: 0px !important;
+            border-bottom: 2px solid $color_red !important;
+            background-color: transparent !important;
+        }
     }
 
     .mp_wrapper .select2-container {

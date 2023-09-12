@@ -955,6 +955,7 @@ div.navbar {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 65px;
   padding-bottom: 70px;
+  font-family: Open Sans, sans-serif;
 }
 @media (min-width: 1024px){
   .account-section{
@@ -1352,10 +1353,14 @@ body.woocommerce-lost-password .account-section .mp-spacer,
 }
 .mepr-nav-item a{
   font-family: Rajdhani, sans-serif;
+  text-decoration-line: none;
 }
 .mepr-active-nav-tab{
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
+}
+.mp_wrapper{
+  font-family: Open Sans, sans-serif;
 }
 .mp_wrapper:last-child{
   width: 100%;
@@ -1417,13 +1422,6 @@ body.woocommerce-lost-password .account-section .mp-spacer,
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
-.mp_wrapper .mepr-account-change-password{
-  text-decoration-line: underline;
-  text-underline-offset: 2px;
-}
-.mp_wrapper .mepr-account-change-password:hover{
-  text-decoration-line: none;
-}
 .mp_wrapper textarea,
   .mp_wrapper select,
   .mp_wrapper input[type=text],
@@ -1451,6 +1449,18 @@ body.woocommerce-lost-password .account-section .mp-spacer,
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.mp_wrapper textarea.invalid,
+  .mp_wrapper select.invalid,
+  .mp_wrapper input[type=text].invalid,
+  .mp_wrapper input[type=url].invalid,
+  .mp_wrapper input[type=email].invalid,
+  .mp_wrapper input[type=tel].invalid,
+  .mp_wrapper input[type=number].invalid,
+  .mp_wrapper input[type=password].invalid {
+    border: 0px !important;
+    border-bottom: 2px solid #E10A17 !important;
+    background-color: transparent !important;
+  }
 .mp_wrapper .select2-container{
   width: 100%;
   max-width: 100%;
@@ -2056,10 +2066,6 @@ form.mepr-account-form select[required] + .select2{
   .full-drop-in-pricing .price{
     font-size: 64px;
   }
-}
-.full-drop-in-pricing .option{
-  font-size: 18px;
-  line-height: 3;
 }
 .promo{
   padding-top: 10px;
@@ -3885,6 +3891,10 @@ body.search [data-node-type=search-result-empty]{
   padding-left: 25px;
   padding-right: 25px;
 }
+.px-\[28px\]{
+  padding-left: 28px;
+  padding-right: 28px;
+}
 .px-\[29px\]{
   padding-left: 29px;
   padding-right: 29px;
@@ -3964,6 +3974,10 @@ body.search [data-node-type=search-result-empty]{
 .py-\[23px\]{
   padding-top: 23px;
   padding-bottom: 23px;
+}
+.py-\[25px\]{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .py-\[46px\]{
   padding-top: 46px;
@@ -4427,6 +4441,12 @@ body.search [data-node-type=search-result-empty]{
 }
 .underline{
   text-decoration-line: underline;
+}
+.no-underline{
+  text-decoration-line: none;
+}
+.underline-offset-2{
+  text-underline-offset: 2px;
 }
 .underline-offset-8{
   text-underline-offset: 8px;
@@ -5089,6 +5109,12 @@ body.lock {
 
 main a{
   font-family: Open Sans, sans-serif;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+}
+
+main a:hover{
+  text-decoration-line: none;
 }
 
 .page {
@@ -5610,6 +5636,10 @@ form.form-search .js-search-input:focus-visible {
   max-width: unset;
 }
 
+.last\:text-center:last-child{
+  text-align: center;
+}
+
 .hover\:border-panther-grey-200:hover{
   --tw-border-opacity: 1;
   border-color: rgb(75 75 75 / var(--tw-border-opacity));
@@ -6081,6 +6111,9 @@ form.form-search .js-search-input:focus-visible {
   .lg\:mb-0{
     margin-bottom: 0px;
   }
+  .lg\:mb-\[10px\]{
+    margin-bottom: 10px;
+  }
   .lg\:mb-\[11px\]{
     margin-bottom: 11px;
   }
@@ -6286,6 +6319,9 @@ form.form-search .js-search-input:focus-visible {
   .lg\:translate-y-\[10\%\]{
     --tw-translate-y: 10%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .lg\:cursor-default{
+    cursor: default;
   }
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -6575,6 +6611,9 @@ form.form-search .js-search-input:focus-visible {
   .lg\:pt-0{
     padding-top: 0px;
   }
+  .lg\:pt-\[10px\]{
+    padding-top: 10px;
+  }
   .lg\:pt-\[119px\]{
     padding-top: 119px;
   }
@@ -6595,9 +6634,6 @@ form.form-search .js-search-input:focus-visible {
   }
   .lg\:pt-\[160px\]{
     padding-top: 160px;
-  }
-  .lg\:pt-\[19px\]{
-    padding-top: 19px;
   }
   .lg\:pt-\[225px\]{
     padding-top: 225px;

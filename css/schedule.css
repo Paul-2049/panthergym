@@ -462,6 +462,7 @@ body.shedule_popup .gym_shedule_popup.auth [data-step=auth] {
   padding: 0px 15px;
   transition: all 0.3s linear;
   width: 214px;
+  text-decoration: none;
 }
 .schedule_head_bar .actions .button:hover {
   background: #E10A17;
@@ -479,7 +480,6 @@ body.page-template-calendar .section.wf-section.class-list {
 }
 body.page-template-calendar header {
   background: #000;
-  height: 177px;
 }
 @media screen and (max-width: 1023px) {
   body.page-template-calendar header {
