@@ -4,7 +4,36 @@
   }
 
   .btn-secondary {
-    @apply block relative text-black uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-bg-btn-secondary bg-no-repeat bg-center bg-[length:100%_100%] py-[18px] pl-[40px] pr-[25px] lg:pl-[40px] lg:pr-[75px] cursor-pointer w-fit after:bg-after-btn-secondary after:h-[98%] after:w-full after:bg-no-repeat after:bg-cover after:absolute after:translate-x-[20%] after:bottom-0 after:left-0;
+    @apply
+    no-underline
+    block
+    relative
+    text-black
+    uppercase
+    text-[20px]
+    font-bold
+    font-base
+    tracking-[1.2px]
+    bg-bg-btn-secondary
+    bg-no-repeat
+    bg-center
+    bg-[length:100%_100%]
+    py-[18px]
+    pl-[40px]
+    pr-[25px]
+    lg:pl-[40px]
+    lg:pr-[75px]
+    cursor-pointer
+    w-fit
+    after:bg-after-btn-secondary
+    after:h-[98%]
+    after:w-full
+    after:bg-no-repeat
+    after:bg-cover
+    after:absolute
+    after:translate-x-[20%]
+    after:bottom-0
+    after:left-0;
   }
 
   .btn-secondary span {
@@ -12,7 +41,26 @@
   }
 
   .btn-primary {
-    @apply text-white uppercase text-[20px] font-bold font-base tracking-[1.2px] bg-panther-red-100 bg-no-repeat bg-center bg-cover py-[17px] px-[47px] block w-fit hover:bg-panther-red-200 transition-colors duration-200 ease-in;
+    @apply
+    no-underline
+    text-white
+    uppercase
+    text-[20px]
+    font-bold
+    font-base
+    tracking-[1.2px]
+    bg-panther-red-100
+    bg-no-repeat
+    bg-center
+    bg-cover
+    py-[17px]
+    px-[47px]
+    block w-fit
+    hover:bg-panther-red-200
+    transition-colors
+    duration-200
+    ease-in;
+
     clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
   }
   .btn-clip-none {
@@ -26,6 +74,6 @@
     @apply uppercase text-[20px] leading-[1] font-bold text-panther-red-100 py-[17px] px-[40px] border-[1px] border-panther-red-100 w-max hover:bg-panther-red-100 hover:text-white transition-colors duration-[0.2s] ease-in;
   }
   .btn-transparent{
-    @apply w-full h-[50px] font-bold uppercase text-[16px] font-privacy text-center flex items-center justify-center hover:text-panther-red-100 transition-colors duration-200 ease-in;
+    @apply no-underline w-full h-[50px] font-bold uppercase text-[16px] font-privacy text-center flex items-center justify-center hover:text-panther-red-100 transition-colors duration-200 ease-in;
   }
 }

@@ -105,7 +105,7 @@ if ($related_products) :
             <div class="auto-rows-auto bm:grid-cols-2 gap-4 grid grid-cols-1 lg:grid-cols-4">
                 <?php foreach ($related_products as $product_id) :
                     $product = wc_get_product($product_id); ?>
-                    <a href="<?php echo esc_url(get_permalink($product_id)); ?>" class="duration-[0.3s] ease-in transition-all border-b-[8px] border-transparent hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px] rounded-[6px]">
+                    <a href="<?php echo esc_url(get_permalink($product_id)); ?>" class="no-underline duration-[0.3s] ease-in transition-all border-b-[8px] border-transparent hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px] rounded-[6px]">
                         <div class="mb-[16px] thumbail">
                             <?php echo $product->get_image();; ?>
                         </div>
