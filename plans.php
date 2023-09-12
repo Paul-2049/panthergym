@@ -68,22 +68,21 @@ get_header();
                     $option = str_replace($search, $replace, $option); */
                     ?>
                     <?php foreach ($product_plans as $product) :
-                        if (is_a($product, 'WC_Product')) {
-                            $name = $product->get_name();
-                            $price = $product->get_price();
-                            $option = $product->get_description();
-                            $allowed_html = array(
-                                'ul'     => array(),
-                                'li'     => array(),
-                                'strong'     => array(),
-                            );
-                            $search  = array('<ul>');
-                            $replace = array('<ul class="option">');
-                            $option = wp_kses($option, $allowed_html);
-                            $option = str_replace($search, $replace, $option);
-                            $product_id = $product->get_id();
-                            $add_to_cart_url = esc_url($product->add_to_cart_url());
-                        }
+                        setup_postdata($product);
+                        $name = $product->get_name();
+                        $price = $product->get_price();
+                        $option = $product->get_description();
+                        $allowed_html = array(
+                            'ul'     => array(),
+                            'li'     => array(),
+                            'strong'     => array(),
+                        );
+                        $search  = array('<ul>');
+                        $replace = array('<ul class="option">');
+                        $option = wp_kses($option, $allowed_html);
+                        $option = str_replace($search, $replace, $option);
+                        $product_id = $product->get_id();
+                        $add_to_cart_url = esc_url($product->add_to_cart_url());
                     ?>
                         <div class="tarif-js">
                             <div class="tarif-head">
@@ -108,7 +107,9 @@ get_header();
 
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php endforeach;
+                    wp_reset_postdata();
+                    ?>
                 </div>
             <?php endif; ?>
         </section>
