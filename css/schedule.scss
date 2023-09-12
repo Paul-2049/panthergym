@@ -58,6 +58,7 @@
 		.button {
 			@include button_white;
 			width: 214px;
+			text-decoration: none;
 		}
 	}
 }
@@ -76,7 +77,6 @@ body.page-template-calendar {
 
 	header {
 		background: #000;
-		height: 177px;
 
 		@include tablet {
 			height: 76px;

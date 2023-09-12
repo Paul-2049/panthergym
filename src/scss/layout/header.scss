@@ -50,7 +50,7 @@
 	.header-menu .has_submenu {
 		&:hover {
 			.nav-sub-menu {
-				@apply hidden lg:flex top-[0px] lg:top-[calc(100%+19px)] opacity-100;
+				@apply hidden lg:flex top-[0px] lg:top-[calc(100%-1px)] opacity-100;
 			}
 		}
 

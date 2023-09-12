@@ -38,7 +38,7 @@
         <input type="submit" value="Search" class="btn--20 is--search w-button btn-search btn-secondary">
       </form>
     </div>
-    <header class="w-full left-0 <?= GYM_HEADER::hasBgImage() ? 'bg-transparent absolute' : 'bg-black' ?> header lg:mt-0 lg:pb-[19px] lg:pt-[10px] mt-[27px] top-0 z-[5]">
+    <header class="w-full left-0 <?= GYM_HEADER::hasBgImage() ? 'bg-transparent absolute' : 'bg-black' ?> header lg:mt-0 lg:pt-[10px] mt-[27px] top-0 z-[5]">
       <div class="w-full mx-auto items-center max-w-[1470px] lg:px-[15px] gap-7 hidden justify-end lg:flex lg:mb-[10px]">
         <div class="search-btn-js">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

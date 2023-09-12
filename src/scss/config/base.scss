@@ -76,7 +76,7 @@ body {
 
 main {
   a {
-    @apply font-privacy;
+    @apply underline hover:no-underline underline-offset-2 font-privacy;
   }
 }
 
