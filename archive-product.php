@@ -45,21 +45,21 @@ get_header();
                         $regular_price = $product->price;
                         $sale_price = $product->sale_price;
                     ?>
-                        <a href="<?php the_permalink(); ?>" class="product-cart py-[25px] px-[28px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
+                        <a href="<?php the_permalink(); ?>" class="product-cart no-underline py-[25px] px-[28px] rounded-[6px] hover:shadow-card-shadow transition-all duration-[0.3s] ease-in border-b-[8px] hover:border-panther-red-100 border-transparent">
                             <div class="thumbail mb-[16px]">
                                 <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                             </div>
-                            <div class="category mb-[10px] text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                            <div class="category no-underline mb-[10px] text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
                                 <?php $terms = get_the_terms($post->ID, 'product_cat');
                                 foreach ($terms as $term) {
                                     echo  $product_cat = $term->name;
                                     break;
                                 } ?>
                             </div>
-                            <div class="title mb-[18px] text-black text-[20px] font-bold leading-[1.1]">
+                            <div class="no-underline title mb-[18px] text-black text-[20px] font-bold leading-[1.1]">
                                 <?php the_title(); ?>
                             </div>
-                            <div class="price  text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
+                            <div class="price no-underline text-panther-red-100 text-[15px] font-privacy font-bold leading-[1.1]">
                                 <?php echo ($sale_price ? '$ ' . $sale_price : '$ ' . $regular_price); ?>
                             </div>
                         </a>

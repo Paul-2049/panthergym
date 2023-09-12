@@ -121,7 +121,7 @@ get_header();
               $regular_price = $product->price;
               $sale_price = $product->sale_price;
             ?>
-              <a href="<?php the_permalink(); ?>" class="duration-[0.3s] ease-in transition-all border-b-[8px] border-transparent hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px] rounded-[6px]">
+              <a href="<?php the_permalink(); ?>" class="no-underline duration-[0.3s] ease-in transition-all border-b-[8px] border-transparent hover:border-panther-red-100 hover:shadow-card-shadow lg:px-[41px] pb-[49px] product-cart pt-[28px] px-[46px] rounded-[6px]">
                 <div class="mb-[16px] thumbail">
                   <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                 </div>

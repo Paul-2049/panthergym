@@ -1,0 +1,9 @@
+@layer components {
+	form.woocommerce-cart-form {
+		.product-name {
+			a {
+				@apply no-underline;
+			}
+		}
+	}
+}
