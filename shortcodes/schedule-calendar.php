@@ -45,7 +45,7 @@
 				$events = GYM_SCHEDULE::getEventsForDay( date('Y-m-d', $day) );
 
 				if( !count($events) ) { ?>
-						<div class="not_found">
+						<div class="not_found font-privacy">
 							Schedule list is empty!
 						</div>
 				<?php } else {

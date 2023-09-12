@@ -4,6 +4,7 @@ node_modules
 .vscode/*
 /dist
 dist
+/gulp/version.json
 .temporary_cache
 .temporary_cache/*
 node_modules

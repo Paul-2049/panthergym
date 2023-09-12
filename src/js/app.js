@@ -306,6 +306,12 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	});
+
+	if( $('form.mepr-account-form').length ) {
+		$('form.mepr-account-form select').select2({
+			minimumResultsForSearch: -1
+		});
+	}
 });
 
 // search =============================================================================================
