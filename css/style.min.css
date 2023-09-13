@@ -2051,16 +2051,12 @@ form.mepr-account-form select[required] + .select2{
 .full-drop-in-pricing .tarif-options{
   min-height: 350px;
 }
-.full-drop-in-pricing .price::before{
-  content: var(--tw-content);
-  padding-right: 5px;
-}
-.full-drop-in-pricing .price::after{
+.full-drop-in-pricing .price bdi::after{
   position: absolute;
   top: 0px;
   right: 0px;
   --tw-translate-x: 100%;
-  --tw-translate-y: 0.25rem;
+  --tw-translate-y: 1.1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   padding-left: 5px;
   font-size: 24px;
@@ -2069,9 +2065,14 @@ form.mepr-account-form select[required] + .select2{
   content: var(--tw-content);
 }
 @media (min-width: 768px){
-  .full-drop-in-pricing .price{
+  .full-drop-in-pricing .price bdi{
     font-size: 64px;
   }
+}
+.full-drop-in-pricing .price bdi .woocommerce-Price-currencySymbol{
+  --tw-translate-y: 1.1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  padding-right: 5px;
 }
 .promo{
   padding-top: 10px;
@@ -3436,6 +3437,10 @@ body.search [data-node-type=search-result-empty]{
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.translate-y-\[1\.1rem\]{
+  --tw-translate-y: 1.1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .translate-y-\[27\%\]{
   --tw-translate-y: 27%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4150,6 +4155,9 @@ body.search [data-node-type=search-result-empty]{
 }
 .pr-\[42px\]{
   padding-right: 42px;
+}
+.pr-\[5px\]{
+  padding-right: 5px;
 }
 .pt-0{
   padding-top: 0px;
@@ -5337,11 +5345,6 @@ form.form-search .js-search-input:focus-visible {
   background-repeat: no-repeat;
 }
 
-.before\:pr-\[5px\]::before{
-  content: var(--tw-content);
-  padding-right: 5px;
-}
-
 .before\:text-\[50px\]::before{
   content: var(--tw-content);
   font-size: 50px;
@@ -5450,9 +5453,9 @@ form.form-search .js-search-input:focus-visible {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.after\:translate-y-1::after{
+.after\:translate-y-\[1\.1rem\]::after{
   content: var(--tw-content);
-  --tw-translate-y: 0.25rem;
+  --tw-translate-y: 1.1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -6246,11 +6249,11 @@ form.form-search .js-search-input:focus-visible {
   .lg\:h-\[588px\]{
     height: 588px;
   }
+  .lg\:h-\[594px\]{
+    height: 594px;
+  }
   .lg\:h-\[60px\]{
     height: 60px;
-  }
-  .lg\:h-\[617px\]{
-    height: 617px;
   }
   .lg\:h-\[638px\]{
     height: 638px;
