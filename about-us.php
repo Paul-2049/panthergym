@@ -158,7 +158,7 @@ $right_title = get_field('right')['title'] ?? '';
 $right_shortcode = get_field('right')['shortcode'] ?? '';
 ?>
 <section class="sign_up_for_free">
-	<div class="content_block flex flex-col lg:flex-row lg:mt-[74px] max-w-[1256px] mt-[45px] mx-auto w-full">
+	<div class="content_block flex flex-col lg:flex-row max-w-[1256px] mx-auto w-full">
 		<div class="left_block w-full lg:w-1/2" style="<?= !empty( $left_bg_form ) ? 'background-image: url('. $left_bg_form .')' : '' ?>">
 			<div class="content">
 			<?php if( !empty( $left_red_text ) ) { ?>
