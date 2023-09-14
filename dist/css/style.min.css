@@ -2060,7 +2060,7 @@ form.mepr-account-form select[required] + .select2{
 }
 @media (min-width: 1024px){
   .sign_up_for_free .content_block .right_block{
-    padding-left: 70px;
+    padding-right: 70px;
   }
 }
 .sign_up_for_free .content_block .right_block {
@@ -2115,7 +2115,14 @@ form.mepr-account-form select[required] + .select2{
     font-weight: 400;
     color: #FFF;
   }
-.sign_up_for_free .content_block .right_block [type=submit] {
+.sign_up_for_free .content_block .right_block .actions {
+    position: relative;
+    margin-top: 35px;
+  }
+.sign_up_for_free .content_block .right_block .actions p {
+    display: flex;
+  }
+.sign_up_for_free .content_block .right_block .actions [type=submit] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2136,12 +2143,23 @@ form.mepr-account-form select[required] + .select2{
     transition: all 0.3s linear;
     max-width: 250px;
     width: 100%;
-    margin-top: 35px;
   }
-.sign_up_for_free .content_block .right_block [type=submit]:hover {
+.sign_up_for_free .content_block .right_block .actions [type=submit]:hover {
     background: #E10A17;
     color: #FFFFFF;
     border-color: #FFFFFF;
+  }
+.sign_up_for_free .content_block .right_block .actions .wpcf7-spinner {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    margin: 0px;
+    z-index: 2;
+  }
+.sign_up_for_free .content_block .right_block .wpcf7-response-output {
+    color: #FFF;
+    text-align: center;
+    border-color: #FFF;
   }
 .content-p{
   margin-bottom: 15px;
@@ -6904,9 +6922,6 @@ form.form-search .js-search-input:focus-visible {
   .lg\:pl-\[60px\]{
     padding-left: 60px;
   }
-  .lg\:pl-\[70px\]{
-    padding-left: 70px;
-  }
   .lg\:pl-\[8\%\]{
     padding-left: 8%;
   }
@@ -6933,6 +6948,9 @@ form.form-search .js-search-input:focus-visible {
   }
   .lg\:pr-\[40px\]{
     padding-right: 40px;
+  }
+  .lg\:pr-\[70px\]{
+    padding-right: 70px;
   }
   .lg\:pr-\[75px\]{
     padding-right: 75px;

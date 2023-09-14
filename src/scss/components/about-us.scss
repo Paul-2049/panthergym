@@ -171,7 +171,7 @@
 			}
 
 			.right_block {
-				@apply pt-[58px] pr-[15px] pb-[65px] pl-[15px] lg:pl-[70px];
+				@apply pt-[58px] pr-[15px] lg:pr-[70px] pb-[65px] pl-[15px];
 				position: relative;
 
 				.content {
@@ -230,11 +230,33 @@
 					}
 				}
 
-				[type="submit"] {
-					@include button_white;
-					max-width: 250px;
-					width: 100%;
+				.actions {
+					position: relative;
 					margin-top: 35px;
+
+					p {
+						display: flex;
+					}
+
+					[type="submit"] {
+						@include button_white;
+						max-width: 250px;
+						width: 100%;
+					}
+
+					.wpcf7-spinner {
+						position: absolute;
+						top: calc(50% - 12px);
+						left: calc(50% - 12px);
+						margin: 0px;
+						z-index: 2;
+					}
+				}
+
+				.wpcf7-response-output {
+					color: #FFF;
+					text-align: center;
+					border-color: #FFF;
 				}
 			}
 		}
