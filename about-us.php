@@ -99,7 +99,7 @@ get_header();
         </section>
     <?php endwhile; ?>
 <?php endif; ?>
-<section class="lg:pt-[70px] lg:pb-[146px] pb-[65px] pt-[17px] px-[15px]">
+<section class="lg:pt-[70px] pt-[17px] px-[15px]">
     <?php if (have_rows('advantages')) : ?>
         <div class="w-full mx-auto auto-rows-auto gap-0 grid grid-cols-1 max-w-[1440px] md:grid-cols-3">
             <?php while (have_rows('advantages')) : the_row();
@@ -125,10 +125,15 @@ get_header();
                 $text = get_sub_field('text');
             ?>
                 <div class="flex flex-col lg:flex-row card-room items-start">
-                    <div class="w-full h-full lg:flex-[1_0_573px] lg:mb-0 max-h-[390px] order-1 overflow-hidden">
-                        <img class="w-full object-cover" src="<?php echo esc_url($image); ?>" alt="img">
+                    <div class="image-room h-full order-1 w-full w-1/2">
+						<div class="image-wrap">
+							<svg width="72" height="117" viewBox="0 0 72 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M71.3594 0.32959H24.9865L0.150604 116.785H46.3764L71.3594 0.32959Z" fill="#E10A17"/>
+							</svg>
+                        	<img class="w-full object-cover" src="<?php echo esc_url($image); ?>" alt="img">
+						</div>
                     </div>
-                    <div class="order-2 text-room">
+                    <div class="order-2 text-room w-full w-1/2">
                         <div class="relative before:absolute before:bg-panther-red-100 before:bottom-0 before:h-[4px] before:left-0 before:w-[120px] lg:mb-[35px] lg:pb-[21px] mb-[23px] pb-[13px]">
                             <h3 class="font-bold uppercase leading-[1.1] text-[30px] lg:text-[40px]"><?php echo esc_html($title); ?></h3>
                             <?php if ($sub_title) : ?>
@@ -142,6 +147,53 @@ get_header();
         </div>
     <?php endif; ?>
 </section>
+
+
+<?php
+$left_bg_form = get_field('left')['contact_image'] ?? '';
+$left_red_text = get_field('left')['red_text'] ?? '';
+$left_big_text = get_field('left')['big_text'] ?? '';
+$left_small_text = get_field('left')['small_text'] ?? '';
+$right_title = get_field('right')['title'] ?? '';
+$right_shortcode = get_field('right')['shortcode'] ?? '';
+?>
+<section class="sign_up_for_free">
+	<div class="content_block flex flex-col lg:flex-row lg:mt-[74px] max-w-[1256px] mt-[45px] mx-auto w-full">
+		<div class="left_block w-full lg:w-1/2" style="<?= !empty( $left_bg_form ) ? 'background-image: url('. $left_bg_form .')' : '' ?>">
+			<div class="content">
+			<?php if( !empty( $left_red_text ) ) { ?>
+				<div class="left_red_text">
+					<?= $left_red_text ?>
+				</div>
+			<?php } ?>
+			<?php if( !empty( $left_red_text ) ) { ?>
+				<div class="left_big_text">
+					<?= $left_big_text ?>
+				</div>
+			<?php } ?>
+			<?php if( !empty( $left_red_text ) ) { ?>
+				<div class="left_small_text">
+					<?= $left_small_text ?>
+				</div>
+			<?php } ?>
+			</div>
+		</div>
+		<div class="right_block w-full lg:w-1/2">
+			<div class="content">
+				<?php if( !empty( $right_title ) ) { ?>
+					<div class="title">
+						<?= $right_title ?>
+					</div>
+				<?php } ?>
+
+				<?php if( !empty( $right_shortcode ) ) { ?>
+					<?= do_shortcode($right_shortcode) ?>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 <?php if (have_rows('trainers_section')) : ?>
     <?php while (have_rows('trainers_section')) : the_row();
