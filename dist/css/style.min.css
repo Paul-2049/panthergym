@@ -1849,6 +1849,41 @@ form.mepr-account-form select[required] + .select2{
   --tw-text-opacity: 1;
   color: rgb(225 10 23 / var(--tw-text-opacity));
 }
+.about-us-advanced_content{
+  margin-bottom: 43px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.about-us-advanced_content .card-room {
+    padding-top: 61px;
+    padding-bottom: 52px;
+  }
+.about-us-advanced_content .card-room:nth-child(2n) {
+    position: relative;
+    background-color: #F9F9F9;
+  }
+.about-us-advanced_content .card-room:nth-child(2n):before, .about-us-advanced_content .card-room:nth-child(2n):after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 100%;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-color: #F9F9F9;
+  }
+.about-us-advanced_content .card-room:nth-child(2n):after {
+    right: unset;
+    left: 100%;
+  }
+.about-us-advanced_content .card-room:nth-child(2n+1) {
+    flex-direction: row-reverse;
+  }
 .content-p{
   margin-bottom: 15px;
   font-family: Open Sans, sans-serif;
@@ -2960,6 +2995,9 @@ body.search [data-node-type=search-result-empty]{
 }
 .mb-\[40px\]{
   margin-bottom: 40px;
+}
+.mb-\[43px\]{
+  margin-bottom: 43px;
 }
 .mb-\[48px\]{
   margin-bottom: 48px;
@@ -6216,11 +6254,11 @@ form.form-search .js-search-input:focus-visible {
   .lg\:mt-\[73px\]{
     margin-top: 73px;
   }
+  .lg\:mt-\[74px\]{
+    margin-top: 74px;
+  }
   .lg\:mt-\[90px\]{
     margin-top: 90px;
-  }
-  .lg\:mt-\[95px\]{
-    margin-top: 95px;
   }
   .lg\:block{
     display: block;

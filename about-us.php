@@ -113,14 +113,18 @@ get_header();
         </div>
     <?php endif; ?>
     <?php if (have_rows('item_content')) : ?>
-        <div class="flex flex-col lg:gap-[110px] gap-[66px] lg:mt-[95px] max-w-[1256px] mt-[45px] mx-auto w-full">
+        <div class="about-us-advanced_content flex flex-col lg:mt-[74px] max-w-[1256px] mt-[45px] mx-auto w-full">
+			<div class="title">
+				What we offer
+			</div>
+
             <?php while (have_rows('item_content')) : the_row();
                 $image = get_sub_field('image');
                 $title = get_sub_field('title');
                 $sub_title = get_sub_field('sub_title');
                 $text = get_sub_field('text');
             ?>
-                <div class="flex flex-col lg:flex-row card-room gap-[27px] items-start lg:even:flex-row-reverse lg:gap-[110px]">
+                <div class="flex flex-col lg:flex-row card-room items-start">
                     <div class="w-full h-full lg:flex-[1_0_573px] lg:mb-0 max-h-[390px] order-1 overflow-hidden">
                         <img class="w-full object-cover" src="<?php echo esc_url($image); ?>" alt="img">
                     </div>
